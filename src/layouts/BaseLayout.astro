@@ -1,0 +1,45 @@
+---
+import '../styles/global.css';
+
+type Props = {
+  title: string;
+  description: string;
+  canonical?: string;
+};
+
+const { title, description, canonical } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="/" aria-label="Futrio - strona główna">Futrio</a>
+        <nav class="site-nav" aria-label="Główna nawigacja">
+          <a href="/rasy/">Rasy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Futrio rozwija praktyczną bazę wiedzy o zwierzętach, żywieniu i kosztach opieki.</p>
+      </div>
+    </footer>
+  </body>
+</html>

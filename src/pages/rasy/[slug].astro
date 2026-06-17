@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  type Breed,
+  formatActivityLevel,
+  formatGroomingLevel,
+  formatRange,
+  formatSpecies,
+  formatTrainingDifficulty,
+  getBreedStaticPaths,
+} from '../../lib/breeds-data';
+
+export function getStaticPaths() {
+  return getBreedStaticPaths();
+}
+
+type Props = {
+  breed: Breed;
+};
+
+const { breed } = Astro.props;
+const title =
+  breed.meta_title ?? `${breed.name} - opis rasy, charakter i koszty utrzymania`;
+const description =
+  breed.meta_description ??
+  breed.short_description ??
+  `${breed.name} - opis rasy, charakter, podstawowe potrzeby i koszty utrzymania.`;
+const h1 = breed.h1 ?? breed.name;
+const calories = formatRange(
+  breed.daily_calories_min,
+  breed.daily_calories_max,
+  'kcal'
+);
+
+const details = [
+  ['Gatunek', formatSpecies(breed.species)],
+  ['Waga', formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')],
+  ['Wzrost/wysokość', formatRange(breed.height_min_cm, breed.height_max_cm, 'cm')],
+  [
+    'Długość życia',
+    formatRange(
+      breed.life_expectancy_min_years,
+      breed.life_expectancy_max_years,
+      'lat'
+    ),
+  ],
+  ['Aktywność', formatActivityLevel(breed.activity_level)],
+  ['Pielęgnacja', formatGroomingLevel(breed.grooming_level)],
+  ['Trudność szkolenia', formatTrainingDifficulty(breed.training_difficulty)],
+  [
+    'Ocena dla rodziny',
+    breed.family_friendly_score ? `${breed.family_friendly_score}/5` : 'brak danych',
+  ],
+  [
+    'Ocena do mieszkania',
+    breed.apartment_score ? `${breed.apartment_score}/5` : 'brak danych',
+  ],
+  ['Dzienne kalorie', calories],
+];
+---
+
+<BaseLayout title={title} description={description} canonical={`/rasy/${breed.slug}/`}>
+  <section class="hero">
+    <div class="container hero__content">
+      <nav class="breadcrumbs" aria-label="Okruszki">
+        <a href="/">Futrio</a> &gt; <a href="/rasy/">Rasy</a> &gt; {breed.name}
+      </nav>
+      <p class="eyebrow">{formatSpecies(breed.species)}</p>
+      <h1>{h1}</h1>
+      <p class="lead">{breed.short_description ?? 'Opis rasy jest w przygotowaniu.'}</p>
+    </div>
+  </section>
+
+  <!-- TODO: Google AdSense placement - top content -->
+
+  <section class="section">
+    <div class="container">
+      <h2>Najważniejsze informacje</h2>
+      <dl class="info-grid">
+        {
+          details.map(([label, value]) => (
+            <div class="info-item">
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      <section class="content-section">
+        <h2>Charakter i potrzeby</h2>
+        <p>{breed.long_description ?? breed.short_description ?? 'Szczegółowy opis tej rasy jest w przygotowaniu.'}</p>
+      </section>
+
+      <section class="content-section">
+        <h2>Żywienie</h2>
+        <p>
+          Orientacyjne dzienne zapotrzebowanie energetyczne dla tej rasy wynosi {calories}.
+          Ostateczna porcja powinna zależeć od wieku, masy ciała, aktywności i stanu
+          zdrowia zwierzęcia.
+        </p>
+      </section>
+
+      <!-- TODO: Google AdSense placement - mid content -->
+
+      <section class="content-section">
+        <h2>Zdrowie</h2>
+        <p>
+          Informacje na stronie mają charakter orientacyjny i nie zastępują konsultacji
+          z lekarzem weterynarii. Przy wyborze diety, aktywności i profilaktyki warto
+          uwzględnić indywidualny stan zdrowia zwierzęcia.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Koszty utrzymania</h2>
+        <p>
+          W kolejnych etapach pojawi się tu miejsce na kalkulator kosztów utrzymania
+          dopasowany do rasy, masy ciała i podstawowych potrzeb opiekuna.
+        </p>
+      </section>
+
+      <section class="content-section notice">
+        <h2>Polecana karma i akcesoria</h2>
+        <p>Wkrótce dodamy tu polecane produkty dopasowane do tej rasy.</p>
+        <!-- TODO: Affiliate CTA based on D1 affiliate_links -->
+      </section>
+    </div>
+  </section>
+</BaseLayout>

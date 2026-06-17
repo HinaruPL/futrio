@@ -1,17 +1,57 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="pl">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Futrio</title>
-	</head>
-	<body>
-		<h1>Futrio</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Futrio - praktyczna baza wiedzy o zwierzętach"
+  description="Futrio to polski portal zoologiczny z opisami ras, praktycznymi poradnikami i przyszłymi kalkulatorami dla opiekunów zwierząt."
+  canonical="/"
+>
+  <section class="hero">
+    <div class="container hero__content">
+      <p class="eyebrow">Portal zoologiczny w budowie</p>
+      <h1>Futrio - praktyczna baza wiedzy o zwierzętach</h1>
+      <p class="lead">
+        Tworzymy uporządkowaną bazę ras psów i kotów, poradników żywieniowych oraz
+        praktycznych informacji o kosztach opieki. Pierwsze opisy ras są już dostępne
+        w wersji statycznej.
+      </p>
+      <div class="actions">
+        <a class="button" href="/rasy/">Przejdź do bazy ras</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        <article class="card">
+          <span class="badge">Dostępne</span>
+          <h2>Rasy psów i kotów</h2>
+          <p>
+            Statyczne opisy ras generowane z danych, z parametrami, opisem charakteru,
+            żywieniem i miejscem na dalszą rozbudowę SEO.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="badge">Wkrótce</span>
+          <h2>Kalkulatory dla opiekunów</h2>
+          <p>
+            W kolejnych etapach pojawią się lekkie narzędzia do szacowania karmy,
+            kosztów utrzymania i podstawowych potrzeb zwierząt.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="badge">W przygotowaniu</span>
+          <h2>Poradniki i koszty utrzymania</h2>
+          <p>
+            Portal będzie rozwijany o poradniki redakcyjne, sekcje kosztowe oraz
+            przyszłe miejsca na rekomendacje produktów.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

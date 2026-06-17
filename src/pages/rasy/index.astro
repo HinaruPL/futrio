@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  formatActivityLevel,
+  formatRange,
+  formatSpecies,
+  getAllBreeds,
+} from '../../lib/breeds-data';
+
+const breeds = getAllBreeds();
+---
+
+<BaseLayout
+  title="Rasy psów i kotów - Futrio"
+  description="Przegląd ras psów i kotów w portalu Futrio: opis, waga, aktywność i najważniejsze informacje dla opiekunów."
+  canonical="/rasy/"
+>
+  <section class="hero">
+    <div class="container hero__content">
+      <p class="eyebrow">Baza ras</p>
+      <h1>Rasy psów i kotów</h1>
+      <p class="lead">
+        Przeglądaj pierwsze opisy ras przygotowane jako statyczne strony SEO.
+        Dane pochodzą z wygenerowanego pliku JSON i będą rozwijane w kolejnych etapach.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="breed-grid grid">
+        {
+          breeds.map((breed) => (
+            <article class="card breed-card">
+              <div>
+                <span class="badge">{formatSpecies(breed.species)}</span>
+                <h2>{breed.name}</h2>
+                <p>{breed.short_description ?? 'Opis rasy jest w przygotowaniu.'}</p>
+              </div>
+              <div class="breed-card__meta">
+                <span>Waga: {formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')}</span>
+                <span>Aktywność: {formatActivityLevel(breed.activity_level)}</span>
+              </div>
+              <a class="breed-card__link" href={`/rasy/${breed.slug}/`}>
+                Zobacz opis rasy
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
