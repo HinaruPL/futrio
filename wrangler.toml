@@ -1,0 +1,7 @@
+name = "futrio"
+compatibility_date = "2026-06-18"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "futrio-db"
+database_id = "dd3a39c7-22f0-46f1-be67-d0f154c0b417"
