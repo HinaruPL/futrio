@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CalorieCalculator from '../../components/CalorieCalculator';
 import {
   type Breed,
   type BreedContentSection,
@@ -39,6 +40,11 @@ const sections = [...breed.contentSections].sort(
 );
 const relatedBreeds = getOtherBreeds(breed.slug, 3);
 const affiliateLinks = breed.affiliateLinks.filter((link) => link.is_active === 1);
+const primaryAffiliateLink = affiliateLinks[0] ?? null;
+const defaultWeightKg =
+  breed.weight_min_kg !== null && breed.weight_max_kg !== null
+    ? Number(((breed.weight_min_kg + breed.weight_max_kg) / 2).toFixed(1))
+    : breed.weight_min_kg ?? breed.weight_max_kg ?? null;
 const imageUrl = breed.image?.image_url ?? '';
 const hasRealImage =
   Boolean(breed.image) &&
@@ -180,6 +186,23 @@ function getParagraphs(section: BreedContentSection): string[] {
               ))
             }
           </dl>
+        </section>
+
+        <section class="article-section" id="kalkulator-kalorii">
+          <h2>Kalkulator kalorii dla tej rasy</h2>
+          <CalorieCalculator
+            breedName={breed.name}
+            species={breed.species}
+            defaultWeightKg={defaultWeightKg}
+            dailyCaloriesMin={breed.daily_calories_min}
+            dailyCaloriesMax={breed.daily_calories_max}
+            affiliateCtaLabel={
+              primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text
+            }
+            affiliateCtaUrl={primaryAffiliateLink?.url}
+            affiliateDisclosure={primaryAffiliateLink?.disclosure}
+            client:visible
+          />
         </section>
 
         {
