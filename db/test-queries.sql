@@ -98,3 +98,24 @@ SELECT
 FROM crossbreeds c
 JOIN breeds a ON a.id = c.breed_a_id
 JOIN breeds b ON b.id = c.breed_b_id;
+
+SELECT 'breed_content_sections_count' AS test_name, COUNT(*) AS result FROM breed_content_sections;
+
+SELECT
+  b.name AS breed_name,
+  COUNT(*) AS sections_count
+FROM breed_content_sections bcs
+JOIN breeds b ON b.id = bcs.breed_id
+GROUP BY b.id, b.name
+ORDER BY b.name;
+
+SELECT
+  b.name AS breed_name,
+  bcs.section_key,
+  bcs.heading,
+  bcs.body,
+  bcs.sort_order
+FROM breed_content_sections bcs
+JOIN breeds b ON b.id = bcs.breed_id
+WHERE b.slug = 'labrador-retriever'
+ORDER BY bcs.sort_order ASC;

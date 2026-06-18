@@ -1,5 +1,12 @@
 import breedsData from '../data/breeds.generated.json';
 
+export type BreedContentSection = {
+  section_key: string;
+  heading: string;
+  body: string;
+  sort_order: number;
+};
+
 export type Breed = {
   id: number;
   name: string;
@@ -26,6 +33,7 @@ export type Breed = {
   status: 'draft' | 'published' | 'archived';
   created_at: string;
   updated_at: string;
+  contentSections: BreedContentSection[];
 };
 
 type GeneratedBreedsData = {
@@ -36,6 +44,24 @@ type GeneratedBreedsData = {
 };
 
 const mojibakeMap: Record<string, string> = {
+  'Ă„â€¦': 'ą',
+  'Ă„â€ˇ': 'ć',
+  'Ă„â„˘': 'ę',
+  'Äąâ€š': 'ł',
+  'Äąâ€ž': 'ń',
+  'Ä‚Ĺ‚': 'ó',
+  'Äąâ€ş': 'ś',
+  'ÄąĹź': 'ź',
+  'ÄąÄ˝': 'ż',
+  'Ă„â€ž': 'Ą',
+  'Ă„â€ ': 'Ć',
+  'Ă„Â': 'Ę',
+  'ÄąÂ': 'Ł',
+  'ÄąĆ’': 'Ń',
+  'Ä‚â€ś': 'Ó',
+  'ÄąĹˇ': 'Ś',
+  'ÄąÄ…': 'Ź',
+  'ÄąÂ»': 'Ż',
   'Ä…': 'ą',
   'Ä‡': 'ć',
   'Ä™': 'ę',
@@ -54,6 +80,10 @@ const mojibakeMap: Record<string, string> = {
   'Ĺš': 'Ś',
   'Ĺą': 'Ź',
   'Ĺ»': 'Ż',
+  'Ă˘â‚¬â€ś': '-',
+  'Ă˘â‚¬â€ť': '-',
+  'Ă˘â‚¬Ĺľ': '"',
+  'Ă˘â‚¬ĹĄ': '"',
   'â€“': '-',
   'â€”': '-',
   'â€ž': '"',
@@ -71,6 +101,14 @@ function normalizeText(value: string | null): string | null {
   );
 }
 
+function normalizeSection(section: BreedContentSection): BreedContentSection {
+  return {
+    ...section,
+    heading: normalizeText(section.heading) ?? section.heading,
+    body: normalizeText(section.body) ?? section.body,
+  };
+}
+
 function normalizeBreed(breed: Breed): Breed {
   return {
     ...breed,
@@ -80,6 +118,7 @@ function normalizeBreed(breed: Breed): Breed {
     meta_title: normalizeText(breed.meta_title),
     meta_description: normalizeText(breed.meta_description),
     h1: normalizeText(breed.h1),
+    contentSections: (breed.contentSections ?? []).map(normalizeSection),
   };
 }
 

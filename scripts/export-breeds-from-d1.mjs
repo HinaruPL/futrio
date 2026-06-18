@@ -18,7 +18,7 @@ if (missingEnv.length > 0) {
   process.exit(1);
 }
 
-const query = `SELECT
+const breedsQuery = `SELECT
   id,
   name,
   slug,
@@ -47,7 +47,21 @@ const query = `SELECT
 FROM breeds
 WHERE status = 'published'
 ORDER BY name ASC`;
-const wranglerQuery = query.replace(/\s+/g, ' ').trim();
+
+const sectionsQuery = `SELECT
+  bcs.breed_id,
+  bcs.section_key,
+  bcs.heading,
+  bcs.body,
+  bcs.sort_order
+FROM breed_content_sections bcs
+JOIN breeds b ON b.id = bcs.breed_id
+WHERE b.status = 'published'
+ORDER BY bcs.breed_id ASC, bcs.sort_order ASC`;
+
+function compactQuery(query) {
+  return query.replace(/\s+/g, ' ').trim();
+}
 
 function findPnpmCommand() {
   const commandName = process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm';
@@ -89,7 +103,7 @@ function getPnpmInvocation() {
   };
 }
 
-function runWrangler(useJsonFlag) {
+function runWrangler(query, useJsonFlag) {
   const pnpm = getPnpmInvocation();
   const args = [
     ...pnpm.argsPrefix,
@@ -100,7 +114,7 @@ function runWrangler(useJsonFlag) {
     'futrio-db',
     '--remote',
     '--command',
-    wranglerQuery,
+    compactQuery(query),
   ];
 
   if (useJsonFlag) {
@@ -152,25 +166,46 @@ function extractRows(parsedOutput) {
   throw new Error('Output Wranglera nie zawiera tablicy results.');
 }
 
-let wranglerResult = runWrangler(true);
+function executeQuery(query) {
+  let wranglerResult = runWrangler(query, true);
 
-if (wranglerResult.status !== 0) {
-  wranglerResult = runWrangler(false);
+  if (wranglerResult.status !== 0) {
+    wranglerResult = runWrangler(query, false);
+  }
+
+  if (wranglerResult.status !== 0) {
+    const errorOutput =
+      wranglerResult.stderr ??
+      wranglerResult.stdout ??
+      wranglerResult.error?.message ??
+      'Nie udało się uruchomić Wranglera.';
+
+    process.stderr.write(errorOutput);
+    process.exit(wranglerResult.status ?? 1);
+  }
+
+  return extractRows(parseJsonFromOutput(wranglerResult.stdout));
 }
 
-if (wranglerResult.status !== 0) {
-  const errorOutput =
-    wranglerResult.stderr ??
-    wranglerResult.stdout ??
-    wranglerResult.error?.message ??
-    'Nie udało się uruchomić Wranglera.';
+const breeds = executeQuery(breedsQuery);
+const sections = executeQuery(sectionsQuery);
+const sectionsByBreedId = new Map();
 
-  process.stderr.write(errorOutput);
-  process.exit(wranglerResult.status ?? 1);
+for (const section of sections) {
+  const breedSections = sectionsByBreedId.get(section.breed_id) ?? [];
+  breedSections.push({
+    section_key: section.section_key,
+    heading: section.heading,
+    body: section.body,
+    sort_order: section.sort_order,
+  });
+  sectionsByBreedId.set(section.breed_id, breedSections);
 }
 
-const parsedOutput = parseJsonFromOutput(wranglerResult.stdout);
-const breeds = extractRows(parsedOutput);
+const breedsWithSections = breeds.map((breed) => ({
+  ...breed,
+  contentSections: sectionsByBreedId.get(breed.id) ?? [],
+}));
 
 mkdirSync(dirname(outputPath), { recursive: true });
 writeFileSync(
@@ -179,8 +214,8 @@ writeFileSync(
     {
       generatedAt: new Date().toISOString(),
       source: 'cloudflare-d1',
-      count: breeds.length,
-      breeds,
+      count: breedsWithSections.length,
+      breeds: breedsWithSections,
     },
     null,
     2
@@ -188,4 +223,4 @@ writeFileSync(
   'utf8'
 );
 
-console.log(`Zapisano ${breeds.length} ras do src/data/breeds.generated.json.`);
+console.log(`Zapisano ${breedsWithSections.length} ras do src/data/breeds.generated.json.`);

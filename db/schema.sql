@@ -146,3 +146,34 @@ CREATE INDEX idx_calculator_profiles_breed_id ON calculator_profiles(breed_id);
 
 CREATE INDEX idx_content_blocks_entity ON content_blocks(entity_type, entity_id);
 CREATE INDEX idx_content_blocks_sort ON content_blocks(entity_type, entity_id, sort_order);
+
+CREATE TABLE breed_content_sections (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  breed_id INTEGER NOT NULL,
+  section_key TEXT NOT NULL CHECK (
+    section_key IN (
+      'character',
+      'for_whom',
+      'home_and_apartment',
+      'children_and_family',
+      'activity',
+      'grooming',
+      'feeding',
+      'health',
+      'costs',
+      'common_mistakes',
+      'fun_facts',
+      'faq'
+    )
+  ),
+  heading TEXT NOT NULL,
+  body TEXT NOT NULL,
+  sort_order INTEGER NOT NULL DEFAULT 100,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (breed_id) REFERENCES breeds(id) ON DELETE CASCADE,
+  UNIQUE (breed_id, section_key)
+);
+
+CREATE INDEX idx_breed_content_sections_breed_id ON breed_content_sections(breed_id);
+CREATE INDEX idx_breed_content_sections_sort ON breed_content_sections(breed_id, sort_order);

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T23:15:35.955Z",
+  "generatedAt": "2026-06-18T11:50:58.328Z",
   "source": "cloudflare-d1",
   "count": 5,
   "breeds": [
@@ -28,7 +28,81 @@
       "h1": "Golden Retriever - opis rasy, charakter i koszty utrzymania",
       "status": "published",
       "created_at": "2026-06-17 22:48:30",
-      "updated_at": "2026-06-17 22:48:30"
+      "updated_at": "2026-06-17 22:48:30",
+      "contentSections": [
+        {
+          "section_key": "character",
+          "heading": "Charakter",
+          "body": "Golden Retriever jest zwykle łagodny, kontaktowy i bardzo nastawiony na człowieka. Lubi współpracę i dobrze reaguje na spokojne szkolenie. Nie jest jednak psem bezobsługowym, bo jego wrażliwość i energia wymagają czasu, cierpliwości oraz codziennego kontaktu.",
+          "sort_order": 10
+        },
+        {
+          "section_key": "for_whom",
+          "heading": "Dla kogo będzie dobrym wyborem",
+          "body": "Golden pasuje do rodzin i osób aktywnych, które chcą psa blisko człowieka. Najlepiej odnajduje się tam, gdzie jest miejsce na spacery, naukę i wspólne zajęcia. Nie będzie dobrym wyborem dla kogoś, kto oczekuje psa stale pozostającego w tle.",
+          "sort_order": 20
+        },
+        {
+          "section_key": "home_and_apartment",
+          "heading": "Dom i mieszkanie",
+          "body": "Golden może mieszkać w mieszkaniu, jeśli jego potrzeby ruchu i kontaktu są spełnione. Potrzebuje wygodnego miejsca do odpoczynku i regularnego wychodzenia poza najbliższy trawnik. W domu z ogrodem nadal potrzebuje spacerów i pracy z opiekunem.",
+          "sort_order": 30
+        },
+        {
+          "section_key": "children_and_family",
+          "heading": "Dzieci i rodzina",
+          "body": "Rasa często dobrze funkcjonuje w rodzinie, ale relacje z dziećmi trzeba prowadzić rozsądnie. Golden bywa cierpliwy, lecz młody pies może być żywiołowy i nieuważny. Dzieci powinny wiedzieć, kiedy dać psu spokój.",
+          "sort_order": 40
+        },
+        {
+          "section_key": "activity",
+          "heading": "Aktywność",
+          "body": "Golden potrzebuje regularnego ruchu i zadań, które pozwalają mu pracować z człowiekiem. Spacery, aport, ćwiczenia węchowe i nauka komend pomagają utrzymać go w dobrej formie. Zbyt mało zajęcia może prowadzić do frustracji i niszczenia rzeczy.",
+          "sort_order": 50
+        },
+        {
+          "section_key": "grooming",
+          "heading": "Pielęgnacja",
+          "body": "Sierść goldena wymaga regularnego szczotkowania, zwłaszcza w okresie linienia. Warto kontrolować miejsca za uszami, ogon i portki, gdzie mogą tworzyć się kołtuny. Po spacerach w błocie lub wodzie dobrze sprawdzić stan skóry i uszu.",
+          "sort_order": 60
+        },
+        {
+          "section_key": "feeding",
+          "heading": "Żywienie",
+          "body": "Golden ma skłonność do przybierania na wadze, dlatego porcje powinny być odmierzone. Dietę warto dopasować do wieku, aktywności i stanu zdrowia. Smakołyki treningowe są pomocne, ale nie powinny wymykać się spod kontroli.",
+          "sort_order": 70
+        },
+        {
+          "section_key": "health",
+          "heading": "Zdrowie",
+          "body": "U goldenów warto zwracać uwagę na stawy, skórę, uszy i prawidłową masę ciała. Informacje zdrowotne są orientacyjne i nie zastępują konsultacji weterynaryjnej. Regularna profilaktyka pomaga szybciej wychwycić niepokojące zmiany.",
+          "sort_order": 80
+        },
+        {
+          "section_key": "costs",
+          "heading": "Koszty utrzymania",
+          "body": "Koszty utrzymania obejmują karmę, pielęgnację sierści, profilaktykę zdrowotną i akcesoria. Przy tej rasie warto uwzględnić także ewentualne wsparcie groomera lub trenera. Wydatki mogą rosnąć przy alergiach, problemach skórnych lub nadwadze.",
+          "sort_order": 90
+        },
+        {
+          "section_key": "common_mistakes",
+          "heading": "Częste błędy opiekunów",
+          "body": "Najczęstszy błąd to traktowanie goldena jak psa, który zawsze sam będzie spokojny i posłuszny. Bez pracy nad emocjami, przywołaniem i chodzeniem na smyczy może stać się trudny w codzienności. Drugim błędem jest odkładanie pielęgnacji sierści.",
+          "sort_order": 100
+        },
+        {
+          "section_key": "fun_facts",
+          "heading": "Ciekawostki",
+          "body": "Golden Retriever powstał jako pies aportujący, dlatego wiele psów tej rasy lubi nosić zabawki i pracować z człowiekiem. Ta potrzeba może być świetnym sposobem na budowanie relacji, jeśli opiekun prowadzi ją spokojnie i konsekwentnie.",
+          "sort_order": 110
+        },
+        {
+          "section_key": "faq",
+          "heading": "FAQ",
+          "body": "Czy golden nadaje się dla rodziny? Często tak, jeśli rodzina ma czas na ruch i naukę. Czy wymaga pielęgnacji? Tak, sierść trzeba regularnie szczotkować. Czy może mieszkać w bloku? Tak, jeśli codziennie wychodzi na wartościowe spacery.",
+          "sort_order": 120
+        }
+      ]
     },
     {
       "id": 5,
@@ -55,7 +129,81 @@
       "h1": "Kot brytyjski krótkowłosy - opis rasy, charakter i koszty utrzymania",
       "status": "published",
       "created_at": "2026-06-17 22:48:30",
-      "updated_at": "2026-06-17 22:48:30"
+      "updated_at": "2026-06-17 22:48:30",
+      "contentSections": [
+        {
+          "section_key": "character",
+          "heading": "Charakter",
+          "body": "Kot brytyjski krótkowłosy jest zwykle spokojny, zrównoważony i niezależny. Lubi obecność człowieka, ale często sam decyduje, kiedy chce bliższego kontaktu. Nie należy mylić jego spokoju z potrzebą całkowitego braku zabawy.",
+          "sort_order": 10
+        },
+        {
+          "section_key": "for_whom",
+          "heading": "Dla kogo będzie dobrym wyborem",
+          "body": "Brytyjczyk pasuje do osób, które cenią spokojne koty i potrafią uszanować ich dystans. Dobrze odnajduje się w przewidywalnym domu. Nie będzie idealny dla kogoś, kto oczekuje kota stale noszonego na rękach.",
+          "sort_order": 20
+        },
+        {
+          "section_key": "home_and_apartment",
+          "heading": "Dom i mieszkanie",
+          "body": "To rasa dobrze pasująca do mieszkania, jeśli kot ma drapak, miejsca odpoczynku i codzienną porcję zabawy. Ze względu na masywną budowę warto zadbać o stabilne legowiska i bezpieczne wskakiwanie. Nuda i brak ruchu mogą sprzyjać nadwadze.",
+          "sort_order": 30
+        },
+        {
+          "section_key": "children_and_family",
+          "heading": "Dzieci i rodzina",
+          "body": "Kot brytyjski może żyć w rodzinie, ale potrzebuje spokojnego traktowania. Dzieci powinny rozumieć, że kot ma prawo odejść i nie musi lubić noszenia. Najlepiej sprawdzają się krótkie, delikatne zabawy zamiast natarczywego kontaktu.",
+          "sort_order": 40
+        },
+        {
+          "section_key": "activity",
+          "heading": "Aktywność",
+          "body": "Aktywność tej rasy bywa raczej umiarkowana lub niska, ale codzienna zabawa nadal jest potrzebna. Kilka krótkich sesji z wędką albo zabawką na jedzenie pomaga utrzymać kondycję. Warto zachęcać kota do ruchu bez zmuszania go na siłę.",
+          "sort_order": 50
+        },
+        {
+          "section_key": "grooming",
+          "heading": "Pielęgnacja",
+          "body": "Gęsta, krótka sierść wymaga regularnego szczotkowania, szczególnie w okresie linienia. Pielęgnacja nie jest skomplikowana, ale systematyczność pomaga ograniczyć sierść w domu. Warto też kontrolować pazury i stan zębów.",
+          "sort_order": 60
+        },
+        {
+          "section_key": "feeding",
+          "heading": "Żywienie",
+          "body": "Brytyjczyki mają tendencję do przybierania na wadze, dlatego porcje powinny być dobrze odmierzone. Dieta musi pasować do wieku, aktywności i stanu zdrowia kota. Regularne ważenie pomaga zauważyć zmiany wcześniej niż sama obserwacja sylwetki.",
+          "sort_order": 70
+        },
+        {
+          "section_key": "health",
+          "heading": "Zdrowie",
+          "body": "U kotów tej rasy warto pilnować masy ciała, kondycji zębów i regularnych kontroli weterynaryjnych. Informacje mają charakter ogólny i nie zastępują konsultacji z lekarzem weterynarii. Każda nagła zmiana apetytu, zachowania lub wagi wymaga uwagi.",
+          "sort_order": 80
+        },
+        {
+          "section_key": "costs",
+          "heading": "Koszty utrzymania",
+          "body": "Koszty obejmują karmę, żwirek, profilaktykę, akcesoria i ewentualne wizyty kontrolne. Przy skłonności do nadwagi oszczędzanie na jakości diety może szybko okazać się pozorne. Warto planować stały budżet na podstawową opiekę.",
+          "sort_order": 90
+        },
+        {
+          "section_key": "common_mistakes",
+          "heading": "Częste błędy opiekunów",
+          "body": "Częsty błąd to uznanie, że spokojny kot nie potrzebuje zabawy. Drugim jest przekarmianie, bo masywna sylwetka bywa mylona z prawidłową wagą. Warto też nie zmuszać brytyjczyka do kontaktu, którego akurat nie chce.",
+          "sort_order": 100
+        },
+        {
+          "section_key": "fun_facts",
+          "heading": "Ciekawostki",
+          "body": "Kot brytyjski krótkowłosy jest kojarzony z okrągłą głową, gęstą sierścią i spokojnym spojrzeniem. Choć wygląda pluszowo, zwykle bardziej ceni stabilną obecność człowieka niż intensywne noszenie na rękach.",
+          "sort_order": 110
+        },
+        {
+          "section_key": "faq",
+          "heading": "FAQ",
+          "body": "Czy kot brytyjski jest spokojny? Zwykle tak, ale nadal potrzebuje zabawy. Czy lubi noszenie? Często nie przepada za długim noszeniem. Czy łatwo tyje? Tak, dlatego ważna jest kontrola porcji i regularny ruch.",
+          "sort_order": 120
+        }
+      ]
     },
     {
       "id": 1,
@@ -82,7 +230,81 @@
       "h1": "Labrador Retriever - opis rasy, charakter i koszty utrzymania",
       "status": "published",
       "created_at": "2026-06-17 22:48:30",
-      "updated_at": "2026-06-17 22:48:30"
+      "updated_at": "2026-06-17 22:48:30",
+      "contentSections": [
+        {
+          "section_key": "character",
+          "heading": "Charakter",
+          "body": "Labrador zwykle bardzo mocno szuka kontaktu z człowiekiem. To pies pogodny i chętny do współpracy, ale nie powinien być traktowany jak spokojna ozdoba kanapy. Bez ruchu, prostych zadań i jasnych zasad szybko zaczyna szukać zajęcia na własną łapę.",
+          "sort_order": 10
+        },
+        {
+          "section_key": "for_whom",
+          "heading": "Dla kogo będzie dobrym wyborem",
+          "body": "Labrador pasuje do osób, które chcą aktywnego psa rodzinnego i mają czas na codzienne spacery, naukę oraz zabawę. Dobrze odnajduje się u opiekunów cierpliwych, konsekwentnych i gotowych pilnować diety. Nie jest najlepszym wyborem dla kogoś, kto często zostawia psa samego na długie godziny.",
+          "sort_order": 20
+        },
+        {
+          "section_key": "home_and_apartment",
+          "heading": "Dom i mieszkanie",
+          "body": "Może mieszkać w bloku, jeśli ma zapewnione porządne wyjścia i spokojne miejsce do odpoczynku. Ogród jest dodatkiem, ale nie zastępuje spacerów ani kontaktu z opiekunem. W małym mieszkaniu warto szczególnie zadbać o naukę odpoczywania po aktywności.",
+          "sort_order": 30
+        },
+        {
+          "section_key": "children_and_family",
+          "heading": "Dzieci i rodzina",
+          "body": "Labrador często dobrze dogaduje się z dziećmi, bo jest towarzyski i łagodny. Trzeba jednak pamiętać, że młody pies tej rasy bywa silny, skoczny i bardzo entuzjastyczny. Kontakty z dziećmi powinny być spokojnie nadzorowane, a pies musi mieć możliwość odejścia.",
+          "sort_order": 40
+        },
+        {
+          "section_key": "activity",
+          "heading": "Aktywność",
+          "body": "To rasa o dużej potrzebie ruchu. Najlepiej sprawdzają się dłuższe spacery, aportowanie, pływanie, proste ćwiczenia węchowe i nauka komend. Samo wypuszczenie do ogrodu zwykle nie wystarcza, bo labrador potrzebuje także zajęcia głowy.",
+          "sort_order": 50
+        },
+        {
+          "section_key": "grooming",
+          "heading": "Pielęgnacja",
+          "body": "Krótka sierść labradora nie jest trudna, ale pies potrafi mocno linieć. Regularne szczotkowanie pomaga ograniczyć sierść w domu i pozwala szybko zauważyć problemy skórne. Warto kontrolować uszy, pazury i stan łap po spacerach.",
+          "sort_order": 60
+        },
+        {
+          "section_key": "feeding",
+          "heading": "Żywienie",
+          "body": "Labradory często mają bardzo dobry apetyt, dlatego łatwo je przekarmić. Porcje warto odmierzać, a smakołyki wliczać w dzienną dawkę jedzenia. Utrzymanie prawidłowej masy ciała jest ważne szczególnie dla stawów i ogólnej kondycji.",
+          "sort_order": 70
+        },
+        {
+          "section_key": "health",
+          "heading": "Zdrowie",
+          "body": "U labradorów warto zwracać uwagę na masę ciała, stawy, uszy i skórę. Informacje na stronie mają charakter orientacyjny i nie zastępują konsultacji z lekarzem weterynarii. Przy niepokojących objawach najlepiej skonsultować psa ze specjalistą.",
+          "sort_order": 80
+        },
+        {
+          "section_key": "costs",
+          "heading": "Koszty utrzymania",
+          "body": "Koszty utrzymania labradora zależą głównie od jakości karmy, profilaktyki weterynaryjnej, akcesoriów i ewentualnej pracy z trenerem. To średnio duży pies, więc żywienie i opieka mogą być wyraźnym miesięcznym wydatkiem. Warto zaplanować budżet także na badania kontrolne.",
+          "sort_order": 90
+        },
+        {
+          "section_key": "common_mistakes",
+          "heading": "Częste błędy opiekunów",
+          "body": "Częstym błędem jest zakładanie, że labrador sam z siebie będzie grzeczny, bo rasa ma opinię rodzinnej. Bez nauki chodzenia na smyczy, kontroli emocji i rozsądnej diety łatwo o problemy. Drugim błędem jest zbyt mało aktywności umysłowej.",
+          "sort_order": 100
+        },
+        {
+          "section_key": "fun_facts",
+          "heading": "Ciekawostki",
+          "body": "Labradory wywodzą się z psów pracujących przy wodzie, dlatego wiele z nich uwielbia pływać i nosić przedmioty w pysku. Ta cecha może być świetną bazą do zabawy, ale wymaga zasad, żeby pies nie podkradał wszystkiego z domu.",
+          "sort_order": 110
+        },
+        {
+          "section_key": "faq",
+          "heading": "FAQ",
+          "body": "Czy labrador nadaje się do mieszkania? Tak, jeśli ma dużo ruchu i kontaktu z opiekunem. Czy mocno linieje? Tak, szczególnie sezonowo. Czy to dobry pierwszy pies? Może być, ale wymaga konsekwencji, nauki i kontroli jedzenia.",
+          "sort_order": 120
+        }
+      ]
     },
     {
       "id": 4,
@@ -109,7 +331,81 @@
       "h1": "Maine Coon - opis rasy, charakter i koszty utrzymania",
       "status": "published",
       "created_at": "2026-06-17 22:48:30",
-      "updated_at": "2026-06-17 22:48:30"
+      "updated_at": "2026-06-17 22:48:30",
+      "contentSections": [
+        {
+          "section_key": "character",
+          "heading": "Charakter",
+          "body": "Maine Coon jest zwykle spokojny, towarzyski i ciekawski. Często lubi być blisko człowieka, ale nie zawsze jest typowym kotem na kolana. Potrzebuje kontaktu, zabawy i przestrzeni, w której może obserwować dom z wyższego miejsca.",
+          "sort_order": 10
+        },
+        {
+          "section_key": "for_whom",
+          "heading": "Dla kogo będzie dobrym wyborem",
+          "body": "To dobry wybór dla osób, które chcą dużego, kontaktowego kota i są gotowe na regularną pielęgnację. Maine Coon dobrze odnajduje się w domu, gdzie opiekun ma czas na zabawę i obserwuje zmiany w zdrowiu. Nie jest najlepszy dla kogoś, kto chce kota całkowicie bezobsługowego.",
+          "sort_order": 20
+        },
+        {
+          "section_key": "home_and_apartment",
+          "heading": "Dom i mieszkanie",
+          "body": "Maine Coon może mieszkać w mieszkaniu, jeśli ma drapaki, półki, miejsca obserwacyjne i codzienną zabawę. Ze względu na rozmiar potrzebuje stabilnych akcesoriów. Balkon lub okna powinny być dobrze zabezpieczone.",
+          "sort_order": 30
+        },
+        {
+          "section_key": "children_and_family",
+          "heading": "Dzieci i rodzina",
+          "body": "Maine Coony często dobrze funkcjonują w rodzinie, ale trzeba szanować ich granice. Dzieci powinny wiedzieć, że kota nie wolno nosić na siłę ani przeszkadzać mu w odpoczynku. Spokojne zabawy wędką zwykle sprawdzają się lepiej niż gonitwy.",
+          "sort_order": 40
+        },
+        {
+          "section_key": "activity",
+          "heading": "Aktywność",
+          "body": "To kot umiarkowanie aktywny, który lubi zabawę i eksplorację. Warto planować krótkie sesje łowieckie z wędką, zabawki na jedzenie i miejsca do wspinania. Brak zajęcia może sprzyjać nudzie i podjadaniu.",
+          "sort_order": 50
+        },
+        {
+          "section_key": "grooming",
+          "heading": "Pielęgnacja",
+          "body": "Półdługa sierść wymaga regularnego czesania, szczególnie na brzuchu, portkach i za uszami. Lepiej robić to krótko, ale systematycznie, niż czekać na kołtuny. Przyzwyczajanie do pielęgnacji warto zacząć spokojnie i stopniowo.",
+          "sort_order": 60
+        },
+        {
+          "section_key": "feeding",
+          "heading": "Żywienie",
+          "body": "Żywienie Maine Coona powinno uwzględniać jego rozmiar, aktywność i skłonność do przybierania na wadze. Porcje warto kontrolować, nawet jeśli kot wydaje się stale zainteresowany jedzeniem. Dobre nawodnienie i jakość diety są ważne w codziennej opiece.",
+          "sort_order": 70
+        },
+        {
+          "section_key": "health",
+          "heading": "Zdrowie",
+          "body": "U tej rasy często zwraca się uwagę na profilaktykę serca, stawów i masy ciała. Informacje są orientacyjne i nie zastępują opieki lekarza weterynarii. Regularne kontrole pomagają szybciej zauważyć problemy, które u dużego kota mogą długo pozostać mało widoczne.",
+          "sort_order": 80
+        },
+        {
+          "section_key": "costs",
+          "heading": "Koszty utrzymania",
+          "body": "Koszty utrzymania Maine Coona mogą być wyższe niż u mniejszych kotów ze względu na ilość karmy, większe akcesoria i pielęgnację. Warto uwzględnić solidny drapak, większą kuwetę i profilaktyczne badania. To rasa, przy której planowanie budżetu ma duże znaczenie.",
+          "sort_order": 90
+        },
+        {
+          "section_key": "common_mistakes",
+          "heading": "Częste błędy opiekunów",
+          "body": "Częsty błąd to kupowanie zbyt małych lub niestabilnych akcesoriów. Drugim jest odkładanie czesania do momentu, gdy pojawią się kołtuny. Warto też nie przekarmiać kota tylko dlatego, że jest duży.",
+          "sort_order": 100
+        },
+        {
+          "section_key": "fun_facts",
+          "heading": "Ciekawostki",
+          "body": "Maine Coon jest jedną z największych ras kotów domowych, ale jego charakter często bywa łagodny i społeczny. Wiele kotów tej rasy wydaje ciche, nietypowe dźwięki i chętnie obserwuje codzienne czynności opiekuna.",
+          "sort_order": 110
+        },
+        {
+          "section_key": "faq",
+          "heading": "FAQ",
+          "body": "Czy Maine Coon nadaje się do mieszkania? Tak, jeśli ma przestrzeń pionową i zabawę. Czy wymaga czesania? Tak, regularnie. Czy to kot dla dzieci? Może być, jeśli dzieci szanują jego granice i nie traktują go jak zabawki.",
+          "sort_order": 120
+        }
+      ]
     },
     {
       "id": 3,
@@ -136,7 +432,81 @@
       "h1": "Owczarek niemiecki - opis rasy, charakter i koszty utrzymania",
       "status": "published",
       "created_at": "2026-06-17 22:48:30",
-      "updated_at": "2026-06-17 22:48:30"
+      "updated_at": "2026-06-17 22:48:30",
+      "contentSections": [
+        {
+          "section_key": "character",
+          "heading": "Charakter",
+          "body": "Owczarek niemiecki to pies inteligentny, czujny i mocno związany z opiekunem. Lubi jasne zadania i przewidywalne zasady. Bez prowadzenia może stać się nadmiernie pobudzony albo zbyt samodzielny w pilnowaniu otoczenia.",
+          "sort_order": 10
+        },
+        {
+          "section_key": "for_whom",
+          "heading": "Dla kogo będzie dobrym wyborem",
+          "body": "To rasa dla osób, które chcą aktywnie pracować z psem i lubią szkolenie. Owczarek potrzebuje opiekuna konsekwentnego, spokojnego i gotowego na codzienne ćwiczenia. Nie jest najlepszym wyborem dla kogoś, kto szuka psa bez dużego zaangażowania.",
+          "sort_order": 20
+        },
+        {
+          "section_key": "home_and_apartment",
+          "heading": "Dom i mieszkanie",
+          "body": "Owczarek może mieszkać w domu lub mieszkaniu, ale potrzebuje ruchu, zajęcia i wyciszenia. Sam ogród nie rozwiązuje jego potrzeb, a czasem wzmacnia czujność. Ważne jest spokojne miejsce, w którym pies może odpocząć po aktywności.",
+          "sort_order": 30
+        },
+        {
+          "section_key": "children_and_family",
+          "heading": "Dzieci i rodzina",
+          "body": "Dobrze prowadzony owczarek może być lojalnym psem rodzinnym, ale jego siła i czujność wymagają odpowiedzialności dorosłych. Dzieci nie powinny prowadzić go bez nadzoru. Od początku warto uczyć psa spokojnych reakcji na domowy ruch.",
+          "sort_order": 40
+        },
+        {
+          "section_key": "activity",
+          "heading": "Aktywność",
+          "body": "Rasa potrzebuje zarówno ruchu, jak i pracy umysłowej. Spacery, trening posłuszeństwa, tropienie lub ćwiczenia węchowe pomagają wykorzystać jego potencjał. Zbyt mało zajęcia może prowadzić do napięcia, szczekania i problemów z kontrolą emocji.",
+          "sort_order": 50
+        },
+        {
+          "section_key": "grooming",
+          "heading": "Pielęgnacja",
+          "body": "Pielęgnacja zależy od typu sierści, ale regularne szczotkowanie jest ważne przez cały rok. W okresie linienia sierści może być bardzo dużo. Warto kontrolować pazury, uszy i stan skóry po intensywnych spacerach.",
+          "sort_order": 60
+        },
+        {
+          "section_key": "feeding",
+          "heading": "Żywienie",
+          "body": "Dieta owczarka powinna wspierać prawidłową masę ciała i kondycję mięśni. Przy dużej aktywności porcje muszą być dopasowane do realnego wysiłku, a nie tylko do wielkości psa. Nadwaga może dodatkowo obciążać stawy.",
+          "sort_order": 70
+        },
+        {
+          "section_key": "health",
+          "heading": "Zdrowie",
+          "body": "U owczarków szczególnie ważna jest profilaktyka stawów, kontrola ruchu w okresie wzrostu i obserwacja sposobu poruszania się. Informacje są ogólne i nie zastępują konsultacji z lekarzem weterynarii. Przy kulawiźnie lub bólu potrzebna jest fachowa ocena.",
+          "sort_order": 80
+        },
+        {
+          "section_key": "costs",
+          "heading": "Koszty utrzymania",
+          "body": "Koszty mogą obejmować dobrej jakości karmę, szkolenie, profilaktykę weterynaryjną i solidne akcesoria. Przy tej rasie warto zaplanować budżet na pracę z trenerem, zwłaszcza w pierwszych latach. Oszczędzanie na socjalizacji często odbija się na codziennym komforcie.",
+          "sort_order": 90
+        },
+        {
+          "section_key": "common_mistakes",
+          "heading": "Częste błędy opiekunów",
+          "body": "Częstym błędem jest budowanie pobudzenia zamiast spokojnej kontroli. Owczarek nie potrzebuje ciągłego nakręcania, tylko mądrego prowadzenia i odpoczynku. Problemem bywa też zbyt późna socjalizacja z ludźmi, psami i nowymi miejscami.",
+          "sort_order": 100
+        },
+        {
+          "section_key": "fun_facts",
+          "heading": "Ciekawostki",
+          "body": "Owczarki niemieckie są cenione w wielu rodzajach pracy, bo szybko się uczą i dobrze czytają człowieka. Ta inteligencja jest zaletą, ale oznacza też, że pies szybko uczy się złych nawyków, jeśli zasady są niejasne.",
+          "sort_order": 110
+        },
+        {
+          "section_key": "faq",
+          "heading": "FAQ",
+          "body": "Czy owczarek niemiecki jest dobry dla początkujących? Może być trudny bez wsparcia i planu szkolenia. Czy potrzebuje dużo ruchu? Tak, ale równie ważna jest praca umysłowa. Czy nadaje się do rodziny? Tak, jeśli jest odpowiedzialnie prowadzony.",
+          "sort_order": 120
+        }
+      ]
     }
   ]
 }
