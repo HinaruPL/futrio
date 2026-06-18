@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CalorieCalculator from '../../components/CalorieCalculator';
+import CostCalculator from '../../components/CostCalculator';
 import {
   type Breed,
   type BreedContentSection,
@@ -196,6 +197,23 @@ function getParagraphs(section: BreedContentSection): string[] {
             defaultWeightKg={defaultWeightKg}
             dailyCaloriesMin={breed.daily_calories_min}
             dailyCaloriesMax={breed.daily_calories_max}
+            affiliateCtaLabel={
+              primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text
+            }
+            affiliateCtaUrl={primaryAffiliateLink?.url}
+            affiliateDisclosure={primaryAffiliateLink?.disclosure}
+            client:visible
+          />
+        </section>
+
+        <section class="article-section" id="kalkulator-kosztow">
+          <h2>Kalkulator kosztów utrzymania</h2>
+          <CostCalculator
+            breedName={breed.name}
+            species={breed.species}
+            weightMinKg={breed.weight_min_kg}
+            weightMaxKg={breed.weight_max_kg}
+            groomingLevel={breed.grooming_level}
             affiliateCtaLabel={
               primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text
             }
