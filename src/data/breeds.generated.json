@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T11:50:58.328Z",
+  "generatedAt": "2026-06-18T12:44:34.346Z",
   "source": "cloudflare-d1",
   "count": 5,
   "breeds": [
@@ -102,6 +102,33 @@
           "body": "Czy golden nadaje się dla rodziny? Często tak, jeśli rodzina ma czas na ruch i naukę. Czy wymaga pielęgnacji? Tak, sierść trzeba regularnie szczotkować. Czy może mieszkać w bloku? Tak, jeśli codziennie wychodzi na wartościowe spacery.",
           "sort_order": 120
         }
+      ],
+      "image": {
+        "image_url": "/images/breeds/placeholder-golden-retriever.svg",
+        "image_alt": "Golden Retriever - zdjęcie rasy",
+        "image_title": "Golden Retriever",
+        "image_credit": null,
+        "image_source_type": "placeholder"
+      },
+      "affiliateLinks": [
+        {
+          "id": 4,
+          "label": "Polecana karma dla tej rasy",
+          "category": "dry_food",
+          "url": "https://example.com/link-afiliacyjny-placeholder",
+          "merchant": "Placeholder",
+          "network": "Placeholder",
+          "priority": 100,
+          "is_active": 1,
+          "anchor_text": "Sprawdź polecane produkty dla tej rasy",
+          "description": "W tym miejscu pojawią się produkty dopasowane do potrzeb tej rasy, takie jak karma, akcesoria lub inne rozwiązania dla opiekunów.",
+          "placement": "feeding_section",
+          "disclosure": "Link może mieć charakter afiliacyjny.",
+          "button_label": "Zobacz polecane produkty",
+          "image_url": null,
+          "valid_from": null,
+          "valid_to": null
+        }
       ]
     },
     {
@@ -202,6 +229,33 @@
           "heading": "FAQ",
           "body": "Czy kot brytyjski jest spokojny? Zwykle tak, ale nadal potrzebuje zabawy. Czy lubi noszenie? Często nie przepada za długim noszeniem. Czy łatwo tyje? Tak, dlatego ważna jest kontrola porcji i regularny ruch.",
           "sort_order": 120
+        }
+      ],
+      "image": {
+        "image_url": "/images/breeds/placeholder-kot-brytyjski-krotkowlosy.svg",
+        "image_alt": "Kot brytyjski krótkowłosy - zdjęcie rasy",
+        "image_title": "Kot brytyjski krótkowłosy",
+        "image_credit": null,
+        "image_source_type": "placeholder"
+      },
+      "affiliateLinks": [
+        {
+          "id": 2,
+          "label": "Polecana karma dla tej rasy",
+          "category": "wet_food",
+          "url": "https://example.com/link-afiliacyjny-placeholder",
+          "merchant": "Placeholder",
+          "network": "Placeholder",
+          "priority": 100,
+          "is_active": 1,
+          "anchor_text": "Sprawdź polecane produkty dla tej rasy",
+          "description": "W tym miejscu pojawią się produkty dopasowane do potrzeb tej rasy, takie jak karma, akcesoria lub inne rozwiązania dla opiekunów.",
+          "placement": "feeding_section",
+          "disclosure": "Link może mieć charakter afiliacyjny.",
+          "button_label": "Zobacz polecane produkty",
+          "image_url": null,
+          "valid_from": null,
+          "valid_to": null
         }
       ]
     },
@@ -304,6 +358,33 @@
           "body": "Czy labrador nadaje się do mieszkania? Tak, jeśli ma dużo ruchu i kontaktu z opiekunem. Czy mocno linieje? Tak, szczególnie sezonowo. Czy to dobry pierwszy pies? Może być, ale wymaga konsekwencji, nauki i kontroli jedzenia.",
           "sort_order": 120
         }
+      ],
+      "image": {
+        "image_url": "/images/breeds/placeholder-labrador-retriever.svg",
+        "image_alt": "Labrador Retriever - zdjęcie rasy",
+        "image_title": "Labrador Retriever",
+        "image_credit": null,
+        "image_source_type": "placeholder"
+      },
+      "affiliateLinks": [
+        {
+          "id": 3,
+          "label": "Polecana karma dla tej rasy",
+          "category": "dry_food",
+          "url": "https://example.com/link-afiliacyjny-placeholder",
+          "merchant": "Placeholder",
+          "network": "Placeholder",
+          "priority": 100,
+          "is_active": 1,
+          "anchor_text": "Sprawdź polecane produkty dla tej rasy",
+          "description": "W tym miejscu pojawią się produkty dopasowane do potrzeb tej rasy, takie jak karma, akcesoria lub inne rozwiązania dla opiekunów.",
+          "placement": "feeding_section",
+          "disclosure": "Link może mieć charakter afiliacyjny.",
+          "button_label": "Zobacz polecane produkty",
+          "image_url": null,
+          "valid_from": null,
+          "valid_to": null
+        }
       ]
     },
     {
@@ -405,6 +486,33 @@
           "body": "Czy Maine Coon nadaje się do mieszkania? Tak, jeśli ma przestrzeń pionową i zabawę. Czy wymaga czesania? Tak, regularnie. Czy to kot dla dzieci? Może być, jeśli dzieci szanują jego granice i nie traktują go jak zabawki.",
           "sort_order": 120
         }
+      ],
+      "image": {
+        "image_url": "/images/breeds/placeholder-maine-coon.svg",
+        "image_alt": "Maine Coon - zdjęcie rasy",
+        "image_title": "Maine Coon",
+        "image_credit": null,
+        "image_source_type": "placeholder"
+      },
+      "affiliateLinks": [
+        {
+          "id": 1,
+          "label": "Polecana karma dla tej rasy",
+          "category": "wet_food",
+          "url": "https://example.com/link-afiliacyjny-placeholder",
+          "merchant": "Placeholder",
+          "network": "Placeholder",
+          "priority": 100,
+          "is_active": 1,
+          "anchor_text": "Sprawdź polecane produkty dla tej rasy",
+          "description": "W tym miejscu pojawią się produkty dopasowane do potrzeb tej rasy, takie jak karma, akcesoria lub inne rozwiązania dla opiekunów.",
+          "placement": "feeding_section",
+          "disclosure": "Link może mieć charakter afiliacyjny.",
+          "button_label": "Zobacz polecane produkty",
+          "image_url": null,
+          "valid_from": null,
+          "valid_to": null
+        }
       ]
     },
     {
@@ -505,6 +613,33 @@
           "heading": "FAQ",
           "body": "Czy owczarek niemiecki jest dobry dla początkujących? Może być trudny bez wsparcia i planu szkolenia. Czy potrzebuje dużo ruchu? Tak, ale równie ważna jest praca umysłowa. Czy nadaje się do rodziny? Tak, jeśli jest odpowiedzialnie prowadzony.",
           "sort_order": 120
+        }
+      ],
+      "image": {
+        "image_url": "/images/breeds/placeholder-owczarek-niemiecki.svg",
+        "image_alt": "Owczarek niemiecki - zdjęcie rasy",
+        "image_title": "Owczarek niemiecki",
+        "image_credit": null,
+        "image_source_type": "placeholder"
+      },
+      "affiliateLinks": [
+        {
+          "id": 5,
+          "label": "Polecana karma dla tej rasy",
+          "category": "dry_food",
+          "url": "https://example.com/link-afiliacyjny-placeholder",
+          "merchant": "Placeholder",
+          "network": "Placeholder",
+          "priority": 100,
+          "is_active": 1,
+          "anchor_text": "Sprawdź polecane produkty dla tej rasy",
+          "description": "W tym miejscu pojawią się produkty dopasowane do potrzeb tej rasy, takie jak karma, akcesoria lub inne rozwiązania dla opiekunów.",
+          "placement": "feeding_section",
+          "disclosure": "Link może mieć charakter afiliacyjny.",
+          "button_label": "Zobacz polecane produkty",
+          "image_url": null,
+          "valid_from": null,
+          "valid_to": null
         }
       ]
     }

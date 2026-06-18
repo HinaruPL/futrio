@@ -59,6 +59,51 @@ JOIN breeds b ON b.id = bcs.breed_id
 WHERE b.status = 'published'
 ORDER BY bcs.breed_id ASC, bcs.sort_order ASC`;
 
+const imagesQuery = `SELECT
+  selected.breed_id,
+  selected.image_url,
+  selected.image_alt,
+  selected.image_title,
+  selected.image_credit,
+  selected.image_source_type
+FROM (
+  SELECT
+    bi.*,
+    ROW_NUMBER() OVER (
+      PARTITION BY bi.breed_id
+      ORDER BY bi.is_primary DESC, bi.sort_order ASC, bi.id ASC
+    ) AS row_number
+  FROM breed_images bi
+) selected
+JOIN breeds b ON b.id = selected.breed_id
+WHERE b.status = 'published'
+  AND selected.row_number = 1
+ORDER BY selected.breed_id ASC`;
+
+const affiliateLinksQuery = `SELECT
+  al.id,
+  al.breed_id,
+  al.label,
+  al.category,
+  al.url,
+  al.merchant,
+  al.network,
+  al.priority,
+  al.is_active,
+  al.anchor_text,
+  al.description,
+  al.placement,
+  al.disclosure,
+  al.button_label,
+  al.image_url,
+  al.valid_from,
+  al.valid_to
+FROM affiliate_links al
+JOIN breeds b ON b.id = al.breed_id
+WHERE b.status = 'published'
+  AND al.is_active = 1
+ORDER BY al.breed_id ASC, al.priority ASC`;
+
 function compactQuery(query) {
   return query.replace(/\s+/g, ' ').trim();
 }
@@ -84,17 +129,29 @@ function getPnpmInvocation() {
   const pnpmCommand = findPnpmCommand();
 
   if (process.platform === 'win32' && pnpmCommand.endsWith('pnpm.cmd')) {
-    const pnpmScript = resolve(
-      dirname(pnpmCommand),
-      '../node/node_modules/pnpm/bin/pnpm.mjs'
-    );
+    const pnpmScripts = [
+      resolve(dirname(pnpmCommand), 'pnpm.cjs'),
+      resolve(dirname(pnpmCommand), 'pnpm.mjs'),
+      resolve(dirname(pnpmCommand), '../node/node_modules/pnpm/bin/pnpm.cjs'),
+      resolve(dirname(pnpmCommand), '../node/node_modules/pnpm/bin/pnpm.mjs'),
+      resolve(dirname(process.execPath), '../node_modules/pnpm/bin/pnpm.cjs'),
+      resolve(dirname(process.execPath), '../node_modules/pnpm/bin/pnpm.mjs'),
+    ];
 
-    if (existsSync(pnpmScript)) {
+    const pnpmScript = pnpmScripts.find((scriptPath) => existsSync(scriptPath));
+
+    if (pnpmScript) {
       return {
         command: process.execPath,
         argsPrefix: [pnpmScript],
       };
     }
+
+    return {
+      command: pnpmCommand,
+      argsPrefix: [],
+      shell: true,
+    };
   }
 
   return {
@@ -125,6 +182,7 @@ function runWrangler(query, useJsonFlag) {
     cwd: projectRoot,
     encoding: 'utf8',
     env: process.env,
+    shell: pnpm.shell ?? false,
   });
 }
 
@@ -189,7 +247,11 @@ function executeQuery(query) {
 
 const breeds = executeQuery(breedsQuery);
 const sections = executeQuery(sectionsQuery);
+const images = executeQuery(imagesQuery);
+const affiliateLinks = executeQuery(affiliateLinksQuery);
 const sectionsByBreedId = new Map();
+const imageByBreedId = new Map();
+const affiliateLinksByBreedId = new Map();
 
 for (const section of sections) {
   const breedSections = sectionsByBreedId.get(section.breed_id) ?? [];
@@ -202,9 +264,44 @@ for (const section of sections) {
   sectionsByBreedId.set(section.breed_id, breedSections);
 }
 
+for (const image of images) {
+  imageByBreedId.set(image.breed_id, {
+    image_url: image.image_url,
+    image_alt: image.image_alt,
+    image_title: image.image_title,
+    image_credit: image.image_credit,
+    image_source_type: image.image_source_type,
+  });
+}
+
+for (const link of affiliateLinks) {
+  const breedLinks = affiliateLinksByBreedId.get(link.breed_id) ?? [];
+  breedLinks.push({
+    id: link.id,
+    label: link.label,
+    category: link.category,
+    url: link.url,
+    merchant: link.merchant,
+    network: link.network,
+    priority: link.priority,
+    is_active: link.is_active,
+    anchor_text: link.anchor_text,
+    description: link.description,
+    placement: link.placement,
+    disclosure: link.disclosure,
+    button_label: link.button_label,
+    image_url: link.image_url,
+    valid_from: link.valid_from,
+    valid_to: link.valid_to,
+  });
+  affiliateLinksByBreedId.set(link.breed_id, breedLinks);
+}
+
 const breedsWithSections = breeds.map((breed) => ({
   ...breed,
   contentSections: sectionsByBreedId.get(breed.id) ?? [],
+  image: imageByBreedId.get(breed.id) ?? null,
+  affiliateLinks: affiliateLinksByBreedId.get(breed.id) ?? [],
 }));
 
 mkdirSync(dirname(outputPath), { recursive: true });

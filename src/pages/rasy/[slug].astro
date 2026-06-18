@@ -38,6 +38,14 @@ const sections = [...breed.contentSections].sort(
   (first, second) => first.sort_order - second.sort_order
 );
 const relatedBreeds = getOtherBreeds(breed.slug, 3);
+const affiliateLinks = breed.affiliateLinks.filter((link) => link.is_active === 1);
+const imageUrl = breed.image?.image_url ?? '';
+const hasRealImage =
+  Boolean(breed.image) &&
+  breed.image?.image_source_type !== 'placeholder' &&
+  (imageUrl.startsWith('https://') ||
+    imageUrl.startsWith('http://') ||
+    imageUrl.startsWith('/'));
 
 const heroStats = [
   ['Waga', formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')],
@@ -118,11 +126,27 @@ function getParagraphs(section: BreedContentSection): string[] {
         </dl>
       </div>
 
-      <aside class="breed-image-placeholder" aria-label="Miejsce na przyszłe zdjęcie rasy">
-        <div>
-          <strong>Zdjęcie rasy wkrótce</strong>
-          <p>Tu dodamy bezpieczną grafikę lub zdjęcie z prawami do użycia.</p>
-        </div>
+      <aside class="breed-media" aria-label="Zdjęcie rasy">
+        {
+          hasRealImage && breed.image ? (
+            <figure class="breed-image">
+              <img
+                src={breed.image.image_url}
+                alt={breed.image.image_alt}
+                title={breed.image.image_title ?? breed.name}
+                loading="eager"
+              />
+              {breed.image.image_credit && (
+                <figcaption>{breed.image.image_credit}</figcaption>
+              )}
+            </figure>
+          ) : (
+            <div class="breed-image-placeholder">
+              <strong>Zdjęcie rasy wkrótce</strong>
+              <p>Tu dodamy bezpieczną grafikę lub zdjęcie z prawami do użycia.</p>
+            </div>
+          )
+        }
       </aside>
     </div>
   </section>
@@ -190,11 +214,36 @@ function getParagraphs(section: BreedContentSection): string[] {
                 <>
                   <section class="affiliate-placeholder">
                     <h2>Polecane produkty dla tej rasy</h2>
-                    <p>
-                      W przyszłości pokażemy tu karmy, akcesoria i produkty dopasowane
-                      do potrzeb tej rasy. Linki będą oznaczone jako afiliacyjne, jeśli
-                      będą prowadzić do programu partnerskiego.
-                    </p>
+                    {affiliateLinks.length > 0 ? (
+                      <div class="affiliate-card-grid">
+                        {affiliateLinks.map((link) => (
+                          <article class="affiliate-card">
+                            <h3>{link.anchor_text ?? link.label}</h3>
+                            <p>
+                              {link.description ??
+                                'W przyszłości pokażemy tu produkty dopasowane do potrzeb tej rasy.'}
+                            </p>
+                            {link.url.includes('example.com') && (
+                              <p class="affiliate-note">
+                                Przykładowy placeholder - link zostanie podmieniony po wyborze programu afiliacyjnego.
+                              </p>
+                            )}
+                            {link.disclosure && (
+                              <p class="affiliate-disclosure">{link.disclosure}</p>
+                            )}
+                            <a class="button button--secondary" href={link.url} rel="nofollow sponsored">
+                              {link.button_label ?? 'Zobacz polecane produkty'}
+                            </a>
+                          </article>
+                        ))}
+                      </div>
+                    ) : (
+                      <p>
+                        W przyszłości pokażemy tu karmy, akcesoria i produkty dopasowane
+                        do potrzeb tej rasy. Linki będą oznaczone jako afiliacyjne, jeśli
+                        będą prowadzić do programu partnerskiego.
+                      </p>
+                    )}
                     <!-- TODO: Affiliate CTA based on D1 affiliate_links -->
                   </section>
 

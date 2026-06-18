@@ -119,3 +119,42 @@ FROM breed_content_sections bcs
 JOIN breeds b ON b.id = bcs.breed_id
 WHERE b.slug = 'labrador-retriever'
 ORDER BY bcs.sort_order ASC;
+
+SELECT 'breed_images_count' AS test_name, COUNT(*) AS result FROM breed_images;
+
+SELECT 'breed_images_primary_count' AS test_name, COUNT(*) AS result
+FROM breed_images
+WHERE is_primary = 1;
+
+SELECT
+  b.name AS breed_name,
+  bi.image_url,
+  bi.image_alt,
+  bi.image_title,
+  bi.image_credit,
+  bi.image_source_type
+FROM breed_images bi
+JOIN breeds b ON b.id = bi.breed_id
+WHERE b.slug = 'labrador-retriever'
+  AND bi.is_primary = 1
+ORDER BY bi.sort_order ASC
+LIMIT 1;
+
+SELECT
+  b.name AS breed_name,
+  al.label,
+  al.category,
+  al.url,
+  al.anchor_text,
+  al.description,
+  al.placement,
+  al.disclosure,
+  al.button_label,
+  al.image_url,
+  al.valid_from,
+  al.valid_to
+FROM affiliate_links al
+JOIN breeds b ON b.id = al.breed_id
+WHERE b.slug = 'labrador-retriever'
+  AND al.is_active = 1
+ORDER BY al.priority ASC;

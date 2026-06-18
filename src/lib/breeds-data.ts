@@ -7,6 +7,39 @@ export type BreedContentSection = {
   sort_order: number;
 };
 
+export type BreedImage = {
+  image_url: string;
+  image_alt: string;
+  image_title: string | null;
+  image_credit: string | null;
+  image_source_type:
+    | 'placeholder'
+    | 'ai_generated'
+    | 'own_photo'
+    | 'licensed_stock'
+    | 'public_domain'
+    | 'other';
+};
+
+export type BreedAffiliateLink = {
+  id: number;
+  label: string;
+  category: string;
+  url: string;
+  merchant: string | null;
+  network: string | null;
+  priority: number;
+  is_active: number;
+  anchor_text: string | null;
+  description: string | null;
+  placement: string | null;
+  disclosure: string | null;
+  button_label: string | null;
+  image_url: string | null;
+  valid_from: string | null;
+  valid_to: string | null;
+};
+
 export type Breed = {
   id: number;
   name: string;
@@ -34,6 +67,8 @@ export type Breed = {
   created_at: string;
   updated_at: string;
   contentSections: BreedContentSection[];
+  image: BreedImage | null;
+  affiliateLinks: BreedAffiliateLink[];
 };
 
 type GeneratedBreedsData = {
@@ -87,6 +122,32 @@ function normalizeSection(section: BreedContentSection): BreedContentSection {
   };
 }
 
+function normalizeImage(image: BreedImage | null): BreedImage | null {
+  if (!image) {
+    return null;
+  }
+
+  return {
+    ...image,
+    image_alt: normalizeText(image.image_alt) ?? image.image_alt,
+    image_title: normalizeText(image.image_title),
+    image_credit: normalizeText(image.image_credit),
+  };
+}
+
+function normalizeAffiliateLink(link: BreedAffiliateLink): BreedAffiliateLink {
+  return {
+    ...link,
+    label: normalizeText(link.label) ?? link.label,
+    merchant: normalizeText(link.merchant),
+    network: normalizeText(link.network),
+    anchor_text: normalizeText(link.anchor_text),
+    description: normalizeText(link.description),
+    disclosure: normalizeText(link.disclosure),
+    button_label: normalizeText(link.button_label),
+  };
+}
+
 function normalizeBreed(breed: Breed): Breed {
   return {
     ...breed,
@@ -97,6 +158,8 @@ function normalizeBreed(breed: Breed): Breed {
     meta_description: normalizeText(breed.meta_description),
     h1: normalizeText(breed.h1),
     contentSections: (breed.contentSections ?? []).map(normalizeSection),
+    image: normalizeImage(breed.image ?? null),
+    affiliateLinks: (breed.affiliateLinks ?? []).map(normalizeAffiliateLink),
   };
 }
 

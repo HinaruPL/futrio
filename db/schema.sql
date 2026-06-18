@@ -68,6 +68,25 @@ CREATE TABLE affiliate_links (
   network TEXT,
   priority INTEGER NOT NULL DEFAULT 100,
   is_active INTEGER NOT NULL DEFAULT 1,
+  anchor_text TEXT,
+  description TEXT,
+  placement TEXT CHECK (
+    placement IN (
+      'breed_top',
+      'feeding_section',
+      'costs_section',
+      'health_section',
+      'sidebar',
+      'article_end',
+      'calculator',
+      'other'
+    )
+  ),
+  disclosure TEXT,
+  button_label TEXT,
+  image_url TEXT,
+  valid_from TEXT,
+  valid_to TEXT,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (breed_id) REFERENCES breeds(id) ON DELETE SET NULL
@@ -177,3 +196,31 @@ CREATE TABLE breed_content_sections (
 
 CREATE INDEX idx_breed_content_sections_breed_id ON breed_content_sections(breed_id);
 CREATE INDEX idx_breed_content_sections_sort ON breed_content_sections(breed_id, sort_order);
+
+CREATE TABLE breed_images (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  breed_id INTEGER NOT NULL,
+  image_url TEXT NOT NULL,
+  image_alt TEXT NOT NULL,
+  image_title TEXT,
+  image_credit TEXT,
+  image_source_type TEXT NOT NULL DEFAULT 'placeholder' CHECK (
+    image_source_type IN (
+      'placeholder',
+      'ai_generated',
+      'own_photo',
+      'licensed_stock',
+      'public_domain',
+      'other'
+    )
+  ),
+  is_primary INTEGER NOT NULL DEFAULT 0,
+  sort_order INTEGER NOT NULL DEFAULT 100,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (breed_id) REFERENCES breeds(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_breed_images_breed_id ON breed_images(breed_id);
+CREATE INDEX idx_breed_images_primary ON breed_images(breed_id, is_primary);
+CREATE INDEX idx_breed_images_sort ON breed_images(breed_id, sort_order);
