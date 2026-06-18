@@ -20,11 +20,11 @@ type Props = {
 
 const { breed } = Astro.props;
 const title =
-  breed.meta_title ?? `${breed.name} - opis rasy, charakter i koszty utrzymania`;
+  breed.meta_title ?? `${breed.name} — opis rasy, charakter i koszty utrzymania | Futrio`;
 const description =
   breed.meta_description ??
   breed.short_description ??
-  `${breed.name} - opis rasy, charakter, podstawowe potrzeby i koszty utrzymania.`;
+  `Sprawdź opis rasy ${breed.name}: charakter, waga, aktywność, żywienie, zdrowie i orientacyjne koszty utrzymania.`;
 const h1 = breed.h1 ?? breed.name;
 const calories = formatRange(
   breed.daily_calories_min,
@@ -59,7 +59,12 @@ const details = [
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical={`/rasy/${breed.slug}/`}>
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={`/rasy/${breed.slug}/`}
+  ogType="article"
+>
   <section class="hero">
     <div class="container hero__content">
       <nav class="breadcrumbs" aria-label="Okruszki">

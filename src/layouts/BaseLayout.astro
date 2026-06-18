@@ -1,13 +1,42 @@
 ---
 import '../styles/global.css';
 
+const SITE_URL = 'https://futrio.pages.dev';
+
 type Props = {
   title: string;
   description: string;
   canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogType?: string;
+  ogImage?: string;
 };
 
-const { title, description, canonical } = Astro.props;
+const {
+  title,
+  description,
+  canonical,
+  ogTitle = title,
+  ogDescription = description,
+  ogType = 'website',
+  ogImage,
+} = Astro.props;
+
+function toAbsoluteUrl(url?: string): string | undefined {
+  if (!url) {
+    return undefined;
+  }
+
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
+  }
+
+  return new URL(url, SITE_URL).toString();
+}
+
+const canonicalUrl = toAbsoluteUrl(canonical);
+const ogImageUrl = toAbsoluteUrl(ogImage);
 ---
 
 <!doctype html>
@@ -18,9 +47,18 @@ const { title, description, canonical } = Astro.props;
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index,follow" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {canonical && <link rel="canonical" href={canonical} />}
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:type" content={ogType} />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    <meta property="og:site_name" content="Futrio" />
+    <meta property="og:locale" content="pl_PL" />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+    <meta name="twitter:card" content={ogImageUrl ? 'summary_large_image' : 'summary'} />
   </head>
   <body>
     <header class="site-header">
