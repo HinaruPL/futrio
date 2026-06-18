@@ -1,56 +1,131 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  formatActivityLevel,
+  formatRange,
+  formatSpecies,
+  getAllBreeds,
+} from '../lib/breeds-data';
+
+const popularBreeds = getAllBreeds().slice(0, 5);
 ---
 
 <BaseLayout
   title="Futrio — praktyczna baza wiedzy o zwierzętach"
-  description="Futrio to praktyczna baza wiedzy o rasach psów i kotów, kosztach utrzymania, żywieniu i narzędziach dla opiekunów zwierząt."
+  description="Futrio pomaga poznawać rasy psów i kotów, sprawdzać koszty utrzymania, żywienie, aktywność i korzystać z prostych kalkulatorów dla opiekunów."
   canonical="/"
 >
-  <section class="hero">
+  <section class="hero hero--home">
     <div class="container hero__content">
-      <p class="eyebrow">Portal zoologiczny w budowie</p>
+      <p class="eyebrow">Portal zoologiczny</p>
       <h1>Futrio — praktyczna baza wiedzy o zwierzętach</h1>
       <p class="lead">
-        Tworzymy uporządkowaną bazę ras psów i kotów, poradników żywieniowych oraz
-        praktycznych informacji o kosztach opieki. Pierwsze opisy ras są już dostępne
-        w wersji statycznej.
+        Futrio pomaga porównywać rasy psów i kotów, sprawdzać orientacyjne koszty
+        utrzymania, żywienie, aktywność oraz podstawowe potrzeby zwierząt. To
+        uporządkowany punkt startu dla osób, które chcą lepiej zaplanować opiekę.
       </p>
       <div class="actions">
-        <a class="button" href="/rasy/">Przejdź do bazy ras</a>
+        <a class="button" href="/rasy/">Przeglądaj rasy</a>
+        <a class="button button--secondary" href="/kalkulatory/">Sprawdź kalkulatory</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Mapa portalu</p>
+        <h2>Co znajdziesz w Futrio?</h2>
+      </div>
+      <div class="grid grid--4">
+        <article class="card">
+          <span class="badge">Katalog</span>
+          <h3>Rasy psów i kotów</h3>
+          <p>Opisy ras, ich potrzeby, aktywność, pielęgnacja i linki do poradników rasowych.</p>
+        </article>
+        <article class="card">
+          <span class="badge">Narzędzia</span>
+          <h3>Kalkulatory dla opiekunów</h3>
+          <p>Proste kalkulatory kalorii oraz kosztów utrzymania dostępne na stronach ras.</p>
+        </article>
+        <article class="card">
+          <span class="badge">Planowanie</span>
+          <h3>Koszty utrzymania</h3>
+          <p>Orientacyjne informacje o budżecie, karmie, profilaktyce i codziennej opiece.</p>
+        </article>
+        <article class="card">
+          <span class="badge">W przygotowaniu</span>
+          <h3>Poradniki w przygotowaniu</h3>
+          <p>Przyszłe materiały o żywieniu, pielęgnacji, zdrowiu i akcesoriach.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container stack">
+      <div class="section-heading section-heading--split">
+        <div>
+          <p class="eyebrow">Start od rasy</p>
+          <h2>Popularne rasy</h2>
+        </div>
+        <a class="text-link" href="/rasy/">Zobacz cały katalog</a>
+      </div>
+      <div class="breed-grid grid">
+        {
+          popularBreeds.map((breed) => (
+            <article class="card breed-card">
+              <span class="badge">{formatSpecies(breed.species)}</span>
+              <h3>{breed.name}</h3>
+              <p>{breed.short_description ?? 'Opis rasy jest w przygotowaniu.'}</p>
+              <div class="breed-card__meta">
+                <span>Waga: {formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')}</span>
+                <span>Aktywność: {formatActivityLevel(breed.activity_level)}</span>
+              </div>
+              <a class="breed-card__link" href={`/rasy/${breed.slug}/`}>
+                Zobacz opis rasy
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div class="panel">
+        <p class="eyebrow">Narzędzia dla opiekunów</p>
+        <h2>Kalkulatory Futrio</h2>
+        <p>
+          Na stronach ras znajdziesz kalkulator kalorii oraz kalkulator kosztów
+          utrzymania. Pomagają szybko oszacować dzienne zapotrzebowanie energetyczne
+          i miesięczny budżet opieki.
+        </p>
+        <div class="actions">
+          <a class="button" href="/kalkulatory/">Przejdź do kalkulatorów</a>
+        </div>
+      </div>
+      <div class="steps-card">
+        <h2>Jak korzystać z Futrio?</h2>
+        <ol class="steps-list">
+          <li>Wybierz rasę z katalogu.</li>
+          <li>Sprawdź potrzeby, aktywność, żywienie i koszty.</li>
+          <li>Użyj kalkulatorów jako punktu wyjścia do planowania.</li>
+        </ol>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="grid grid--3">
-        <article class="card">
-          <span class="badge">Dostępne</span>
-          <h2>Rasy psów i kotów</h2>
-          <p>
-            Statyczne opisy ras generowane z danych, z parametrami, opisem charakteru,
-            żywieniem i miejscem na dalszą rozbudowę SEO.
-          </p>
-        </article>
-
-        <article class="card">
-          <span class="badge">Wkrótce</span>
-          <h2>Kalkulatory dla opiekunów</h2>
-          <p>
-            W kolejnych etapach pojawią się lekkie narzędzia do szacowania karmy,
-            kosztów utrzymania i podstawowych potrzeb zwierząt.
-          </p>
-        </article>
-
-        <article class="card">
-          <span class="badge">W przygotowaniu</span>
-          <h2>Poradniki i koszty utrzymania</h2>
-          <p>
-            Portal będzie rozwijany o poradniki redakcyjne, sekcje kosztowe oraz
-            przyszłe miejsca na rekomendacje produktów.
-          </p>
-        </article>
+      <div class="notice">
+        <h2>Ważna informacja</h2>
+        <p>
+          Futrio nie zastępuje lekarza weterynarii. Informacje mają charakter
+          orientacyjny i pomagają przygotować się do rozmowy ze specjalistą lub
+          świadomej opieki nad zwierzęciem.
+        </p>
       </div>
     </div>
   </section>

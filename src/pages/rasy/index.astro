@@ -2,27 +2,58 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import {
   formatActivityLevel,
+  formatGroomingLevel,
   formatRange,
   formatSpecies,
   getAllBreeds,
 } from '../../lib/breeds-data';
 
 const breeds = getAllBreeds();
+
+function hasRealImage(breed: (typeof breeds)[number]) {
+  const imageUrl = breed.image?.image_url ?? '';
+
+  return (
+    Boolean(breed.image) &&
+    breed.image?.image_source_type !== 'placeholder' &&
+    (imageUrl.startsWith('https://') || imageUrl.startsWith('http://') || imageUrl.startsWith('/'))
+  );
+}
 ---
 
 <BaseLayout
-  title="Rasy psów i kotów — opisy, charakter i koszty utrzymania | Futrio"
-  description="Poznaj rasy psów i kotów w Futrio. Sprawdź charakter, wagę, aktywność, pielęgnację, żywienie i orientacyjne koszty utrzymania."
+  title="Rasy psów i kotów — katalog Futrio"
+  description="Przeglądaj rasy psów i kotów w Futrio. Sprawdź charakter, wagę, aktywność, pielęgnację, żywienie i orientacyjne koszty utrzymania."
   canonical="/rasy/"
 >
   <section class="hero">
     <div class="container hero__content">
-      <p class="eyebrow">Baza ras</p>
+      <p class="eyebrow">Katalog ras</p>
       <h1>Rasy psów i kotów</h1>
       <p class="lead">
-        Przeglądaj pierwsze opisy ras przygotowane jako statyczne strony SEO.
-        Dane pochodzą z wygenerowanego pliku JSON i będą rozwijane w kolejnych etapach.
+        Katalog Futrio pomaga porównać podstawowe cechy ras, ich potrzeby,
+        aktywność, pielęgnację i orientacyjne koszty utrzymania.
       </p>
+      <div class="hero-badges">
+        <span class="badge">W bazie: {breeds.length} ras</span>
+        <span class="badge">pies</span>
+        <span class="badge">kot</span>
+        <span class="badge">inne</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="panel">
+        <h2>Jak wybrać rasę dla siebie?</h2>
+        <ul class="feature-list">
+          <li>Porównaj rasę ze swoim stylem życia i codziennym rytmem.</li>
+          <li>Weź pod uwagę mieszkanie, dom, dostęp do spacerów i przestrzeń.</li>
+          <li>Zaplanuj budżet na karmę, profilaktykę, pielęgnację i akcesoria.</li>
+          <li>Sprawdź, ile czasu możesz poświęcić na ruch, naukę i pielęgnację.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -31,7 +62,19 @@ const breeds = getAllBreeds();
       <div class="breed-grid grid">
         {
           breeds.map((breed) => (
-            <article class="card breed-card">
+            <article class="card breed-card breed-card--catalog">
+              {hasRealImage(breed) && breed.image ? (
+                <img
+                  class="breed-card__image"
+                  src={breed.image.image_url}
+                  alt={breed.image.image_alt}
+                  loading="lazy"
+                />
+              ) : (
+                <div class="mini-image-placeholder" aria-hidden="true">
+                  <span>{formatSpecies(breed.species)}</span>
+                </div>
+              )}
               <div>
                 <span class="badge">{formatSpecies(breed.species)}</span>
                 <h2>{breed.name}</h2>
@@ -40,8 +83,9 @@ const breeds = getAllBreeds();
               <div class="breed-card__meta">
                 <span>Waga: {formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')}</span>
                 <span>Aktywność: {formatActivityLevel(breed.activity_level)}</span>
+                <span>Pielęgnacja: {formatGroomingLevel(breed.grooming_level)}</span>
               </div>
-              <a class="breed-card__link" href={`/rasy/${breed.slug}/`}>
+              <a class="button button--secondary" href={`/rasy/${breed.slug}/`}>
                 Zobacz opis rasy
               </a>
             </article>

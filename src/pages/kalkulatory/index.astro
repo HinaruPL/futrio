@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatSpecies, getAllBreeds } from '../../lib/breeds-data';
+
+const popularBreeds = getAllBreeds().slice(0, 5);
+---
+
+<BaseLayout
+  title="Kalkulatory dla opiekunów zwierząt | Futrio"
+  description="Skorzystaj z kalkulatorów Futrio, aby orientacyjnie oszacować kalorie, koszty utrzymania i podstawowe potrzeby psa lub kota."
+  canonical="/kalkulatory/"
+>
+  <section class="hero">
+    <div class="container hero__content">
+      <p class="eyebrow">Narzędzia Futrio</p>
+      <h1>Kalkulatory dla opiekunów zwierząt</h1>
+      <p class="lead">
+        Kalkulatory Futrio pomagają orientacyjnie oszacować potrzeby żywieniowe
+        i koszty utrzymania. Działają na statycznych stronach ras i są punktem
+        wyjścia do dalszego planowania opieki.
+      </p>
+      <div class="actions">
+        <a class="button" href="/rasy/">Wybierz rasę</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Dostępne narzędzia</p>
+        <h2>Co możesz policzyć?</h2>
+      </div>
+      <div class="grid grid--2">
+        <article class="card hub-card">
+          <span class="badge">Kalorie</span>
+          <h2>Kalkulator kalorii</h2>
+          <p>
+            Pomaga oszacować dzienne zapotrzebowanie energetyczne zwierzęcia na
+            podstawie wagi, wieku i aktywności.
+          </p>
+          <a class="button button--secondary" href="/rasy/">
+            Wybierz rasę i użyj kalkulatora
+          </a>
+        </article>
+        <article class="card hub-card">
+          <span class="badge">Koszty</span>
+          <h2>Kalkulator kosztów utrzymania</h2>
+          <p>
+            Pomaga oszacować miesięczne i roczne koszty karmy, pielęgnacji,
+            profilaktyki oraz akcesoriów.
+          </p>
+          <a class="button button--secondary" href="/rasy/">Sprawdź rasy</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container two-column">
+      <div class="panel">
+        <h2>Dlaczego wyniki są orientacyjne?</h2>
+        <p>
+          Realne koszty i zapotrzebowanie zależą od zdrowia, aktywności, jakości
+          karmy, cen w Twoim mieście oraz zaleceń lekarza weterynarii lub innego
+          specjalisty. Wyniki traktuj jako pomoc w planowaniu, nie jako diagnozę.
+        </p>
+      </div>
+      <div class="panel">
+        <h2>Najpierw wybierz rasę</h2>
+        <div class="quick-links">
+          {
+            popularBreeds.map((breed) => (
+              <a href={`/rasy/${breed.slug}/`}>
+                <span>{formatSpecies(breed.species)}</span>
+                <strong>{breed.name}</strong>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

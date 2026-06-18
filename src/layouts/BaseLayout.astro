@@ -23,6 +23,13 @@ const {
   ogImage,
 } = Astro.props;
 
+const navigation = [
+  { href: '/', label: 'Start' },
+  { href: '/rasy/', label: 'Rasy' },
+  { href: '/kalkulatory/', label: 'Kalkulatory' },
+  { href: '/poradniki/', label: 'Poradniki' },
+];
+
 function toAbsoluteUrl(url?: string): string | undefined {
   if (!url) {
     return undefined;
@@ -63,9 +70,12 @@ const ogImageUrl = toAbsoluteUrl(ogImage);
   <body>
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="brand" href="/" aria-label="Futrio - strona główna">Futrio</a>
+        <a class="brand" href="/" aria-label="Futrio - strona główna">
+          <span class="brand__mark">F</span>
+          <span>Futrio</span>
+        </a>
         <nav class="site-nav" aria-label="Główna nawigacja">
-          <a href="/rasy/">Rasy</a>
+          {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
         </nav>
       </div>
     </header>
@@ -75,8 +85,33 @@ const ogImageUrl = toAbsoluteUrl(ogImage);
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>Futrio rozwija praktyczną bazę wiedzy o zwierzętach, żywieniu i kosztach opieki.</p>
+      <div class="container site-footer__grid">
+        <div class="site-footer__about">
+          <a class="brand brand--footer" href="/" aria-label="Futrio - strona główna">
+            <span class="brand__mark">F</span>
+            <span>Futrio</span>
+          </a>
+          <p>
+            Futrio to statyczny portal zoologiczny rozwijany jako praktyczna baza
+            wiedzy o rasach, kosztach opieki, żywieniu i codziennych potrzebach
+            zwierząt.
+          </p>
+        </div>
+
+        <nav class="site-footer__links" aria-label="Linki w stopce">
+          <a href="/">Start</a>
+          <a href="/rasy/">Rasy</a>
+          <a href="/kalkulatory/">Kalkulatory</a>
+          <a href="/poradniki/">Poradniki</a>
+        </nav>
+
+        <div class="site-footer__notes">
+          <p>
+            Treści w Futrio mają charakter informacyjny i nie zastępują konsultacji z
+            lekarzem weterynarii.
+          </p>
+          <p>Niektóre linki mogą mieć w przyszłości charakter afiliacyjny.</p>
+        </div>
       </div>
     </footer>
   </body>

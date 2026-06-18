@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const plannedSections = [
+  'Żywienie psa i kota',
+  'Koszty utrzymania',
+  'Pielęgnacja',
+  'Zdrowie i profilaktyka',
+  'Przygotowanie domu',
+  'Akcesoria dla zwierząt',
+];
+---
+
+<BaseLayout
+  title="Poradniki dla opiekunów zwierząt | Futrio"
+  description="Poradniki Futrio pomogą lepiej przygotować się do opieki nad psem lub kotem: żywienie, koszty, pielęgnacja, zdrowie i akcesoria."
+  canonical="/poradniki/"
+>
+  <section class="hero">
+    <div class="container hero__content">
+      <p class="eyebrow">Dział w rozwoju</p>
+      <h1>Poradniki dla opiekunów zwierząt</h1>
+      <p class="lead">
+        W tym dziale pojawią się praktyczne poradniki o żywieniu, kosztach,
+        pielęgnacji, zdrowiu i przygotowaniu domu na zwierzę. Na razie budujemy
+        strukturę portalu i bezpieczne miejsce pod przyszłe treści.
+      </p>
+      <div class="actions">
+        <a class="button" href="/rasy/">Zacznij od katalogu ras</a>
+        <a class="button button--secondary" href="/kalkulatory/">Sprawdź kalkulatory</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Plan redakcyjny</p>
+        <h2>Planowane działy</h2>
+      </div>
+      <div class="grid grid--3">
+        {
+          plannedSections.map((section) => (
+            <article class="card hub-card">
+              <span class="badge">w przygotowaniu</span>
+              <h2>{section}</h2>
+              <p>
+                Ten dział zostanie uzupełniony w kolejnych etapach rozwoju Futrio.
+                Treści będą miały charakter informacyjny i nie będą poradą leczenia.
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="notice">
+        <h2>Bezpieczny zakres treści</h2>
+        <p>
+          Poradniki Futrio będą pomagać w przygotowaniu do opieki nad zwierzęciem,
+          ale nie zastąpią konsultacji z lekarzem weterynarii, behawiorystą ani
+          specjalistą od żywienia.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

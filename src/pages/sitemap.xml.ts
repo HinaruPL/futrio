@@ -44,6 +44,18 @@ export function GET() {
       changefreq: 'weekly',
       priority: '0.9',
     },
+    {
+      loc: toAbsoluteUrl('/kalkulatory/'),
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.7',
+    },
+    {
+      loc: toAbsoluteUrl('/poradniki/'),
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.6',
+    },
     ...getAllBreeds().map((breed) => ({
       loc: toAbsoluteUrl(`/rasy/${breed.slug}/`),
       lastmod: toDateOnly(breed.updated_at),
