@@ -2,12 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import {
   type Breed,
+  type BreedContentSection,
   formatActivityLevel,
   formatGroomingLevel,
   formatRange,
+  formatScore,
   formatSpecies,
   formatTrainingDifficulty,
   getBreedStaticPaths,
+  getOtherBreeds,
 } from '../../lib/breeds-data';
 
 export function getStaticPaths() {
@@ -20,7 +23,7 @@ type Props = {
 
 const { breed } = Astro.props;
 const title =
-  breed.meta_title ?? `${breed.name} — opis rasy, charakter i koszty utrzymania | Futrio`;
+  breed.meta_title ?? `${breed.name} - opis rasy, charakter i koszty utrzymania | Futrio`;
 const description =
   breed.meta_description ??
   breed.short_description ??
@@ -31,11 +34,31 @@ const calories = formatRange(
   breed.daily_calories_max,
   'kcal'
 );
+const sections = [...breed.contentSections].sort(
+  (first, second) => first.sort_order - second.sort_order
+);
+const relatedBreeds = getOtherBreeds(breed.slug, 3);
+
+const heroStats = [
+  ['Waga', formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')],
+  ['Wysokość', formatRange(breed.height_min_cm, breed.height_max_cm, 'cm')],
+  [
+    'Długość życia',
+    formatRange(
+      breed.life_expectancy_min_years,
+      breed.life_expectancy_max_years,
+      'lat'
+    ),
+  ],
+  ['Aktywność', formatActivityLevel(breed.activity_level)],
+  ['Pielęgnacja', formatGroomingLevel(breed.grooming_level)],
+  ['Szkolenie', formatTrainingDifficulty(breed.training_difficulty)],
+];
 
 const details = [
   ['Gatunek', formatSpecies(breed.species)],
   ['Waga', formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')],
-  ['Wzrost/wysokość', formatRange(breed.height_min_cm, breed.height_max_cm, 'cm')],
+  ['Wysokość', formatRange(breed.height_min_cm, breed.height_max_cm, 'cm')],
   [
     'Długość życia',
     formatRange(
@@ -47,16 +70,24 @@ const details = [
   ['Aktywność', formatActivityLevel(breed.activity_level)],
   ['Pielęgnacja', formatGroomingLevel(breed.grooming_level)],
   ['Trudność szkolenia', formatTrainingDifficulty(breed.training_difficulty)],
-  [
-    'Ocena dla rodziny',
-    breed.family_friendly_score ? `${breed.family_friendly_score}/5` : 'brak danych',
-  ],
-  [
-    'Ocena do mieszkania',
-    breed.apartment_score ? `${breed.apartment_score}/5` : 'brak danych',
-  ],
+  ['Dla rodziny', formatScore(breed.family_friendly_score)],
+  ['Do mieszkania', formatScore(breed.apartment_score)],
   ['Dzienne kalorie', calories],
 ];
+
+function getParagraphs(section: BreedContentSection): string[] {
+  if (section.section_key === 'faq') {
+    return section.body
+      .split(/(?=Czy )/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+
+  return section.body
+    .split(/\r?\n+/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+}
 ---
 
 <BaseLayout
@@ -65,71 +96,129 @@ const details = [
   canonical={`/rasy/${breed.slug}/`}
   ogType="article"
 >
-  <section class="hero">
-    <div class="container hero__content">
-      <nav class="breadcrumbs" aria-label="Okruszki">
-        <a href="/">Futrio</a> &gt; <a href="/rasy/">Rasy</a> &gt; {breed.name}
-      </nav>
-      <p class="eyebrow">{formatSpecies(breed.species)}</p>
-      <h1>{h1}</h1>
-      <p class="lead">{breed.short_description ?? 'Opis rasy jest w przygotowaniu.'}</p>
+  <section class="breed-hero">
+    <div class="container breed-hero__grid">
+      <div class="breed-hero__content">
+        <nav class="breadcrumbs" aria-label="Okruszki">
+          <a href="/">Futrio</a> &gt; <a href="/rasy/">Rasy</a> &gt; {breed.name}
+        </nav>
+        <span class="badge">{formatSpecies(breed.species)}</span>
+        <h1>{h1}</h1>
+        <p class="lead">{breed.short_description ?? 'Opis rasy jest w przygotowaniu.'}</p>
+
+        <dl class="hero-stats">
+          {
+            heroStats.map(([label, value]) => (
+              <div>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+
+      <aside class="breed-image-placeholder" aria-label="Miejsce na przyszłe zdjęcie rasy">
+        <div>
+          <strong>Zdjęcie rasy wkrótce</strong>
+          <p>Tu dodamy bezpieczną grafikę lub zdjęcie z prawami do użycia.</p>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <!-- TODO: Google AdSense placement - top content -->
+  <!-- TODO: Google AdSense placement - after hero -->
 
   <section class="section">
-    <div class="container">
-      <h2>Najważniejsze informacje</h2>
-      <dl class="info-grid">
+    <div class="container article-layout">
+      <aside class="toc" aria-label="Spis treści">
+        <h2>Spis treści</h2>
+        <nav>
+          <a href="#najwazniejsze-informacje">Najważniejsze informacje</a>
+          {
+            sections.map((section) => (
+              <a href={`#${section.section_key}`}>{section.heading}</a>
+            ))
+          }
+        </nav>
+      </aside>
+
+      <article class="breed-article">
+        <section id="najwazniejsze-informacje" class="article-section">
+          <h2>Najważniejsze informacje</h2>
+          <dl class="info-grid info-grid--article">
+            {
+              details.map(([label, value]) => (
+                <div class="info-item">
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </section>
+
         {
-          details.map(([label, value]) => (
-            <div class="info-item">
-              <dt>{label}</dt>
-              <dd>{value}</dd>
-            </div>
+          sections.map((section) => (
+            <>
+              {section.section_key === 'faq' && (
+                <!-- TODO: Google AdSense placement - before FAQ -->
+              )}
+
+              <section
+                id={section.section_key}
+                class:list={[
+                  'article-section',
+                  section.section_key === 'faq' && 'faq-section',
+                ]}
+              >
+                <h2>{section.heading}</h2>
+
+                {getParagraphs(section).map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+
+                {section.section_key === 'health' && (
+                  <div class="health-disclaimer">
+                    Informacje zdrowotne mają charakter orientacyjny i nie zastępują
+                    konsultacji z lekarzem weterynarii.
+                  </div>
+                )}
+              </section>
+
+              {section.section_key === 'feeding' && (
+                <>
+                  <section class="affiliate-placeholder">
+                    <h2>Polecane produkty dla tej rasy</h2>
+                    <p>
+                      W przyszłości pokażemy tu karmy, akcesoria i produkty dopasowane
+                      do potrzeb tej rasy. Linki będą oznaczone jako afiliacyjne, jeśli
+                      będą prowadzić do programu partnerskiego.
+                    </p>
+                    <!-- TODO: Affiliate CTA based on D1 affiliate_links -->
+                  </section>
+
+                  <!-- TODO: Google AdSense placement - mid article -->
+                </>
+              )}
+            </>
           ))
         }
-      </dl>
 
-      <section class="content-section">
-        <h2>Charakter i potrzeby</h2>
-        <p>{breed.long_description ?? breed.short_description ?? 'Szczegółowy opis tej rasy jest w przygotowaniu.'}</p>
-      </section>
-
-      <section class="content-section">
-        <h2>Żywienie</h2>
-        <p>
-          Orientacyjne dzienne zapotrzebowanie energetyczne dla tej rasy wynosi {calories}.
-          Ostateczna porcja powinna zależeć od wieku, masy ciała, aktywności i stanu
-          zdrowia zwierzęcia.
-        </p>
-      </section>
-
-      <!-- TODO: Google AdSense placement - mid content -->
-
-      <section class="content-section">
-        <h2>Zdrowie</h2>
-        <p>
-          Informacje na stronie mają charakter orientacyjny i nie zastępują konsultacji
-          z lekarzem weterynarii. Przy wyborze diety, aktywności i profilaktyki warto
-          uwzględnić indywidualny stan zdrowia zwierzęcia.
-        </p>
-      </section>
-
-      <section class="content-section">
-        <h2>Koszty utrzymania</h2>
-        <p>
-          W kolejnych etapach pojawi się tu miejsce na kalkulator kosztów utrzymania
-          dopasowany do rasy, masy ciała i podstawowych potrzeb opiekuna.
-        </p>
-      </section>
-
-      <section class="content-section notice">
-        <h2>Polecana karma i akcesoria</h2>
-        <p>Wkrótce dodamy tu polecane produkty dopasowane do tej rasy.</p>
-        <!-- TODO: Affiliate CTA based on D1 affiliate_links -->
-      </section>
+        <section class="related-breeds">
+          <h2>Zobacz też inne rasy</h2>
+          <div class="related-breeds__grid">
+            {
+              relatedBreeds.map((relatedBreed) => (
+                <a href={`/rasy/${relatedBreed.slug}/`}>
+                  <span>{formatSpecies(relatedBreed.species)}</span>
+                  <strong>{relatedBreed.name}</strong>
+                </a>
+              ))
+            }
+          </div>
+        </section>
+      </article>
     </div>
   </section>
 </BaseLayout>
