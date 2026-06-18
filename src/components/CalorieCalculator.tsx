@@ -83,10 +83,10 @@ export default function CalorieCalculator({
   const isPlaceholderLink = affiliateCtaUrl?.includes('example.com') ?? false;
 
   return (
-    <div className="calculator-card">
+    <div className="calculator-card calculator-card--compact">
       <div className="calculator-form" aria-label={`Kalkulator kalorii dla rasy ${breedName}`}>
         <div className="calculator-field">
-          <label htmlFor="calorie-weight">Waga zwierzęcia w kg</label>
+          <label htmlFor="calorie-weight">Aktualna waga w kg</label>
           <input
             id="calorie-weight"
             inputMode="decimal"
@@ -100,6 +100,7 @@ export default function CalorieCalculator({
             type="number"
             value={weightKg}
           />
+          <span className="calculator-hint">Możesz wpisać wagę swojego zwierzęcia.</span>
         </div>
 
         <div className="calculator-field">
@@ -119,7 +120,7 @@ export default function CalorieCalculator({
         </div>
 
         <div className="calculator-field">
-          <label htmlFor="calorie-activity">Aktywność</label>
+          <label htmlFor="calorie-activity">Poziom aktywności</label>
           <select
             id="calorie-activity"
             name="activityLevel"
@@ -136,29 +137,30 @@ export default function CalorieCalculator({
       </div>
 
       <div className="calculator-result" aria-live="polite">
+        <span className="calculator-result__label">Wynik orientacyjny</span>
         {calories ? (
           <>
-            <strong>Orientacyjne dzienne zapotrzebowanie: {calories} kcal</strong>
+            <strong>{calories} kcal dziennie</strong>
             <p>
-              To wynik orientacyjny. Realne potrzeby zależą od zdrowia, masy ciała,
-              kastracji/sterylizacji, aktywności i rodzaju karmy.
+              To punkt wyjścia do planowania porcji. Realne potrzeby zależą od
+              zdrowia, masy ciała, kastracji/sterylizacji, aktywności i rodzaju karmy.
             </p>
             {hasBreedCalories && (
               <p>
-                Dla tej rasy w bazie Futrio zapisano orientacyjny zakres:{' '}
-                {dailyCaloriesMin}-{dailyCaloriesMax} kcal dziennie.
+                Zakres zapisany w bazie Futrio dla tej rasy: {dailyCaloriesMin}-
+                {dailyCaloriesMax} kcal dziennie.
               </p>
             )}
           </>
         ) : (
-          <p>Podaj prawidłową wagę większą od 0 kg, a kalkulator pokaże wynik.</p>
+          <p>Podaj wagę większą od 0 kg, aby zobaczyć orientacyjny wynik.</p>
         )}
       </div>
 
-      <div className="calculator-cta">
+      <div className="calculator-cta calculator-cta--subtle">
         {affiliateCtaUrl ? (
           <>
-            <a className="button" href={affiliateCtaUrl} rel="nofollow sponsored">
+            <a className="button button--secondary" href={affiliateCtaUrl} rel="nofollow sponsored">
               {ctaLabel}
             </a>
             {isPlaceholderLink && (

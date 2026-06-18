@@ -123,7 +123,7 @@ export default function CostCalculator({
   const isPlaceholderLink = affiliateCtaUrl?.includes('example.com') ?? false;
 
   return (
-    <div className="calculator-card">
+    <div className="calculator-card calculator-card--compact">
       <div className="calculator-form" aria-label={`Kalkulator kosztów dla rasy ${breedName}`}>
         <div className="calculator-field">
           <label htmlFor="cost-food-quality">Jakość karmy</label>
@@ -142,7 +142,7 @@ export default function CostCalculator({
         </div>
 
         <div className="calculator-field">
-          <label htmlFor="cost-grooming-mode">Pielęgnacja</label>
+          <label htmlFor="cost-grooming-mode">Model pielęgnacji</label>
           <select
             id="cost-grooming-mode"
             name="groomingMode"
@@ -158,7 +158,7 @@ export default function CostCalculator({
         </div>
 
         <div className="calculator-field">
-          <label htmlFor="cost-vet-care">Profilaktyka/weterynarz</label>
+          <label htmlFor="cost-vet-care">Profilaktyka i weterynarz</label>
           <select
             id="cost-vet-care"
             name="vetCare"
@@ -181,8 +181,19 @@ export default function CostCalculator({
             }}
             type="checkbox"
           />
-          <span>dolicz akcesoria i zabawki</span>
+          <span>Dolicz akcesoria i zabawki</span>
         </label>
+      </div>
+
+      <div className="cost-total" aria-live="polite">
+        <div className="cost-total-main">
+          <span>Orientacyjny koszt miesięczny</span>
+          <strong>{formatMoney(monthlyTotal)}</strong>
+        </div>
+        <div className="cost-total-year">
+          <span>Orientacyjny koszt roczny</span>
+          <strong>{formatMoney(yearlyTotal)}</strong>
+        </div>
       </div>
 
       <p className="calculator-note">
@@ -190,7 +201,7 @@ export default function CostCalculator({
         od zdrowia zwierzęcia, cen w Twoim mieście, rodzaju karmy i stylu opieki.
       </p>
 
-      <div className="cost-breakdown" aria-live="polite">
+      <div className="cost-breakdown">
         <div className="cost-breakdown-row">
           <span>Karma</span>
           <strong>{formatMoney(foodMonthly)} / mies.</strong>
@@ -209,21 +220,10 @@ export default function CostCalculator({
         </div>
       </div>
 
-      <div className="cost-total">
-        <div className="cost-total-main">
-          <span>Orientacyjny koszt miesięczny</span>
-          <strong>{formatMoney(monthlyTotal)}</strong>
-        </div>
-        <div className="cost-total-year">
-          <span>Orientacyjny koszt roczny</span>
-          <strong>{formatMoney(yearlyTotal)}</strong>
-        </div>
-      </div>
-
-      <div className="calculator-cta">
+      <div className="calculator-cta calculator-cta--subtle">
         {affiliateCtaUrl ? (
           <>
-            <a className="button" href={affiliateCtaUrl} rel="nofollow sponsored">
+            <a className="button button--secondary" href={affiliateCtaUrl} rel="nofollow sponsored">
               {ctaLabel}
             </a>
             {isPlaceholderLink && (
@@ -245,8 +245,8 @@ export default function CostCalculator({
       </div>
 
       <p className="calculator-disclaimer">
-        Kalkulator nie obejmuje nagłych kosztów leczenia, zakupu zwierzęcia,
-        większych zabiegów ani jednorazowych wydatków na start.
+        Kalkulator nie obejmuje nagłych kosztów leczenia, większych zabiegów ani
+        jednorazowych wydatków na start.
       </p>
     </div>
   );

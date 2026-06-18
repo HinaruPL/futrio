@@ -166,6 +166,7 @@ function getParagraphs(section: BreedContentSection): string[] {
         <h2>Spis treści</h2>
         <nav>
           <a href="#najwazniejsze-informacje">Najważniejsze informacje</a>
+          <a href="#narzedzia-dla-opiekuna">Narzędzia dla opiekuna</a>
           {
             sections.map((section) => (
               <a href={`#${section.section_key}`}>{section.heading}</a>
@@ -189,38 +190,59 @@ function getParagraphs(section: BreedContentSection): string[] {
           </dl>
         </section>
 
-        <section class="article-section" id="kalkulator-kalorii">
-          <h2>Kalkulator kalorii dla tej rasy</h2>
-          <CalorieCalculator
-            breedName={breed.name}
-            species={breed.species}
-            defaultWeightKg={defaultWeightKg}
-            dailyCaloriesMin={breed.daily_calories_min}
-            dailyCaloriesMax={breed.daily_calories_max}
-            affiliateCtaLabel={
-              primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text
-            }
-            affiliateCtaUrl={primaryAffiliateLink?.url}
-            affiliateDisclosure={primaryAffiliateLink?.disclosure}
-            client:visible
-          />
-        </section>
+        <section class="tools-section" id="narzedzia-dla-opiekuna">
+          <div class="tool-intro">
+            <p class="eyebrow">Praktyczne narzędzia</p>
+            <h2>Narzędzia dla opiekuna</h2>
+            <p>
+              Skorzystaj z prostych kalkulatorów Futrio, aby oszacować dzienne
+              zapotrzebowanie kaloryczne oraz orientacyjne koszty utrzymania tej
+              rasy. Wyniki mają charakter poglądowy i warto traktować je jako
+              punkt wyjścia do dalszego planowania.
+            </p>
+          </div>
 
-        <section class="article-section" id="kalkulator-kosztow">
-          <h2>Kalkulator kosztów utrzymania</h2>
-          <CostCalculator
-            breedName={breed.name}
-            species={breed.species}
-            weightMinKg={breed.weight_min_kg}
-            weightMaxKg={breed.weight_max_kg}
-            groomingLevel={breed.grooming_level}
-            affiliateCtaLabel={
-              primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text
-            }
-            affiliateCtaUrl={primaryAffiliateLink?.url}
-            affiliateDisclosure={primaryAffiliateLink?.disclosure}
-            client:visible
-          />
+          <div class="tools-grid">
+            <article class="tool-card" id="kalkulator-kalorii">
+              <div class="tool-card__header">
+                <h3>Kalkulator kalorii</h3>
+                <p>Do oszacowania dziennego zapotrzebowania energetycznego.</p>
+              </div>
+              <CalorieCalculator
+                breedName={breed.name}
+                species={breed.species}
+                defaultWeightKg={defaultWeightKg}
+                dailyCaloriesMin={breed.daily_calories_min}
+                dailyCaloriesMax={breed.daily_calories_max}
+                affiliateCtaLabel={
+                  primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text
+                }
+                affiliateCtaUrl={primaryAffiliateLink?.url}
+                affiliateDisclosure={primaryAffiliateLink?.disclosure}
+                client:visible
+              />
+            </article>
+
+            <article class="tool-card" id="kalkulator-kosztow">
+              <div class="tool-card__header">
+                <h3>Kalkulator kosztów utrzymania</h3>
+                <p>Do oszacowania miesięcznych i rocznych wydatków.</p>
+              </div>
+              <CostCalculator
+                breedName={breed.name}
+                species={breed.species}
+                weightMinKg={breed.weight_min_kg}
+                weightMaxKg={breed.weight_max_kg}
+                groomingLevel={breed.grooming_level}
+                affiliateCtaLabel={
+                  primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text
+                }
+                affiliateCtaUrl={primaryAffiliateLink?.url}
+                affiliateDisclosure={primaryAffiliateLink?.disclosure}
+                client:visible
+              />
+            </article>
+          </div>
         </section>
 
         {

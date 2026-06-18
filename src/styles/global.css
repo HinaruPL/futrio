@@ -451,6 +451,57 @@ p {
   padding: 1.35rem;
 }
 
+.tools-section {
+  background:
+    linear-gradient(145deg, rgba(238, 246, 232, 0.98), rgba(255, 249, 237, 0.82)),
+    var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1.35rem;
+  padding: 1.35rem;
+}
+
+.tool-intro {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 760px;
+}
+
+.tool-intro .eyebrow {
+  margin: 0;
+}
+
+.tool-intro p:not(.eyebrow),
+.tool-card__header p {
+  color: var(--color-muted);
+}
+
+.tools-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.tool-card {
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+}
+
+.tool-card__header {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.tool-card__header h3 {
+  font-size: 1.25rem;
+}
+
 .article-section p {
   color: var(--color-muted);
 }
@@ -477,13 +528,17 @@ p {
 
 .calculator-card {
   background:
-    linear-gradient(135deg, rgba(238, 246, 232, 0.92), rgba(255, 249, 237, 0.78)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(238, 246, 232, 0.74)),
     var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   display: grid;
   gap: 1rem;
   padding: 1.1rem;
+}
+
+.calculator-card--compact {
+  box-shadow: none;
 }
 
 .calculator-form {
@@ -500,6 +555,11 @@ p {
 .calculator-field label {
   color: var(--color-text);
   font-weight: 700;
+}
+
+.calculator-hint {
+  color: var(--color-muted);
+  font-size: 0.86rem;
 }
 
 .calculator-field input,
@@ -529,9 +589,17 @@ p {
   padding: 1rem;
 }
 
+.calculator-result__label {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 .calculator-result strong {
   color: var(--color-primary-strong);
-  font-size: 1.12rem;
+  font-size: 1.35rem;
 }
 
 .calculator-result p,
@@ -544,6 +612,13 @@ p {
   align-items: start;
   display: grid;
   gap: 0.45rem;
+}
+
+.calculator-cta--subtle {
+  background: rgba(255, 249, 237, 0.58);
+  border: 1px solid #eed6a8;
+  border-radius: var(--radius);
+  padding: 0.85rem;
 }
 
 .calculator-cta .button {
@@ -682,6 +757,7 @@ p {
 }
 
 .affiliate-disclosure {
+  color: #6f5220;
   font-weight: 700;
 }
 
