@@ -56,6 +56,36 @@ export function GET() {
       changefreq: 'monthly',
       priority: '0.6',
     },
+    {
+      loc: toAbsoluteUrl('/o-nas/'),
+      lastmod: today,
+      changefreq: 'yearly',
+      priority: '0.4',
+    },
+    {
+      loc: toAbsoluteUrl('/kontakt/'),
+      lastmod: today,
+      changefreq: 'yearly',
+      priority: '0.4',
+    },
+    {
+      loc: toAbsoluteUrl('/polityka-prywatnosci/'),
+      lastmod: today,
+      changefreq: 'yearly',
+      priority: '0.3',
+    },
+    {
+      loc: toAbsoluteUrl('/polityka-cookies/'),
+      lastmod: today,
+      changefreq: 'yearly',
+      priority: '0.3',
+    },
+    {
+      loc: toAbsoluteUrl('/informacja-o-afiliacji/'),
+      lastmod: today,
+      changefreq: 'yearly',
+      priority: '0.3',
+    },
     ...getAllBreeds().map((breed) => ({
       loc: toAbsoluteUrl(`/rasy/${breed.slug}/`),
       lastmod: toDateOnly(breed.updated_at),

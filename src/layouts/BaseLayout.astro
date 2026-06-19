@@ -30,6 +30,21 @@ const navigation = [
   { href: '/poradniki/', label: 'Poradniki' },
 ];
 
+const footerMainLinks = [
+  { href: '/', label: 'Start' },
+  { href: '/rasy/', label: 'Rasy' },
+  { href: '/kalkulatory/', label: 'Kalkulatory' },
+  { href: '/poradniki/', label: 'Poradniki' },
+];
+
+const footerTrustLinks = [
+  { href: '/o-nas/', label: 'O nas' },
+  { href: '/kontakt/', label: 'Kontakt' },
+  { href: '/polityka-prywatnosci/', label: 'Polityka prywatności' },
+  { href: '/polityka-cookies/', label: 'Polityka cookies' },
+  { href: '/informacja-o-afiliacji/', label: 'Informacja o afiliacji' },
+];
+
 function toAbsoluteUrl(url?: string): string | undefined {
   if (!url) {
     return undefined;
@@ -92,26 +107,24 @@ const ogImageUrl = toAbsoluteUrl(ogImage);
             <span>Futrio</span>
           </a>
           <p>
-            Futrio to statyczny portal zoologiczny rozwijany jako praktyczna baza
-            wiedzy o rasach, kosztach opieki, żywieniu i codziennych potrzebach
-            zwierząt.
+            Futrio jest rozwijanym portalem informacyjnym o rasach, kosztach opieki,
+            żywieniu i codziennych potrzebach zwierząt.
+          </p>
+          <p>
+            Treści nie zastępują konsultacji z lekarzem weterynarii. Niektóre linki
+            mogą mieć w przyszłości charakter afiliacyjny.
           </p>
         </div>
 
-        <nav class="site-footer__links" aria-label="Linki w stopce">
-          <a href="/">Start</a>
-          <a href="/rasy/">Rasy</a>
-          <a href="/kalkulatory/">Kalkulatory</a>
-          <a href="/poradniki/">Poradniki</a>
+        <nav class="site-footer__links" aria-label="Główne linki w stopce">
+          <strong>Portal</strong>
+          {footerMainLinks.map((item) => <a href={item.href}>{item.label}</a>)}
         </nav>
 
-        <div class="site-footer__notes">
-          <p>
-            Treści w Futrio mają charakter informacyjny i nie zastępują konsultacji z
-            lekarzem weterynarii.
-          </p>
-          <p>Niektóre linki mogą mieć w przyszłości charakter afiliacyjny.</p>
-        </div>
+        <nav class="site-footer__links" aria-label="Informacje i dokumenty">
+          <strong>Informacje</strong>
+          {footerTrustLinks.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
       </div>
     </footer>
   </body>
