@@ -2,7 +2,7 @@ export function GET() {
   return new Response(
     `User-agent: *
 Allow: /
-Sitemap: https://futrio.pages.dev/sitemap.xml
+Sitemap: https://futrio.pl/sitemap.xml
 `,
     {
       headers: {

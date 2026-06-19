@@ -1,6 +1,6 @@
 import { getAllBreeds } from '../lib/breeds-data';
 
-const SITE_URL = 'https://futrio.pages.dev';
+const SITE_URL = 'https://futrio.pl';
 
 function toAbsoluteUrl(path: string): string {
   return new URL(path, SITE_URL).toString();
