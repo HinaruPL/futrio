@@ -9,6 +9,8 @@ import {
 } from '../../lib/breeds-data';
 
 const breeds = getAllBreeds();
+const dogBreeds = breeds.filter((breed) => breed.species === 'dog');
+const catBreeds = breeds.filter((breed) => breed.species === 'cat');
 
 function hasRealImage(breed: (typeof breeds)[number]) {
   const imageUrl = breed.image?.image_url ?? '';
@@ -22,7 +24,7 @@ function hasRealImage(breed: (typeof breeds)[number]) {
 ---
 
 <BaseLayout
-  title="Rasy psów i kotów — katalog Futrio"
+  title="Rasy psów i kotów - katalog Futrio"
   description="Przeglądaj rasy psów i kotów w Futrio. Sprawdź charakter, wagę, aktywność, pielęgnację, żywienie i orientacyjne koszty utrzymania."
   canonical="/rasy/"
 >
@@ -36,32 +38,52 @@ function hasRealImage(breed: (typeof breeds)[number]) {
       </p>
       <div class="hero-badges">
         <span class="badge">W bazie: {breeds.length} ras</span>
-        <span class="badge">pies</span>
-        <span class="badge">kot</span>
-        <span class="badge">inne</span>
+        <span class="badge">Psy: {dogBreeds.length}</span>
+        <span class="badge">Koty: {catBreeds.length}</span>
+      </div>
+      <div class="actions">
+        <a class="button" href="/psy/">Sekcja Psy</a>
+        <a class="button button--secondary" href="/koty/">Sekcja Koty</a>
       </div>
     </div>
   </section>
 
   <section class="section section--soft">
-    <div class="container">
-      <div class="panel">
-        <h2>Jak wybrać rasę dla siebie?</h2>
-        <ul class="feature-list">
-          <li>Porównaj rasę ze swoim stylem życia i codziennym rytmem.</li>
-          <li>Weź pod uwagę mieszkanie, dom, dostęp do spacerów i przestrzeń.</li>
-          <li>Zaplanuj budżet na karmę, profilaktykę, pielęgnację i akcesoria.</li>
-          <li>Sprawdź, ile czasu możesz poświęcić na ruch, naukę i pielęgnację.</li>
-        </ul>
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Linkowanie tematyczne</p>
+        <h2>Sprawdź też praktyczne huby</h2>
+      </div>
+      <div class="topic-grid">
+        <a class="topic-card topic-card--link" href="/koszty-utrzymania/">
+          <span>Budżet</span>
+          <strong>Koszty utrzymania</strong>
+        </a>
+        <a class="topic-card topic-card--link" href="/zywienie/">
+          <span>Karma i kalorie</span>
+          <strong>Żywienie psa i kota</strong>
+        </a>
+        <a class="topic-card topic-card--link" href="/pielegnacja/">
+          <span>Rutyna</span>
+          <strong>Pielęgnacja psa i kota</strong>
+        </a>
+        <a class="topic-card topic-card--link" href="/kalkulatory/">
+          <span>Narzędzia</span>
+          <strong>Kalkulatory Futrio</strong>
+        </a>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Psy</p>
+        <h2>Rasy psów</h2>
+      </div>
       <div class="breed-grid grid">
         {
-          breeds.map((breed) => (
+          dogBreeds.map((breed) => (
             <article class="card breed-card breed-card--catalog">
               {hasRealImage(breed) && breed.image ? (
                 <img
@@ -77,7 +99,49 @@ function hasRealImage(breed: (typeof breeds)[number]) {
               )}
               <div>
                 <span class="badge">{formatSpecies(breed.species)}</span>
-                <h2>{breed.name}</h2>
+                <h3>{breed.name}</h3>
+                <p>{breed.short_description ?? 'Opis rasy jest w przygotowaniu.'}</p>
+              </div>
+              <div class="breed-card__meta">
+                <span>Waga: {formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')}</span>
+                <span>Aktywność: {formatActivityLevel(breed.activity_level)}</span>
+                <span>Pielęgnacja: {formatGroomingLevel(breed.grooming_level)}</span>
+              </div>
+              <a class="button button--secondary" href={`/rasy/${breed.slug}/`}>
+                Zobacz opis rasy
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Koty</p>
+        <h2>Rasy kotów</h2>
+      </div>
+      <div class="breed-grid grid">
+        {
+          catBreeds.map((breed) => (
+            <article class="card breed-card breed-card--catalog">
+              {hasRealImage(breed) && breed.image ? (
+                <img
+                  class="breed-card__image"
+                  src={breed.image.image_url}
+                  alt={breed.image.image_alt}
+                  loading="lazy"
+                />
+              ) : (
+                <div class="mini-image-placeholder" aria-hidden="true">
+                  <span>{formatSpecies(breed.species)}</span>
+                </div>
+              )}
+              <div>
+                <span class="badge">{formatSpecies(breed.species)}</span>
+                <h3>{breed.name}</h3>
                 <p>{breed.short_description ?? 'Opis rasy jest w przygotowaniu.'}</p>
               </div>
               <div class="breed-card__meta">

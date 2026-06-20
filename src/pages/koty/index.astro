@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getGuideBySlug } from '../../data/guides';
+import {
+  formatGroomingLevel,
+  formatRange,
+  getAllBreeds,
+} from '../../lib/breeds-data';
+
+const catBreeds = getAllBreeds().filter((breed) => breed.species === 'cat');
+const featuredBreeds = catBreeds.slice(0, 6);
+const topicSlugs = [
+  'kot-do-mieszkania',
+  'jak-karmic-kota-podstawy',
+  'ile-kosztuje-utrzymanie-kota',
+  'pielegnacja-kota',
+  'wyprawka-dla-kota',
+];
+const topics = topicSlugs.map((slug) => getGuideBySlug(slug)).filter(Boolean);
+---
+
+<BaseLayout
+  title="Koty - rasy, koszty, żywienie i poradniki | Futrio"
+  description="Poznaj rasy kotów, sprawdź koszty utrzymania, żywienie, pielęgnację i praktyczne poradniki dla opiekunów kotów."
+  canonical="/koty/"
+>
+  <section class="hero">
+    <div class="container hero__content">
+      <p class="eyebrow">Hub dla opiekunów kotów</p>
+      <h1>Koty - rasy, żywienie, koszty i poradniki</h1>
+      <p class="lead">
+        Futrio pomaga przygotować mieszkanie dla kota, porównać rasy, zaplanować
+        koszty i zrozumieć podstawy żywienia oraz pielęgnacji.
+      </p>
+      <div class="hero-badges">
+        <span class="badge">Rasy kotów w bazie: {catBreeds.length}</span>
+        <span class="badge">wyprawka</span>
+        <span class="badge">żywienie</span>
+      </div>
+      <div class="actions">
+        <a class="button" href="/rasy/">Przeglądaj rasy</a>
+        <a class="button button--secondary" href="/kalkulatory/">Sprawdź kalkulatory</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Rasy kotów</p>
+        <h2>Wybrane rasy z katalogu</h2>
+      </div>
+      <div class="breed-grid grid">
+        {
+          featuredBreeds.map((breed) => (
+            <article class="card breed-card">
+              <span class="badge">kot</span>
+              <h3>{breed.name}</h3>
+              <p>{breed.short_description}</p>
+              <div class="breed-card__meta">
+                <span>Waga: {formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')}</span>
+                <span>Pielęgnacja: {formatGroomingLevel(breed.grooming_level)}</span>
+              </div>
+              <a class="text-link" href={`/rasy/${breed.slug}/`}>Zobacz opis rasy</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div class="panel">
+        <p class="eyebrow">Dom</p>
+        <h2>Jak przygotować dom dla kota?</h2>
+        <p>
+          Najważniejsze są zabezpieczone okna, wygodna kuweta, stabilny drapak,
+          kryjówki, miejsce obserwacji i codzienna zabawa. Kot domowy potrzebuje
+          środowiska, które pozwala mu zachowywać się jak kot.
+        </p>
+        <a class="text-link" href="/poradniki/kot-do-mieszkania/">Przeczytaj poradnik o kocie w mieszkaniu</a>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Planowanie</p>
+        <h2>Karma, żwirek i profilaktyka</h2>
+        <p>
+          Budżet na kota to nie tylko jedzenie. Stałe koszty obejmują żwirek,
+          profilaktykę, akcesoria, drapak i opiekę podczas wyjazdów.
+        </p>
+        <a class="text-link" href="/poradniki/ile-kosztuje-utrzymanie-kota/">Zobacz koszty utrzymania kota</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Popularne tematy</p>
+        <h2>Poradniki o kotach</h2>
+      </div>
+      <div class="guide-grid">
+        {
+          topics.map((guide) => (
+            guide && (
+              <article class="guide-card">
+                <span class="badge">{guide.categoryLabel}</span>
+                <h3>{guide.title}</h3>
+                <p>{guide.description}</p>
+                <a class="text-link" href={`/poradniki/${guide.slug}/`}>Czytaj poradnik</a>
+              </article>
+            )
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

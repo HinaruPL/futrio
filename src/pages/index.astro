@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getFeaturedGuides } from '../data/guides';
 import {
   formatActivityLevel,
   formatRange,
@@ -7,26 +8,27 @@ import {
   getAllBreeds,
 } from '../lib/breeds-data';
 
-const popularBreeds = getAllBreeds().slice(0, 5);
+const popularBreeds = getAllBreeds().slice(0, 6);
+const featuredGuides = getFeaturedGuides(6);
 ---
 
 <BaseLayout
-  title="Futrio — praktyczna baza wiedzy o zwierzętach"
+  title="Futrio - praktyczna baza wiedzy o zwierzętach"
   description="Futrio pomaga poznawać rasy psów i kotów, sprawdzać koszty utrzymania, żywienie, aktywność i korzystać z prostych kalkulatorów dla opiekunów."
   canonical="/"
 >
   <section class="hero hero--home">
     <div class="container hero__content">
       <p class="eyebrow">Portal zoologiczny</p>
-      <h1>Futrio — praktyczna baza wiedzy o zwierzętach</h1>
+      <h1>Futrio - praktyczna baza wiedzy o zwierzętach</h1>
       <p class="lead">
-        Futrio pomaga porównywać rasy psów i kotów, sprawdzać orientacyjne koszty
-        utrzymania, żywienie, aktywność oraz podstawowe potrzeby zwierząt. To
-        uporządkowany punkt startu dla osób, które chcą lepiej zaplanować opiekę.
+        Porównuj rasy psów i kotów, planuj koszty utrzymania, sprawdzaj podstawy
+        żywienia i pielęgnacji oraz korzystaj z kalkulatorów jako punktu wyjścia do
+        mądrej opieki.
       </p>
       <div class="actions">
         <a class="button" href="/rasy/">Przeglądaj rasy</a>
-        <a class="button button--secondary" href="/kalkulatory/">Sprawdź kalkulatory</a>
+        <a class="button button--secondary" href="/poradniki/">Czytaj poradniki</a>
       </div>
     </div>
   </section>
@@ -34,29 +36,27 @@ const popularBreeds = getAllBreeds().slice(0, 5);
   <section class="section">
     <div class="container stack">
       <div class="section-heading">
-        <p class="eyebrow">Mapa portalu</p>
-        <h2>Co znajdziesz w Futrio?</h2>
+        <p class="eyebrow">Szybki wybór</p>
+        <h2>Od czego chcesz zacząć?</h2>
       </div>
-      <div class="grid grid--4">
-        <article class="card">
-          <span class="badge">Katalog</span>
-          <h3>Rasy psów i kotów</h3>
-          <p>Opisy ras, ich potrzeby, aktywność, pielęgnacja i linki do poradników rasowych.</p>
+      <div class="topic-grid">
+        <article class="topic-card topic-card--large">
+          <span class="badge">psy</span>
+          <h3>Dla opiekunów psów</h3>
+          <p>
+            Rasy psów, wybór psa do stylu życia, koszty, aktywność, żywienie i wyprawka
+            dla przyszłych oraz obecnych opiekunów.
+          </p>
+          <a class="text-link" href="/psy/">Przejdź do sekcji Psy</a>
         </article>
-        <article class="card">
-          <span class="badge">Narzędzia</span>
-          <h3>Kalkulatory dla opiekunów</h3>
-          <p>Proste kalkulatory kalorii oraz kosztów utrzymania dostępne na stronach ras.</p>
-        </article>
-        <article class="card">
-          <span class="badge">Planowanie</span>
-          <h3>Koszty utrzymania</h3>
-          <p>Orientacyjne informacje o budżecie, karmie, profilaktyce i codziennej opiece.</p>
-        </article>
-        <article class="card">
-          <span class="badge">W przygotowaniu</span>
-          <h3>Poradniki w przygotowaniu</h3>
-          <p>Przyszłe materiały o żywieniu, pielęgnacji, zdrowiu i akcesoriach.</p>
+        <article class="topic-card topic-card--large">
+          <span class="badge">koty</span>
+          <h3>Dla opiekunów kotów</h3>
+          <p>
+            Rasy kotów, przygotowanie mieszkania, kuweta, drapak, żywienie, pielęgnacja
+            i koszty codziennej opieki.
+          </p>
+          <a class="text-link" href="/koty/">Przejdź do sekcji Koty</a>
         </article>
       </div>
     </div>
@@ -93,26 +93,52 @@ const popularBreeds = getAllBreeds().slice(0, 5);
   </section>
 
   <section class="section">
-    <div class="container two-column">
-      <div class="panel">
-        <p class="eyebrow">Narzędzia dla opiekunów</p>
-        <h2>Kalkulatory Futrio</h2>
-        <p>
-          Na stronach ras znajdziesz kalkulator kalorii oraz kalkulator kosztów
-          utrzymania. Pomagają szybko oszacować dzienne zapotrzebowanie energetyczne
-          i miesięczny budżet opieki.
-        </p>
-        <div class="actions">
-          <a class="button" href="/kalkulatory/">Przejdź do kalkulatorów</a>
+    <div class="container stack">
+      <div class="section-heading section-heading--split">
+        <div>
+          <p class="eyebrow">Evergreen</p>
+          <h2>Najważniejsze poradniki</h2>
         </div>
+        <a class="text-link" href="/poradniki/">Wszystkie poradniki</a>
       </div>
-      <div class="steps-card">
-        <h2>Jak korzystać z Futrio?</h2>
-        <ol class="steps-list">
-          <li>Wybierz rasę z katalogu.</li>
-          <li>Sprawdź potrzeby, aktywność, żywienie i koszty.</li>
-          <li>Użyj kalkulatorów jako punktu wyjścia do planowania.</li>
-        </ol>
+      <div class="guide-grid">
+        {
+          featuredGuides.map((guide) => (
+            <article class="guide-card">
+              <span class="badge">{guide.categoryLabel}</span>
+              <h3>{guide.title}</h3>
+              <p>{guide.description}</p>
+              <a class="text-link" href={`/poradniki/${guide.slug}/`}>Czytaj poradnik</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Najczęściej sprawdzane tematy</p>
+        <h2>Praktyczne huby Futrio</h2>
+      </div>
+      <div class="topic-grid">
+        <a class="topic-card topic-card--link" href="/koszty-utrzymania/">
+          <span>Koszty</span>
+          <strong>Koszty utrzymania psa i kota</strong>
+        </a>
+        <a class="topic-card topic-card--link" href="/zywienie/">
+          <span>Żywienie</span>
+          <strong>Żywienie psa i kota</strong>
+        </a>
+        <a class="topic-card topic-card--link" href="/pielegnacja/">
+          <span>Pielęgnacja</span>
+          <strong>Pielęgnacja psa i kota</strong>
+        </a>
+        <a class="topic-card topic-card--link" href="/kalkulatory/">
+          <span>Narzędzia</span>
+          <strong>Kalkulatory Futrio</strong>
+        </a>
       </div>
     </div>
   </section>

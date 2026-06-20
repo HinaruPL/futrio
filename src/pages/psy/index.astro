@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getGuideBySlug } from '../../data/guides';
+import {
+  formatActivityLevel,
+  formatRange,
+  getAllBreeds,
+} from '../../lib/breeds-data';
+
+const dogBreeds = getAllBreeds().filter((breed) => breed.species === 'dog');
+const featuredBreeds = dogBreeds.slice(0, 6);
+const topicSlugs = [
+  'jak-wybrac-rase-psa',
+  'jaki-pies-do-mieszkania',
+  'pies-dla-rodziny-z-dziecmi',
+  'pies-dla-aktywnych',
+  'wyprawka-dla-psa',
+  'jak-karmic-psa-podstawy',
+];
+const topics = topicSlugs.map((slug) => getGuideBySlug(slug)).filter(Boolean);
+---
+
+<BaseLayout
+  title="Psy - rasy, koszty, żywienie i poradniki | Futrio"
+  description="Poznaj rasy psów, sprawdź koszty utrzymania, żywienie, aktywność i praktyczne poradniki dla opiekunów psów."
+  canonical="/psy/"
+>
+  <section class="hero">
+    <div class="container hero__content">
+      <p class="eyebrow">Hub dla opiekunów psów</p>
+      <h1>Psy - rasy, koszty, żywienie i praktyczne poradniki</h1>
+      <p class="lead">
+        Zebraliśmy w jednym miejscu rasy psów, poradniki o wyborze psa, żywieniu,
+        kosztach i codziennej opiece. To dobry start, jeśli dopiero planujesz psa
+        albo chcesz uporządkować wiedzę przed decyzją.
+      </p>
+      <div class="hero-badges">
+        <span class="badge">Rasy psów w bazie: {dogBreeds.length}</span>
+        <span class="badge">poradniki</span>
+        <span class="badge">kalkulatory</span>
+      </div>
+      <div class="actions">
+        <a class="button" href="/rasy/">Przeglądaj wszystkie rasy</a>
+        <a class="button button--secondary" href="/kalkulatory/">Sprawdź kalkulatory</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Rasy psów</p>
+        <h2>Wybrane rasy z katalogu</h2>
+      </div>
+      <div class="breed-grid grid">
+        {
+          featuredBreeds.map((breed) => (
+            <article class="card breed-card">
+              <span class="badge">pies</span>
+              <h3>{breed.name}</h3>
+              <p>{breed.short_description}</p>
+              <div class="breed-card__meta">
+                <span>Waga: {formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')}</span>
+                <span>Aktywność: {formatActivityLevel(breed.activity_level)}</span>
+              </div>
+              <a class="text-link" href={`/rasy/${breed.slug}/`}>Zobacz opis rasy</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div class="panel">
+        <p class="eyebrow">Decyzja</p>
+        <h2>Jak wybrać psa dla siebie?</h2>
+        <p>
+          Zacznij od zwykłego dnia, nie od idealnego weekendu. Oceń czas na spacery,
+          naukę, pielęgnację, budżet i to, ile godzin pies będzie sam. Dopiero potem
+          porównuj temperament, aktywność i wymagania ras.
+        </p>
+        <a class="text-link" href="/poradniki/jak-wybrac-rase-psa/">Przeczytaj poradnik o wyborze rasy</a>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Praktyka</p>
+        <h2>Nie pomijaj kosztów i żywienia</h2>
+        <p>
+          Karma, profilaktyka, pielęgnacja, szkolenie i nagłe wydatki potrafią mocno
+          różnić się między rasami. Kalkulatory Futrio pomagają oszacować punkt startu,
+          ale nie zastępują obserwacji konkretnego psa.
+        </p>
+        <a class="text-link" href="/koszty-utrzymania/">Zobacz hub kosztów</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container stack">
+      <div class="section-heading">
+        <p class="eyebrow">Popularne tematy</p>
+        <h2>Poradniki o psach</h2>
+      </div>
+      <div class="guide-grid">
+        {
+          topics.map((guide) => (
+            guide && (
+              <article class="guide-card">
+                <span class="badge">{guide.categoryLabel}</span>
+                <h3>{guide.title}</h3>
+                <p>{guide.description}</p>
+                <a class="text-link" href={`/poradniki/${guide.slug}/`}>Czytaj poradnik</a>
+              </article>
+            )
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

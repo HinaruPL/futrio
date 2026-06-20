@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  getAllGuides,
+  getRelatedGuides,
+  type Guide,
+} from '../../data/guides';
+import { getBreedBySlug } from '../../lib/breeds-data';
+
+export function getStaticPaths() {
+  return getAllGuides().map((guide) => ({
+    params: {
+      slug: guide.slug,
+    },
+    props: {
+      guide,
+    },
+  }));
+}
+
+type Props = {
+  guide: Guide;
+};
+
+const { guide } = Astro.props;
+const relatedGuides = getRelatedGuides(guide.slug, 3);
+const relatedBreeds = (guide.relatedBreedSlugs ?? [])
+  .map((slug) => getBreedBySlug(slug))
+  .filter(Boolean);
+const needsDisclaimer = guide.category === 'zdrowie' || guide.category === 'zywienie';
+---
+
+<BaseLayout
+  title={`${guide.title} | Futrio`}
+  description={guide.description}
+  canonical={`/poradniki/${guide.slug}/`}
+  ogType="article"
+>
+  <section class="hero guide-hero">
+    <div class="container hero__content">
+      <nav class="breadcrumbs" aria-label="Okruszki">
+        <a href="/">Futrio</a> &gt; <a href="/poradniki/">Poradniki</a> &gt; {guide.title}
+      </nav>
+      <p class="eyebrow">{guide.categoryLabel}</p>
+      <h1>{guide.title}</h1>
+      <p class="lead">{guide.intro}</p>
+      <div class="guide-meta" aria-label="Informacje o poradniku">
+        <span>{guide.categoryLabel}</span>
+        <span>{guide.readingTime}</span>
+        <span>Aktualizacja: {guide.updatedAt}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container article-layout">
+      <aside class="toc guide-toc" aria-label="Spis treści">
+        <h2>Spis treści</h2>
+        <nav>
+          {
+            guide.sections.map((section) => (
+              <a href={`#${section.id}`}>{section.heading}</a>
+            ))
+          }
+          <a href="#faq">FAQ</a>
+        </nav>
+      </aside>
+
+      <article class="guide-article">
+        <div class="article-section guide-intro-box">
+          <p>{guide.description}</p>
+          <p>
+            Jeśli dopiero planujesz opiekę nad zwierzęciem, sprawdź też
+            <a href="/rasy/"> katalog ras</a> oraz <a href="/kalkulatory/"> kalkulatory Futrio</a>.
+          </p>
+        </div>
+
+        {needsDisclaimer && (
+          <div class="health-disclaimer">
+            Informacje mają charakter orientacyjny i nie zastępują konsultacji z lekarzem
+            weterynarii.
+          </div>
+        )}
+
+        {
+          guide.sections.map((section) => (
+            <section id={section.id} class="article-section">
+              <h2>{section.heading}</h2>
+              {section.body.split(/\n\n+/).map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </section>
+          ))
+        }
+
+        <section id="faq" class="article-section faq-section guide-faq">
+          <h2>FAQ</h2>
+          {
+            guide.faq.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))
+          }
+        </section>
+
+        {relatedBreeds.length > 0 && (
+          <section class="related-breeds">
+            <h2>Powiązane rasy</h2>
+            <div class="related-breeds__grid">
+              {
+                relatedBreeds.map((breed) => (
+                  breed && (
+                    <a href={`/rasy/${breed.slug}/`}>
+                      <span>{breed.species === 'dog' ? 'pies' : 'kot'}</span>
+                      <strong>{breed.name}</strong>
+                    </a>
+                  )
+                ))
+              }
+            </div>
+          </section>
+        )}
+
+        <section class="article-section">
+          <h2>Co dalej?</h2>
+          <div class="topic-links">
+            <a href="/rasy/">Przejdź do katalogu ras</a>
+            <a href="/kalkulatory/">Sprawdź kalkulatory</a>
+            <a href="/koszty-utrzymania/">Zobacz koszty utrzymania</a>
+            <a href="/zywienie/">Przejdź do żywienia</a>
+          </div>
+        </section>
+
+        <section class="related-breeds">
+          <h2>Zobacz też</h2>
+          <div class="related-breeds__grid">
+            {
+              relatedGuides.map((relatedGuide) => (
+                <a href={`/poradniki/${relatedGuide.slug}/`}>
+                  <span>{relatedGuide.categoryLabel}</span>
+                  <strong>{relatedGuide.title}</strong>
+                </a>
+              ))
+            }
+          </div>
+        </section>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

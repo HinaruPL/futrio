@@ -1,4 +1,5 @@
 import { getAllBreeds } from '../lib/breeds-data';
+import { getAllGuides } from '../data/guides';
 
 const SITE_URL = 'https://futrio.pl';
 
@@ -43,6 +44,36 @@ export function GET() {
       lastmod: today,
       changefreq: 'weekly',
       priority: '0.9',
+    },
+    {
+      loc: toAbsoluteUrl('/psy/'),
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.8',
+    },
+    {
+      loc: toAbsoluteUrl('/koty/'),
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.8',
+    },
+    {
+      loc: toAbsoluteUrl('/koszty-utrzymania/'),
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.8',
+    },
+    {
+      loc: toAbsoluteUrl('/zywienie/'),
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.8',
+    },
+    {
+      loc: toAbsoluteUrl('/pielegnacja/'),
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.8',
     },
     {
       loc: toAbsoluteUrl('/kalkulatory/'),
@@ -91,6 +122,12 @@ export function GET() {
       lastmod: toDateOnly(breed.updated_at),
       changefreq: 'monthly',
       priority: '0.8',
+    })),
+    ...getAllGuides().map((guide) => ({
+      loc: toAbsoluteUrl(`/poradniki/${guide.slug}/`),
+      lastmod: guide.updatedAt,
+      changefreq: 'monthly',
+      priority: '0.7',
     })),
   ];
 
