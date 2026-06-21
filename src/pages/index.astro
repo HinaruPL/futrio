@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BreedCard from '../components/BreedCard.astro';
 import GuideCard from '../components/GuideCard.astro';
 import { getFeaturedGuides } from '../data/guides';
-import { getAllBreeds, getBreedBySlug, getBreedIllustrationUrl } from '../lib/breeds-data';
+import { getAllBreeds, getBreedBySlug, getBreedPhotoUrl } from '../lib/breeds-data';
 
 const popularBreeds = getAllBreeds().slice(0, 6);
 const featuredGuides = getFeaturedGuides(4);
@@ -38,12 +38,18 @@ const heroBreeds = ['labrador-retriever', 'ragdoll', 'border-collie']
           heroBreeds.map((breed, index) => (
             breed && (
               <a class:list={['home-visual-card', `home-visual-card--${index + 1}`]} href={`/rasy/${breed.slug}/`}>
-                <img
-                  src={getBreedIllustrationUrl(breed)}
-                  alt={`${breed.species === 'cat' ? 'Ilustracja kota' : 'Ilustracja rasy'} ${breed.name}`}
-                  width="640"
-                  height="480"
-                />
+                {
+                  getBreedPhotoUrl(breed) ? (
+                    <img
+                      src={getBreedPhotoUrl(breed) ?? ''}
+                      alt={`${breed.species === 'cat' ? 'Ilustracja kota' : 'Ilustracja rasy'} ${breed.name}`}
+                      width="1200"
+                      height="800"
+                    />
+                  ) : (
+                    <div class="home-visual-card__placeholder" aria-hidden="true"></div>
+                  )
+                }
                 <span>{breed.name}</span>
               </a>
             )

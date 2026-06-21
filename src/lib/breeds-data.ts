@@ -199,6 +199,16 @@ export function getBreedIllustrationUrl(breed: Pick<Breed, 'slug' | 'species'>):
   return breed.species === 'cat' ? '/breeds/default-cat.svg' : '/breeds/default-dog.svg';
 }
 
+const breedPhotoMap: Record<string, string> = {
+  'border-collie': '/breeds/photos/border-collie.png',
+  ragdoll: '/breeds/photos/ragdoll.png',
+  'buldog-francuski': '/breeds/photos/buldog-francuski.png',
+};
+
+export function getBreedPhotoUrl(breed: Pick<Breed, 'slug'>): string | null {
+  return breedPhotoMap[breed.slug] ?? null;
+}
+
 export function getSectionByKey(
   breed: Breed,
   sectionKey: string

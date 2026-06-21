@@ -26,6 +26,11 @@
   box-sizing: border-box;
 }
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   background: var(--color-bg);
   color: var(--color-text);
@@ -46,6 +51,7 @@ body {
     linear-gradient(180deg, #fffaf0 0%, var(--color-bg) 42%, #f7f2e8 100%);
   margin: 0;
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 a {
@@ -69,6 +75,8 @@ summary:focus-visible {
 
 img,
 svg {
+  display: block;
+  height: auto;
   max-width: 100%;
 }
 
@@ -94,6 +102,7 @@ svg {
   margin: 0 auto;
   max-width: var(--container);
   min-height: 72px;
+  min-width: 0;
   padding: 0 1.25rem;
 }
 
@@ -104,6 +113,7 @@ svg {
   font-size: 1.35rem;
   font-weight: 700;
   gap: 0.5rem;
+  min-width: 0;
   text-decoration: none;
 }
 
@@ -302,6 +312,7 @@ p {
 .grid {
   display: grid;
   gap: 1rem;
+  min-width: 0;
 }
 
 .grid--2 {
@@ -310,7 +321,7 @@ p {
 
 .grid--3,
 .breed-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
 }
 
 .grid--4 {
@@ -1055,7 +1066,7 @@ p {
 .topic-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
 }
 
 .guide-grid--featured,
@@ -1772,6 +1783,7 @@ body {
   display: grid;
   gap: clamp(1.5rem, 5vw, 4rem);
   grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.92fr);
+  min-width: 0;
 }
 
 .hero-split .hero__content {
@@ -1784,8 +1796,12 @@ body {
 }
 
 .home-visual {
+  margin-inline: auto;
+  max-width: 560px;
   min-height: 420px;
+  min-width: 0;
   position: relative;
+  width: 100%;
 }
 
 .home-visual__orb {
@@ -1811,15 +1827,24 @@ body {
   padding: 0.7rem;
   position: absolute;
   text-decoration: none;
-  width: min(220px, 48%);
+  width: clamp(150px, 43%, 220px);
 }
 
 .home-visual-card img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   border-radius: 1rem;
   display: block;
+  height: auto;
   object-fit: cover;
   width: 100%;
+}
+
+.home-visual-card__placeholder {
+  aspect-ratio: 3 / 2;
+  background:
+    radial-gradient(circle at 26% 20%, rgba(255, 255, 255, 0.72), transparent 34%),
+    linear-gradient(135deg, var(--primary-soft), var(--accent-soft));
+  border-radius: 1rem;
 }
 
 .home-visual-card span {
@@ -1878,21 +1903,52 @@ body {
   gap: 0;
   overflow: hidden;
   padding: 0;
+  min-width: 0;
 }
 
 .breed-card__media {
   background: var(--surface-green);
   display: block;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   text-decoration: none;
 }
 
 .breed-card__media img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   display: block;
+  height: 100%;
   object-fit: cover;
   transition: transform 180ms ease;
   width: 100%;
+}
+
+.breed-card__placeholder {
+  align-content: end;
+  aspect-ratio: 3 / 2;
+  background:
+    radial-gradient(circle at 76% 18%, rgba(216, 144, 63, 0.24), transparent 34%),
+    radial-gradient(circle at 20% 24%, rgba(47, 125, 79, 0.18), transparent 28%),
+    linear-gradient(135deg, #f8f1e5, #eef7ed);
+  color: var(--text);
+  display: grid;
+  gap: 0.25rem;
+  min-height: 100%;
+  padding: 1rem;
+  width: 100%;
+}
+
+.breed-card__placeholder span {
+  color: var(--primary-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.breed-card__placeholder strong {
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  line-height: 1.1;
 }
 
 .breed-card:hover .breed-card__media img {
@@ -1912,6 +1968,7 @@ body {
 .breed-card h3 a {
   color: var(--text);
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .breed-card h3 a:hover {
@@ -1932,6 +1989,7 @@ body {
   gap: 0.55rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0;
+  min-width: 0;
 }
 
 .breed-card__metrics div {
@@ -1954,6 +2012,7 @@ body {
   font-size: 0.88rem;
   font-weight: 800;
   margin: 0.1rem 0 0;
+  overflow-wrap: anywhere;
 }
 
 .breed-card__cta,
@@ -1995,12 +2054,13 @@ body {
 .breed-grid--mini {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
 }
 
 .guide-card {
   grid-template-columns: auto minmax(0, 1fr);
   overflow: hidden;
+  min-width: 0;
 }
 
 .guide-card__icon {
@@ -2026,6 +2086,7 @@ body {
 
 .guide-card h3 a {
   color: var(--text);
+  overflow-wrap: anywhere;
   text-decoration: none;
 }
 
@@ -2048,12 +2109,51 @@ body {
 }
 
 .breed-media {
+  min-width: 0;
   padding: 0.8rem;
 }
 
 .breed-image--illustration img {
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
+}
+
+.breed-image--photo img {
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius-lg);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.breed-hero-placeholder {
+  align-content: end;
+  aspect-ratio: 3 / 2;
+  background:
+    radial-gradient(circle at 78% 22%, rgba(216, 144, 63, 0.22), transparent 30%),
+    radial-gradient(circle at 22% 26%, rgba(47, 125, 79, 0.16), transparent 30%),
+    linear-gradient(135deg, #fff8ed, #eef7ed);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: 0.25rem;
+  min-height: 100%;
+  padding: clamp(1rem, 4vw, 2rem);
+  width: 100%;
+}
+
+.breed-hero-placeholder span {
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.breed-hero-placeholder strong {
+  color: var(--text);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.05;
+  overflow-wrap: anywhere;
 }
 
 .article-section,

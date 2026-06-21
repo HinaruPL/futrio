@@ -15,7 +15,7 @@ import {
   formatSpecies,
   formatTrainingDifficulty,
   getBreedStaticPaths,
-  getBreedIllustrationUrl,
+  getBreedPhotoUrl,
   getOtherBreeds,
 } from '../../lib/breeds-data';
 
@@ -69,8 +69,8 @@ const affiliateCtaLabel =
   primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text ?? undefined;
 const affiliateCtaUrl = primaryAffiliateLink?.url ?? undefined;
 const affiliateDisclosure = primaryAffiliateLink?.disclosure ?? undefined;
-const illustrationUrl = getBreedIllustrationUrl(breed);
-const illustrationAlt = `${breed.species === 'cat' ? 'Ilustracja kota' : 'Ilustracja rasy'} ${breed.name}`;
+const photoUrl = getBreedPhotoUrl(breed);
+const breedMediaAlt = `${breed.species === 'cat' ? 'Ilustracja kota' : 'Ilustracja rasy'} ${breed.name}`;
 
 const heroStats = [
   ['Waga', formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')],
@@ -155,17 +155,26 @@ function getParagraphs(section: BreedContentSection): string[] {
         </dl>
       </div>
 
-      <aside class="breed-media" aria-label={illustrationAlt}>
-        <figure class="breed-image breed-image--illustration">
-          <img
-            src={illustrationUrl}
-            alt={illustrationAlt}
-            title={illustrationAlt}
-            width="640"
-            height="480"
-            loading="eager"
-          />
-        </figure>
+      <aside class="breed-media" aria-label={breedMediaAlt}>
+        {
+          photoUrl ? (
+            <figure class="breed-image breed-image--photo">
+              <img
+                src={photoUrl}
+                alt={breedMediaAlt}
+                title={breedMediaAlt}
+                width="1200"
+                height="800"
+                loading="eager"
+              />
+            </figure>
+          ) : (
+            <div class="breed-hero-placeholder" aria-hidden="true">
+              <span>{formatSpecies(breed.species)}</span>
+              <strong>{breed.name}</strong>
+            </div>
+          )
+        }
       </aside>
     </div>
   </section>

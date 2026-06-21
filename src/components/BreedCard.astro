@@ -5,7 +5,7 @@ import {
   formatGroomingLevel,
   formatRange,
   formatSpecies,
-  getBreedIllustrationUrl,
+  getBreedPhotoUrl,
 } from '../lib/breeds-data';
 
 type Props = {
@@ -14,20 +14,29 @@ type Props = {
 };
 
 const { breed, variant = 'compact' } = Astro.props;
-const illustrationUrl = getBreedIllustrationUrl(breed);
+const photoUrl = getBreedPhotoUrl(breed);
 const speciesLabel = formatSpecies(breed.species);
 const altPrefix = breed.species === 'cat' ? 'Ilustracja kota' : 'Ilustracja rasy';
 ---
 
 <article class:list={['breed-card', `breed-card--${variant}`]}>
   <a class="breed-card__media" href={`/rasy/${breed.slug}/`} aria-label={`Zobacz rasę ${breed.name}`}>
-    <img
-      src={illustrationUrl}
-      alt={`${altPrefix} ${breed.name}`}
-      width="640"
-      height="480"
-      loading={variant === 'featured' ? 'eager' : 'lazy'}
-    />
+    {
+      photoUrl ? (
+        <img
+          src={photoUrl}
+          alt={`${altPrefix} ${breed.name}`}
+          width="1200"
+          height="800"
+          loading={variant === 'featured' ? 'eager' : 'lazy'}
+        />
+      ) : (
+        <div class="breed-card__placeholder" aria-hidden="true">
+          <span>{breed.species === 'cat' ? 'kot' : 'pies'}</span>
+          <strong>{breed.name}</strong>
+        </div>
+      )
+    }
   </a>
   <div class="breed-card__body">
     <div class="breed-card__topline">
