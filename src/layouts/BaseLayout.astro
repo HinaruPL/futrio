@@ -28,8 +28,8 @@ const navigation = [
   { href: '/psy/', label: 'Psy' },
   { href: '/koty/', label: 'Koty' },
   { href: '/rasy/', label: 'Rasy' },
-  { href: '/kalkulatory/', label: 'Kalkulatory' },
   { href: '/poradniki/', label: 'Poradniki' },
+  { href: '/kalkulatory/', label: 'Kalkulatory' },
 ];
 
 const footerMainLinks = [
@@ -37,11 +37,16 @@ const footerMainLinks = [
   { href: '/psy/', label: 'Psy' },
   { href: '/koty/', label: 'Koty' },
   { href: '/rasy/', label: 'Rasy' },
+  { href: '/poradniki/', label: 'Poradniki' },
+  { href: '/kalkulatory/', label: 'Kalkulatory' },
+];
+
+const footerTopicLinks = [
   { href: '/koszty-utrzymania/', label: 'Koszty utrzymania' },
   { href: '/zywienie/', label: 'Żywienie' },
   { href: '/pielegnacja/', label: 'Pielęgnacja' },
-  { href: '/kalkulatory/', label: 'Kalkulatory' },
-  { href: '/poradniki/', label: 'Poradniki' },
+  { href: '/poradniki/jak-wybrac-rase-psa/', label: 'Wybór rasy' },
+  { href: '/poradniki/kalkulator-kalorii-dla-psa-i-kota/', label: 'Kalkulator kalorii' },
 ];
 
 const footerTrustLinks = [
@@ -94,7 +99,10 @@ const ogImageUrl = toAbsoluteUrl(ogImage);
       <div class="site-header__inner">
         <a class="brand" href="/" aria-label="Futrio - strona główna">
           <span class="brand__mark">F</span>
-          <span>Futrio</span>
+          <span class="brand__text">
+            <span class="brand__name">Futrio</span>
+            <span class="brand__claim">Przewodnik dla opiekunów zwierząt</span>
+          </span>
         </a>
         <nav class="site-nav" aria-label="Główna nawigacja">
           {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
@@ -111,21 +119,29 @@ const ogImageUrl = toAbsoluteUrl(ogImage);
         <div class="site-footer__about">
           <a class="brand brand--footer" href="/" aria-label="Futrio - strona główna">
             <span class="brand__mark">F</span>
-            <span>Futrio</span>
+            <span class="brand__text">
+              <span class="brand__name">Futrio</span>
+              <span class="brand__claim">Przewodnik dla opiekunów zwierząt</span>
+            </span>
           </a>
           <p>
             Futrio jest rozwijanym portalem informacyjnym o rasach, kosztach opieki,
             żywieniu i codziennych potrzebach zwierząt.
           </p>
-          <p>
-            Treści nie zastępują konsultacji z lekarzem weterynarii. Niektóre linki
-            mogą mieć w przyszłości charakter afiliacyjny.
+          <p class="site-footer__disclaimer">
+            Treści mają charakter informacyjny i nie zastępują konsultacji z lekarzem
+            weterynarii. Niektóre linki mogą mieć w przyszłości charakter afiliacyjny.
           </p>
         </div>
 
-        <nav class="site-footer__links" aria-label="Główne linki w stopce">
-          <strong>Portal</strong>
+        <nav class="site-footer__links" aria-label="Odkrywaj Futrio">
+          <strong>Odkrywaj</strong>
           {footerMainLinks.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
+
+        <nav class="site-footer__links" aria-label="Tematy Futrio">
+          <strong>Tematy</strong>
+          {footerTopicLinks.map((item) => <a href={item.href}>{item.label}</a>)}
         </nav>
 
         <nav class="site-footer__links" aria-label="Informacje i dokumenty">

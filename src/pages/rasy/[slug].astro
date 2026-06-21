@@ -56,6 +56,16 @@ const defaultWeightKg =
   breed.weight_min_kg !== null && breed.weight_max_kg !== null
     ? Number(((breed.weight_min_kg + breed.weight_max_kg) / 2).toFixed(1))
     : breed.weight_min_kg ?? breed.weight_max_kg ?? null;
+const calculatorWeightKg = defaultWeightKg ?? undefined;
+const calculatorDailyCaloriesMin = breed.daily_calories_min ?? undefined;
+const calculatorDailyCaloriesMax = breed.daily_calories_max ?? undefined;
+const calculatorWeightMinKg = breed.weight_min_kg ?? undefined;
+const calculatorWeightMaxKg = breed.weight_max_kg ?? undefined;
+const calculatorGroomingLevel = breed.grooming_level ?? undefined;
+const affiliateCtaLabel =
+  primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text ?? undefined;
+const affiliateCtaUrl = primaryAffiliateLink?.url ?? undefined;
+const affiliateDisclosure = primaryAffiliateLink?.disclosure ?? undefined;
 const imageUrl = breed.image?.image_url ?? '';
 const hasRealImage =
   Boolean(breed.image) &&
@@ -222,14 +232,12 @@ function getParagraphs(section: BreedContentSection): string[] {
               <CalorieCalculator
                 breedName={breed.name}
                 species={breed.species}
-                defaultWeightKg={defaultWeightKg}
-                dailyCaloriesMin={breed.daily_calories_min}
-                dailyCaloriesMax={breed.daily_calories_max}
-                affiliateCtaLabel={
-                  primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text
-                }
-                affiliateCtaUrl={primaryAffiliateLink?.url}
-                affiliateDisclosure={primaryAffiliateLink?.disclosure}
+                defaultWeightKg={calculatorWeightKg}
+                dailyCaloriesMin={calculatorDailyCaloriesMin}
+                dailyCaloriesMax={calculatorDailyCaloriesMax}
+                affiliateCtaLabel={affiliateCtaLabel}
+                affiliateCtaUrl={affiliateCtaUrl}
+                affiliateDisclosure={affiliateDisclosure}
                 client:visible
               />
             </article>
@@ -242,14 +250,12 @@ function getParagraphs(section: BreedContentSection): string[] {
               <CostCalculator
                 breedName={breed.name}
                 species={breed.species}
-                weightMinKg={breed.weight_min_kg}
-                weightMaxKg={breed.weight_max_kg}
-                groomingLevel={breed.grooming_level}
-                affiliateCtaLabel={
-                  primaryAffiliateLink?.button_label ?? primaryAffiliateLink?.anchor_text
-                }
-                affiliateCtaUrl={primaryAffiliateLink?.url}
-                affiliateDisclosure={primaryAffiliateLink?.disclosure}
+                weightMinKg={calculatorWeightMinKg}
+                weightMaxKg={calculatorWeightMaxKg}
+                groomingLevel={calculatorGroomingLevel}
+                affiliateCtaLabel={affiliateCtaLabel}
+                affiliateCtaUrl={affiliateCtaUrl}
+                affiliateDisclosure={affiliateDisclosure}
                 client:visible
               />
             </article>
