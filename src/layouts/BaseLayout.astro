@@ -77,11 +77,12 @@ const ogImageUrl = toAbsoluteUrl(ogImage);
 <html lang="pl">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#2f7d4f" />
     <title>{title}</title>
     <meta name="description" content={description} />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
@@ -98,9 +99,8 @@ const ogImageUrl = toAbsoluteUrl(ogImage);
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="/" aria-label="Futrio - strona główna">
-          <span class="brand__mark">F</span>
+          <img class="brand__logo" src="/brand/futrio-logo.svg" alt="Futrio" width="180" height="48" />
           <span class="brand__text">
-            <span class="brand__name">Futrio</span>
             <span class="brand__claim">Przewodnik dla opiekunów zwierząt</span>
           </span>
         </a>
@@ -118,11 +118,7 @@ const ogImageUrl = toAbsoluteUrl(ogImage);
       <div class="container site-footer__grid">
         <div class="site-footer__about">
           <a class="brand brand--footer" href="/" aria-label="Futrio - strona główna">
-            <span class="brand__mark">F</span>
-            <span class="brand__text">
-              <span class="brand__name">Futrio</span>
-              <span class="brand__claim">Przewodnik dla opiekunów zwierząt</span>
-            </span>
+            <img class="brand__logo" src="/brand/futrio-logo.svg" alt="Futrio" width="180" height="48" />
           </a>
           <p>
             Futrio jest rozwijanym portalem informacyjnym o rasach, kosztach opieki,

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { formatSpecies, getAllBreeds } from '../../lib/breeds-data';
+import BreedCard from '../../components/BreedCard.astro';
+import { getAllBreeds } from '../../lib/breeds-data';
 
 const popularBreeds = getAllBreeds().slice(0, 5);
 ---
@@ -71,13 +72,10 @@ const popularBreeds = getAllBreeds().slice(0, 5);
       </div>
       <div class="panel">
         <h2>Najpierw wybierz rasę</h2>
-        <div class="quick-links">
+        <div class="breed-grid breed-grid--mini">
           {
             popularBreeds.map((breed) => (
-              <a href={`/rasy/${breed.slug}/`}>
-                <span>{formatSpecies(breed.species)}</span>
-                <strong>{breed.name}</strong>
-              </a>
+              <BreedCard breed={breed} variant="related" />
             ))
           }
         </div>

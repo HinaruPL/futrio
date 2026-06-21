@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreedCard from '../../components/BreedCard.astro';
+import GuideCard from '../../components/GuideCard.astro';
 import {
   getAllGuides,
   getRelatedGuides,
@@ -108,14 +110,11 @@ const needsDisclaimer = guide.category === 'zdrowie' || guide.category === 'zywi
         {relatedBreeds.length > 0 && (
           <section class="related-breeds">
             <h2>Powiązane rasy</h2>
-            <div class="related-breeds__grid">
+            <div class="breed-grid breed-grid--related">
               {
                 relatedBreeds.map((breed) => (
                   breed && (
-                    <a href={`/rasy/${breed.slug}/`}>
-                      <span>{breed.species === 'dog' ? 'pies' : 'kot'}</span>
-                      <strong>{breed.name}</strong>
-                    </a>
+                    <BreedCard breed={breed} variant="related" />
                   )
                 ))
               }
@@ -135,13 +134,10 @@ const needsDisclaimer = guide.category === 'zdrowie' || guide.category === 'zywi
 
         <section class="related-breeds">
           <h2>Zobacz też</h2>
-          <div class="related-breeds__grid">
+          <div class="guide-grid guide-grid--compact">
             {
               relatedGuides.map((relatedGuide) => (
-                <a href={`/poradniki/${relatedGuide.slug}/`}>
-                  <span>{relatedGuide.categoryLabel}</span>
-                  <strong>{relatedGuide.title}</strong>
-                </a>
+                <GuideCard guide={relatedGuide} />
               ))
             }
           </div>

@@ -1,11 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreedCard from '../../components/BreedCard.astro';
+import GuideCard from '../../components/GuideCard.astro';
 import { getGuideBySlug } from '../../data/guides';
-import {
-  formatActivityLevel,
-  formatRange,
-  getAllBreeds,
-} from '../../lib/breeds-data';
+import { getAllBreeds } from '../../lib/breeds-data';
 
 const dogBreeds = getAllBreeds().filter((breed) => breed.species === 'dog');
 const featuredBreeds = dogBreeds.slice(0, 6);
@@ -30,9 +28,8 @@ const topics = topicSlugs.map((slug) => getGuideBySlug(slug)).filter(Boolean);
       <p class="eyebrow">Hub dla opiekunów psów</p>
       <h1>Psy - rasy, koszty, żywienie i praktyczne poradniki</h1>
       <p class="lead">
-        Zebraliśmy w jednym miejscu rasy psów, poradniki o wyborze psa, żywieniu,
-        kosztach i codziennej opiece. To dobry start, jeśli dopiero planujesz psa
-        albo chcesz uporządkować wiedzę przed decyzją.
+        Rasy psów, poradniki i narzędzia do szybkiego sprawdzenia codziennych potrzeb,
+        kosztów oraz dopasowania psa do stylu życia.
       </p>
       <div class="hero-badges">
         <span class="badge">Rasy psów w bazie: {dogBreeds.length}</span>
@@ -55,16 +52,7 @@ const topics = topicSlugs.map((slug) => getGuideBySlug(slug)).filter(Boolean);
       <div class="breed-grid grid">
         {
           featuredBreeds.map((breed) => (
-            <article class="card breed-card">
-              <span class="badge">pies</span>
-              <h3>{breed.name}</h3>
-              <p>{breed.short_description}</p>
-              <div class="breed-card__meta">
-                <span>Waga: {formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')}</span>
-                <span>Aktywność: {formatActivityLevel(breed.activity_level)}</span>
-              </div>
-              <a class="text-link" href={`/rasy/${breed.slug}/`}>Zobacz opis rasy</a>
-            </article>
+            <BreedCard breed={breed} />
           ))
         }
       </div>
@@ -106,12 +94,7 @@ const topics = topicSlugs.map((slug) => getGuideBySlug(slug)).filter(Boolean);
         {
           topics.map((guide) => (
             guide && (
-              <article class="guide-card">
-                <span class="badge">{guide.categoryLabel}</span>
-                <h3>{guide.title}</h3>
-                <p>{guide.description}</p>
-                <a class="text-link" href={`/poradniki/${guide.slug}/`}>Czytaj poradnik</a>
-              </article>
+              <GuideCard guide={guide} />
             )
           ))
         }

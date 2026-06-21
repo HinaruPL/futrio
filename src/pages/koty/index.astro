@@ -1,11 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreedCard from '../../components/BreedCard.astro';
+import GuideCard from '../../components/GuideCard.astro';
 import { getGuideBySlug } from '../../data/guides';
-import {
-  formatGroomingLevel,
-  formatRange,
-  getAllBreeds,
-} from '../../lib/breeds-data';
+import { getAllBreeds } from '../../lib/breeds-data';
 
 const catBreeds = getAllBreeds().filter((breed) => breed.species === 'cat');
 const featuredBreeds = catBreeds.slice(0, 6);
@@ -53,16 +51,7 @@ const topics = topicSlugs.map((slug) => getGuideBySlug(slug)).filter(Boolean);
       <div class="breed-grid grid">
         {
           featuredBreeds.map((breed) => (
-            <article class="card breed-card">
-              <span class="badge">kot</span>
-              <h3>{breed.name}</h3>
-              <p>{breed.short_description}</p>
-              <div class="breed-card__meta">
-                <span>Waga: {formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')}</span>
-                <span>Pielęgnacja: {formatGroomingLevel(breed.grooming_level)}</span>
-              </div>
-              <a class="text-link" href={`/rasy/${breed.slug}/`}>Zobacz opis rasy</a>
-            </article>
+            <BreedCard breed={breed} />
           ))
         }
       </div>
@@ -103,12 +92,7 @@ const topics = topicSlugs.map((slug) => getGuideBySlug(slug)).filter(Boolean);
         {
           topics.map((guide) => (
             guide && (
-              <article class="guide-card">
-                <span class="badge">{guide.categoryLabel}</span>
-                <h3>{guide.title}</h3>
-                <p>{guide.description}</p>
-                <a class="text-link" href={`/poradniki/${guide.slug}/`}>Czytaj poradnik</a>
-              </article>
+              <GuideCard guide={guide} />
             )
           ))
         }

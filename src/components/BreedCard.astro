@@ -1,0 +1,56 @@
+---
+import {
+  type Breed,
+  formatActivityLevel,
+  formatGroomingLevel,
+  formatRange,
+  formatSpecies,
+  getBreedIllustrationUrl,
+} from '../lib/breeds-data';
+
+type Props = {
+  breed: Breed;
+  variant?: 'compact' | 'featured' | 'related';
+};
+
+const { breed, variant = 'compact' } = Astro.props;
+const illustrationUrl = getBreedIllustrationUrl(breed);
+const speciesLabel = formatSpecies(breed.species);
+const altPrefix = breed.species === 'cat' ? 'Ilustracja kota' : 'Ilustracja rasy';
+---
+
+<article class:list={['breed-card', `breed-card--${variant}`]}>
+  <a class="breed-card__media" href={`/rasy/${breed.slug}/`} aria-label={`Zobacz rasę ${breed.name}`}>
+    <img
+      src={illustrationUrl}
+      alt={`${altPrefix} ${breed.name}`}
+      width="640"
+      height="480"
+      loading={variant === 'featured' ? 'eager' : 'lazy'}
+    />
+  </a>
+  <div class="breed-card__body">
+    <div class="breed-card__topline">
+      <span class="badge">{speciesLabel}</span>
+    </div>
+    <h3>
+      <a href={`/rasy/${breed.slug}/`}>{breed.name}</a>
+    </h3>
+    <p>{breed.short_description ?? 'Opis rasy jest w przygotowaniu.'}</p>
+    <dl class="breed-card__metrics" aria-label={`Najważniejsze cechy rasy ${breed.name}`}>
+      <div>
+        <dt>Waga</dt>
+        <dd>{formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')}</dd>
+      </div>
+      <div>
+        <dt>Aktywność</dt>
+        <dd>{formatActivityLevel(breed.activity_level)}</dd>
+      </div>
+      <div>
+        <dt>Pielęgnacja</dt>
+        <dd>{formatGroomingLevel(breed.grooming_level)}</dd>
+      </div>
+    </dl>
+    <a class="breed-card__cta" href={`/rasy/${breed.slug}/`}>Zobacz rasę</a>
+  </div>
+</article>

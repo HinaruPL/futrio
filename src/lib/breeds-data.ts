@@ -191,6 +191,14 @@ export function getOtherBreeds(currentSlug: string, limit = 3): Breed[] {
   return breeds.filter((breed) => breed.slug !== currentSlug).slice(0, limit);
 }
 
+export function getBreedIllustrationUrl(breed: Pick<Breed, 'slug' | 'species'>): string {
+  if (breed.slug) {
+    return `/breeds/${breed.slug}.svg`;
+  }
+
+  return breed.species === 'cat' ? '/breeds/default-cat.svg' : '/breeds/default-dog.svg';
+}
+
 export function getSectionByKey(
   breed: Breed,
   sectionKey: string

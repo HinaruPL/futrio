@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BreedCard from '../../components/BreedCard.astro';
+import GuideCard from '../../components/GuideCard.astro';
 import { getGuideBySlug } from '../../data/guides';
 import { getAllBreeds } from '../../lib/breeds-data';
 
@@ -80,12 +82,7 @@ const budgetBreeds = getAllBreeds().filter((breed) => budgetBreedSlugs.includes(
         {
           guides.map((guide) => (
             guide && (
-              <article class="guide-card">
-                <span class="badge">{guide.categoryLabel}</span>
-                <h3>{guide.title}</h3>
-                <p>{guide.description}</p>
-                <a class="text-link" href={`/poradniki/${guide.slug}/`}>Czytaj poradnik</a>
-              </article>
+              <GuideCard guide={guide} />
             )
           ))
         }
@@ -99,13 +96,10 @@ const budgetBreeds = getAllBreeds().filter((breed) => budgetBreedSlugs.includes(
         <p class="eyebrow">Rasy i budżet</p>
         <h2>Rasy, przy których warto szczególnie planować budżet</h2>
       </div>
-      <div class="related-breeds__grid">
+      <div class="breed-grid breed-grid--related">
         {
           budgetBreeds.map((breed) => (
-            <a href={`/rasy/${breed.slug}/`}>
-              <span>{breed.species === 'dog' ? 'pies' : 'kot'}</span>
-              <strong>{breed.name}</strong>
-            </a>
+            <BreedCard breed={breed} variant="related" />
           ))
         }
       </div>

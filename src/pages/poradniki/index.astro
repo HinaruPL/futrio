@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuideCard from '../../components/GuideCard.astro';
 import {
   getAllGuides,
   getFeaturedGuides,
@@ -84,14 +85,7 @@ const featuredGuides = getFeaturedGuides(4);
       <div class="guide-grid guide-grid--featured">
         {
           featuredGuides.map((guide) => (
-            <article class="guide-card guide-card--highlight">
-              <span class="badge">{guide.categoryLabel}</span>
-              <h3>{guide.title}</h3>
-              <p>{guide.description}</p>
-              <a class="text-link" href={`/poradniki/${guide.slug}/`}>
-                Czytaj poradnik
-              </a>
-            </article>
+            <GuideCard guide={guide} variant="featured" />
           ))
         }
       </div>
@@ -139,20 +133,7 @@ const featuredGuides = getFeaturedGuides(4);
       <div class="guide-grid">
         {
           guides.map((guide) => (
-            <article class="guide-card">
-              <div>
-                <span class="badge">{guide.categoryLabel}</span>
-                <h3>{guide.title}</h3>
-              </div>
-              <p>{guide.description}</p>
-              <div class="guide-card__meta">
-                <span>{guide.readingTime}</span>
-                <span>Aktualizacja: {guide.updatedAt}</span>
-              </div>
-              <a class="button button--secondary" href={`/poradniki/${guide.slug}/`}>
-                Czytaj poradnik
-              </a>
-            </article>
+            <GuideCard guide={guide} />
           ))
         }
       </div>

@@ -1,15 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BreedCard from '../components/BreedCard.astro';
+import GuideCard from '../components/GuideCard.astro';
 import { getFeaturedGuides } from '../data/guides';
-import {
-  formatActivityLevel,
-  formatRange,
-  formatSpecies,
-  getAllBreeds,
-} from '../lib/breeds-data';
+import { getAllBreeds, getBreedBySlug, getBreedIllustrationUrl } from '../lib/breeds-data';
 
 const popularBreeds = getAllBreeds().slice(0, 6);
-const featuredGuides = getFeaturedGuides(6);
+const featuredGuides = getFeaturedGuides(4);
+const heroBreeds = ['labrador-retriever', 'ragdoll', 'border-collie']
+  .map((slug) => getBreedBySlug(slug))
+  .filter(Boolean);
 ---
 
 <BaseLayout
@@ -18,31 +18,45 @@ const featuredGuides = getFeaturedGuides(6);
   canonical="/"
 >
   <section class="hero hero--home">
-    <div class="container hero__content">
-      <p class="eyebrow">Portal zoologiczny</p>
-      <h1>Futrio - praktyczna baza wiedzy o zwierzętach</h1>
-      <p class="lead">
-        Porównuj rasy psów i kotów, planuj koszty utrzymania, sprawdzaj podstawy
-        żywienia i pielęgnacji oraz korzystaj z kalkulatorów jako punktu wyjścia do
-        mądrej opieki.
-      </p>
-      <div class="actions">
-        <a class="button" href="/rasy/">Przeglądaj rasy</a>
-        <a class="button button--secondary" href="/poradniki/">Czytaj poradniki</a>
+    <div class="container hero-split">
+      <div class="hero__content">
+        <p class="eyebrow">Portal dla opiekunów psów i kotów</p>
+        <h1>Poznaj rasy, koszty i potrzeby swojego przyszłego pupila</h1>
+        <p class="lead">
+          Futrio pomaga szybko porównać rasy, oszacować budżet i wejść w praktyczne
+          poradniki bez przekopywania ściany tekstu.
+        </p>
+        <div class="actions">
+          <a class="button" href="/rasy/">Przeglądaj rasy</a>
+          <a class="button button--secondary" href="/poradniki/">Sprawdź poradniki</a>
+        </div>
       </div>
+
+      <aside class="home-visual" aria-label="Przykładowe rasy w Futrio">
+        <div class="home-visual__orb" aria-hidden="true"></div>
+        {
+          heroBreeds.map((breed, index) => (
+            breed && (
+              <a class:list={['home-visual-card', `home-visual-card--${index + 1}`]} href={`/rasy/${breed.slug}/`}>
+                <img
+                  src={getBreedIllustrationUrl(breed)}
+                  alt={`${breed.species === 'cat' ? 'Ilustracja kota' : 'Ilustracja rasy'} ${breed.name}`}
+                  width="640"
+                  height="480"
+                />
+                <span>{breed.name}</span>
+              </a>
+            )
+          ))
+        }
+      </aside>
+    </div>
+    <div class="container">
       <div class="hero-stats-panel" aria-label="Najważniejsze informacje o Futrio">
-        <div>
-          <strong>30</strong>
-          <span>ras w bazie</span>
-        </div>
-        <div>
-          <strong>2</strong>
-          <span>praktyczne kalkulatory</span>
-        </div>
-        <div>
-          <strong>16</strong>
-          <span>poradników dla opiekunów</span>
-        </div>
+        <div><strong>30</strong><span>ras</span></div>
+        <div><strong>16</strong><span>poradników</span></div>
+        <div><strong>2</strong><span>kalkulatory</span></div>
+        <div><strong>5</strong><span>głównych tematów</span></div>
       </div>
     </div>
   </section>
@@ -55,22 +69,28 @@ const featuredGuides = getFeaturedGuides(6);
       </div>
       <div class="topic-grid">
         <article class="topic-card topic-card--large">
-          <span class="badge">psy</span>
-          <h3>Dla opiekunów psów</h3>
-          <p>
-            Rasy psów, wybór psa do stylu życia, koszty, aktywność, żywienie i wyprawka
-            dla przyszłych oraz obecnych opiekunów.
-          </p>
+          <span class="topic-card__symbol">01</span>
+          <h3>Wybieram rasę</h3>
+          <p>Porównaj temperament, wagę, aktywność i pielęgnację.</p>
+          <a class="text-link" href="/rasy/">Przejdź do katalogu</a>
+        </article>
+        <article class="topic-card topic-card--large">
+          <span class="topic-card__symbol">02</span>
+          <h3>Mam psa</h3>
+          <p>Sprawdź poradniki o wyborze, żywieniu, ruchu i kosztach.</p>
           <a class="text-link" href="/psy/">Przejdź do sekcji Psy</a>
         </article>
         <article class="topic-card topic-card--large">
-          <span class="badge">koty</span>
-          <h3>Dla opiekunów kotów</h3>
-          <p>
-            Rasy kotów, przygotowanie mieszkania, kuweta, drapak, żywienie, pielęgnacja
-            i koszty codziennej opieki.
-          </p>
+          <span class="topic-card__symbol">03</span>
+          <h3>Mam kota</h3>
+          <p>Zobacz rasy kotów, wyprawkę, pielęgnację i domową rutynę.</p>
           <a class="text-link" href="/koty/">Przejdź do sekcji Koty</a>
+        </article>
+        <article class="topic-card topic-card--large">
+          <span class="topic-card__symbol">04</span>
+          <h3>Planuję koszty</h3>
+          <p>Ułóż realistyczny budżet na karmę, profilaktykę i akcesoria.</p>
+          <a class="text-link" href="/koszty-utrzymania/">Sprawdź koszty</a>
         </article>
       </div>
     </div>
@@ -88,18 +108,7 @@ const featuredGuides = getFeaturedGuides(6);
       <div class="breed-grid grid">
         {
           popularBreeds.map((breed) => (
-            <article class="card breed-card">
-              <span class="badge">{formatSpecies(breed.species)}</span>
-              <h3>{breed.name}</h3>
-              <p>{breed.short_description ?? 'Opis rasy jest w przygotowaniu.'}</p>
-              <div class="breed-card__meta">
-                <span>Waga: {formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')}</span>
-                <span>Aktywność: {formatActivityLevel(breed.activity_level)}</span>
-              </div>
-              <a class="breed-card__link" href={`/rasy/${breed.slug}/`}>
-                Zobacz opis rasy
-              </a>
-            </article>
+            <BreedCard breed={breed} variant="compact" />
           ))
         }
       </div>
@@ -118,12 +127,7 @@ const featuredGuides = getFeaturedGuides(6);
       <div class="guide-grid">
         {
           featuredGuides.map((guide) => (
-            <article class="guide-card">
-              <span class="badge">{guide.categoryLabel}</span>
-              <h3>{guide.title}</h3>
-              <p>{guide.description}</p>
-              <a class="text-link" href={`/poradniki/${guide.slug}/`}>Czytaj poradnik</a>
-            </article>
+            <GuideCard guide={guide} variant="featured" />
           ))
         }
       </div>

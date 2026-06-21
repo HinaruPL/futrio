@@ -1,0 +1,32 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 320 240" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustracja kota Sfinks</title>
+  <desc id="desc">Lokalna ilustracja SVG Futrio używana w katalogu ras.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="320" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff4df"/>
+      <stop offset="1" stop-color="#fbf8f1"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="76" y1="40" x2="250" y2="218" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".48"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="240" rx="32" fill="url(#bg)"/>
+  <circle cx="58" cy="50" r="28" fill="#d8903f" opacity=".16"/>
+  <circle cx="266" cy="68" r="42" fill="#d8903f" opacity=".14"/>
+  <path d="M38 184c58-18 102-17 153-1s81 6 103-9" fill="none" stroke="#d8903f" stroke-width="10" stroke-linecap="round" opacity=".14"/>
+  <g opacity=".32" fill="#d8903f"><circle cx="39" cy="103" r="5"/><circle cx="54" cy="96" r="4"/><circle cx="67" cy="106" r="4"/><path d="M55 113c0 7-6 11-13 11-5 0-9-3-9-7 0-6 6-11 13-11 5 0 9 3 9 7Z"/></g>
+  <path d='M214 157c48-28 58 19 23 44' fill='none' stroke='#c9a08d' stroke-width='8' stroke-linecap='round'/>
+  <ellipse cx="160" cy="172" rx="56" ry="35" fill="#c9a08d"/>
+  <ellipse cx="130" cy="205" rx="13" ry="25" fill="#c9a08d" opacity=".95"/>
+  <ellipse cx="188" cy="205" rx="13" ry="25" fill="#c9a08d" opacity=".95"/>
+  <path d='M125 94l-17-43 39 20Z' fill='#c9a08d'/><path d='M189 93l34-34-5 45Z' fill='#c9a08d'/>
+  <circle cx="160" cy="116" r="39" fill="#c9a08d"/>
+  <path d="M142 119c11 10 25 10 36 0" fill="none" stroke="#fff8ea" stroke-width="16" stroke-linecap="round" opacity=".58"/>
+  <circle cx="147" cy="111" r="4" fill="#1f2a24"/>
+  <circle cx="173" cy="111" r="4" fill="#1f2a24"/>
+  <path d="M156 124h8l-4 5Z" fill="#1f2a24" opacity=".8"/>
+  <path d='M140 116h40M149 105l-18-10M171 105l18-10' stroke='#fff8ea' stroke-width='4' stroke-linecap='round' opacity='.7'/><path d='M124 125c-18 0-30 3-44 11M126 135c-18 3-29 9-39 19M196 125c18 0 30 3 44 11M194 135c18 3 29 9 39 19' stroke='#1f2a24' stroke-width='2' stroke-linecap='round' opacity='.28'/>
+  <path d="M46 206c56 13 164 13 228 0" fill="none" stroke="#1f2a24" stroke-width="10" stroke-linecap="round" opacity=".08"/>
+  <rect x="18" y="18" width="284" height="204" rx="28" fill="url(#shine)"/>
+</svg>
