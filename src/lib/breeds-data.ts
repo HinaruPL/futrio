@@ -200,9 +200,36 @@ export function getBreedIllustrationUrl(breed: Pick<Breed, 'slug' | 'species'>):
 }
 
 const breedPhotoMap: Record<string, string> = {
+  'akita-inu': '/breeds/photos/akita-inu.png',
+  beagle: '/breeds/photos/beagle.png',
+  bengal: '/breeds/photos/bengal.png',
+  'bernenski-pies-pasterski': '/breeds/photos/bernenski-pies-pasterski.png',
+  bokser: '/breeds/photos/bokser.png',
   'border-collie': '/breeds/photos/border-collie.png',
-  ragdoll: '/breeds/photos/ragdoll.png',
   'buldog-francuski': '/breeds/photos/buldog-francuski.png',
+  'cane-corso': '/breeds/photos/cane-corso.png',
+  'cavalier-king-charles-spaniel': '/breeds/photos/cavalier-king-charles-spaniel.png',
+  chihuahua: '/breeds/photos/chihuahua.png',
+  'cocker-spaniel-angielski': '/breeds/photos/cocker-spaniel-angielski.png',
+  'golden-retriever': '/breeds/photos/golden-retriever.png',
+  'jack-russell-terrier': '/breeds/photos/jack-russell-terrier.png',
+  jamnik: '/breeds/photos/jamnik.png',
+  'kot-brytyjski-krotkowlosy': '/breeds/photos/kot-brytyjski-krotkowlosy.png',
+  'kot-perski': '/breeds/photos/kot-perski.png',
+  'kot-syberyjski': '/breeds/photos/kot-syberyjski.png',
+  'labrador-retriever': '/breeds/photos/labrador-retriever.png',
+  'maine-coon': '/breeds/photos/maine-coon.png',
+  maltanczyk: '/breeds/photos/maltanczyk.png',
+  'owczarek-niemiecki': '/breeds/photos/owczarek-niemiecki.png',
+  pudel: '/breeds/photos/pudel.png',
+  ragdoll: '/breeds/photos/ragdoll.png',
+  rottweiler: '/breeds/photos/rottweiler.png',
+  samoyed: '/breeds/photos/samoyed.png',
+  sfinks: '/breeds/photos/sfinks.png',
+  'shih-tzu': '/breeds/photos/shih-tzu.png',
+  'siberian-husky': '/breeds/photos/siberian-husky.png',
+  'sznaucer-miniaturowy': '/breeds/photos/sznaucer-miniaturowy.png',
+  'yorkshire-terrier': '/breeds/photos/yorkshire-terrier.png',
 };
 
 export function getBreedPhotoUrl(breed: Pick<Breed, 'slug'>): string | null {
