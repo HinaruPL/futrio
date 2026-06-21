@@ -20,41 +20,45 @@ const heroBreeds = ['labrador-retriever', 'ragdoll', 'border-collie']
   <section class="hero hero--home">
     <div class="container hero-split">
       <div class="hero__content">
-        <p class="eyebrow">Portal dla opiekunów psów i kotów</p>
-        <h1>Poznaj rasy, koszty i potrzeby swojego przyszłego pupila</h1>
+        <p class="eyebrow">Futrio — portal dla opiekunów psów i kotów</p>
+        <h1>Wybierz rasę i zaplanuj opiekę bez zgadywania</h1>
         <p class="lead">
-          Futrio pomaga szybko porównać rasy, oszacować budżet i wejść w praktyczne
-          poradniki bez przekopywania ściany tekstu.
+          Porównuj rasy, sprawdzaj koszty utrzymania i korzystaj z prostych kalkulatorów dla opiekunów.
         </p>
         <div class="actions">
           <a class="button" href="/rasy/">Przeglądaj rasy</a>
-          <a class="button button--secondary" href="/poradniki/">Sprawdź poradniki</a>
+          <a class="button button--secondary" href="/poradniki/">Czytaj poradniki</a>
         </div>
       </div>
 
-      <aside class="home-visual" aria-label="Przykładowe rasy w Futrio">
-        <div class="home-visual__orb" aria-hidden="true"></div>
-        {
-          heroBreeds.map((breed, index) => (
-            breed && (
-              <a class:list={['home-visual-card', `home-visual-card--${index + 1}`]} href={`/rasy/${breed.slug}/`}>
-                {
-                  getBreedPhotoUrl(breed) ? (
-                    <img
-                      src={getBreedPhotoUrl(breed) ?? ''}
-                      alt={`${breed.species === 'cat' ? 'Ilustracja kota' : 'Ilustracja rasy'} ${breed.name}`}
-                      width="1200"
-                      height="800"
-                    />
-                  ) : (
-                    <div class="home-visual-card__placeholder" aria-hidden="true"></div>
-                  )
-                }
-                <span>{breed.name}</span>
-              </a>
-            )
-          ))
-        }
+      <aside class="home-visual" aria-label="Polecane rasy w Futrio">
+        <div class="home-visual__header">
+          <span>30 ras w bazie</span>
+          <strong>Zdjęcia, potrzeby i koszty w jednym miejscu</strong>
+        </div>
+        <div class="home-visual__cards">
+          {
+            heroBreeds.map((breed, index) => (
+              breed && (
+                <a class:list={['home-visual-card', `home-visual-card--${index + 1}`]} href={`/rasy/${breed.slug}/`}>
+                  {
+                    getBreedPhotoUrl(breed) ? (
+                      <img
+                        src={getBreedPhotoUrl(breed) ?? ''}
+                        alt={`${breed.species === 'cat' ? 'Zdjęcie kota' : 'Zdjęcie rasy'} ${breed.name}`}
+                        width="1200"
+                        height="800"
+                      />
+                    ) : (
+                      <div class="home-visual-card__placeholder" aria-hidden="true"></div>
+                    )
+                  }
+                  <span>{breed.name}</span>
+                </a>
+              )
+            ))
+          }
+        </div>
       </aside>
     </div>
     <div class="container">
@@ -62,7 +66,7 @@ const heroBreeds = ['labrador-retriever', 'ragdoll', 'border-collie']
         <div><strong>30</strong><span>ras</span></div>
         <div><strong>16</strong><span>poradników</span></div>
         <div><strong>2</strong><span>kalkulatory</span></div>
-        <div><strong>5</strong><span>głównych tematów</span></div>
+        <div><strong>5</strong><span>tematów opieki</span></div>
       </div>
     </div>
   </section>
@@ -77,25 +81,25 @@ const heroBreeds = ['labrador-retriever', 'ragdoll', 'border-collie']
         <article class="topic-card topic-card--large">
           <span class="topic-card__symbol">01</span>
           <h3>Wybieram rasę</h3>
-          <p>Porównaj temperament, wagę, aktywność i pielęgnację.</p>
+          <p>Porównaj temperament, wagę, aktywność i pielęgnację bez chaosu.</p>
           <a class="text-link" href="/rasy/">Przejdź do katalogu</a>
         </article>
         <article class="topic-card topic-card--large">
           <span class="topic-card__symbol">02</span>
           <h3>Mam psa</h3>
-          <p>Sprawdź poradniki o wyborze, żywieniu, ruchu i kosztach.</p>
+          <p>Sprawdź poradniki o żywieniu, ruchu, pielęgnacji i profilaktyce.</p>
           <a class="text-link" href="/psy/">Przejdź do sekcji Psy</a>
         </article>
         <article class="topic-card topic-card--large">
           <span class="topic-card__symbol">03</span>
           <h3>Mam kota</h3>
-          <p>Zobacz rasy kotów, wyprawkę, pielęgnację i domową rutynę.</p>
+          <p>Zobacz rasy kotów, wyprawkę, pielęgnację i codzienną rutynę.</p>
           <a class="text-link" href="/koty/">Przejdź do sekcji Koty</a>
         </article>
         <article class="topic-card topic-card--large">
           <span class="topic-card__symbol">04</span>
           <h3>Planuję koszty</h3>
-          <p>Ułóż realistyczny budżet na karmę, profilaktykę i akcesoria.</p>
+          <p>Ułóż budżet na karmę, profilaktykę, pielęgnację i akcesoria.</p>
           <a class="text-link" href="/koszty-utrzymania/">Sprawdź koszty</a>
         </article>
       </div>
@@ -178,22 +182,21 @@ const heroBreeds = ['labrador-retriever', 'ragdoll', 'border-collie']
         <p class="eyebrow">Najczęściej sprawdzane tematy</p>
         <h2>Praktyczne huby Futrio</h2>
       </div>
-      <div class="topic-grid">
+      <div class="topic-grid topic-grid--wide">
         <a class="topic-card topic-card--link" href="/koszty-utrzymania/">
           <span>Koszty</span>
-          <strong>Koszty utrzymania psa i kota</strong>
+          <strong>Koszty utrzymania</strong>
+          <p>Realistyczne widełki wydatków przed adopcją lub zakupem zwierzęcia.</p>
         </a>
         <a class="topic-card topic-card--link" href="/zywienie/">
           <span>Żywienie</span>
-          <strong>Żywienie psa i kota</strong>
+          <strong>Żywienie</strong>
+          <p>Poradniki o karmie, porcjach i potrzebach ras bez dietetycznych skrótów.</p>
         </a>
         <a class="topic-card topic-card--link" href="/pielegnacja/">
           <span>Pielęgnacja</span>
-          <strong>Pielęgnacja psa i kota</strong>
-        </a>
-        <a class="topic-card topic-card--link" href="/kalkulatory/">
-          <span>Narzędzia</span>
-          <strong>Kalkulatory Futrio</strong>
+          <strong>Pielęgnacja</strong>
+          <p>Rutyny, sierść, higiena i opieka dopasowana do typu zwierzęcia.</p>
         </a>
       </div>
     </div>

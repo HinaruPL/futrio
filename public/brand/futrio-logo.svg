@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="72" viewBox="0 0 260 72" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="88" viewBox="0 0 300 88" role="img" aria-labelledby="title desc" style="overflow: visible;">
   <title id="title">Futrio</title>
   <desc id="desc">Minimalistyczne logo Futrio z łapką i liściem.</desc>
   <defs>
-    <linearGradient id="mark" x1="8" y1="8" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+    <linearGradient id="mark" x1="12" y1="12" x2="76" y2="76" gradientUnits="userSpaceOnUse">
       <stop stop-color="#3f9b66"/>
       <stop offset="1" stop-color="#225f3c"/>
     </linearGradient>
   </defs>
-  <rect x="6" y="6" width="60" height="60" rx="22" fill="url(#mark)"/>
-  <circle cx="27" cy="27" r="5.8" fill="#fff8ea"/>
-  <circle cx="38" cy="22" r="5.8" fill="#fff8ea"/>
-  <circle cx="49" cy="28" r="5.8" fill="#fff8ea"/>
-  <path d="M42 43c0 7.5-6.2 12.5-14 12.5-6 0-10-3.3-10-8.2 0-6.8 6.7-12.2 14.3-12.2 5.8 0 9.7 3.2 9.7 7.9Z" fill="#fff8ea"/>
-  <path d="M46 53c10.8-1.1 17.3-8.3 17.8-19.3C53 35 46.7 42.1 46 53Z" fill="#ffe8bd"/>
-  <path d="M50.5 48.5c3.3-3.9 6.4-7 10-9.8" fill="none" stroke="#225f3c" stroke-width="1.8" stroke-linecap="round" opacity=".6"/>
-  <text x="82" y="47" fill="#1f2a24" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700" letter-spacing="-.04em">Futrio</text>
+  <rect x="10" y="10" width="68" height="68" rx="24" fill="url(#mark)"/>
+  <circle cx="36" cy="35" r="6.3" fill="#fff8ea"/>
+  <circle cx="48" cy="29" r="6.3" fill="#fff8ea"/>
+  <circle cx="60" cy="36" r="6.3" fill="#fff8ea"/>
+  <path d="M53 54c0 8.2-6.8 13.7-15.3 13.7-6.5 0-11-3.6-11-9 0-7.4 7.3-13.4 15.7-13.4 6.3 0 10.6 3.5 10.6 8.7Z" fill="#fff8ea"/>
+  <path d="M58 67c12.4-1.2 19.8-9.7 20.3-22.4C65.9 46 58.7 54.2 58 67Z" fill="#ffe8bd"/>
+  <path d="M63 61.2c3.9-4.6 7.4-8.2 11.6-11.5" fill="none" stroke="#225f3c" stroke-width="2" stroke-linecap="round" opacity=".62"/>
+  <text x="96" y="57" fill="#1f2a24" font-family="Georgia, 'Times New Roman', serif" font-size="43" font-weight="700" letter-spacing="-.04em">Futrio</text>
 </svg>

@@ -16,7 +16,7 @@ type Props = {
 const { breed, variant = 'compact' } = Astro.props;
 const photoUrl = getBreedPhotoUrl(breed);
 const speciesLabel = formatSpecies(breed.species);
-const altPrefix = breed.species === 'cat' ? 'Ilustracja kota' : 'Ilustracja rasy';
+const altPrefix = breed.species === 'cat' ? 'Zdjęcie kota' : 'Zdjęcie rasy';
 ---
 
 <article class:list={['breed-card', `breed-card--${variant}`]}>
