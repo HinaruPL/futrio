@@ -2690,6 +2690,12 @@ body {
   color: #80572a;
 }
 
+.registry-status--provisional {
+  background: #fff1cf;
+  border-color: #e5be66;
+  color: #755219;
+}
+
 .breed-faq {
   margin-top: clamp(1.2rem, 3vw, 1.8rem);
 }

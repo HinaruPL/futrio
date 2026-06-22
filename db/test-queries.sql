@@ -8,6 +8,38 @@ SELECT 'breed_content_sections_count' AS test_name, COUNT(*) AS result FROM bree
 SELECT 'history_sections_count' AS test_name, COUNT(*) AS result FROM breed_content_sections WHERE section_key = 'history';
 SELECT 'breed_faqs_count' AS test_name, COUNT(*) AS result FROM breed_faqs;
 SELECT 'breed_registry_recognitions_count' AS test_name, COUNT(*) AS result FROM breed_registry_recognitions;
+SELECT 'recognition_status_recognized_count' AS test_name, COUNT(*) AS result FROM breed_registry_recognitions WHERE recognition_status = 'recognized';
+SELECT 'recognition_status_not_recognized_count' AS test_name, COUNT(*) AS result FROM breed_registry_recognitions WHERE recognition_status = 'not_recognized';
+SELECT 'recognition_status_provisional_count' AS test_name, COUNT(*) AS result FROM breed_registry_recognitions WHERE recognition_status = 'provisional';
+SELECT 'recognition_status_needs_verification_count' AS test_name, COUNT(*) AS result FROM breed_registry_recognitions WHERE recognition_status = 'needs_verification';
+SELECT 'recognition_missing_source_count' AS test_name, COUNT(*) AS result FROM breed_registry_recognitions WHERE recognition_status IN ('recognized', 'not_recognized', 'provisional') AND (source_url IS NULL OR source_url = '');
+SELECT 'recognition_missing_verified_at_count' AS test_name, COUNT(*) AS result FROM breed_registry_recognitions WHERE recognition_status IN ('recognized', 'not_recognized', 'provisional') AND (verified_at IS NULL OR verified_at = '');
+SELECT 'recognition_duplicate_org_count' AS test_name, COUNT(*) AS result FROM (
+  SELECT breed_id, organization_code, COUNT(*) AS duplicates
+  FROM breed_registry_recognitions
+  GROUP BY breed_id, organization_code
+  HAVING COUNT(*) > 1
+);
+
+SELECT b.slug, b.name, COUNT(brr.id) AS needs_verification_count
+FROM breeds b
+JOIN breed_registry_recognitions brr ON brr.breed_id = b.id
+WHERE brr.recognition_status = 'needs_verification'
+GROUP BY b.id, b.slug, b.name
+ORDER BY b.name;
+
+SELECT
+  b.slug,
+  b.name,
+  brr.organization_code,
+  brr.recognition_status,
+  brr.recognized,
+  brr.source_url,
+  brr.verified_at
+FROM breed_registry_recognitions brr
+JOIN breeds b ON b.id = brr.breed_id
+WHERE b.slug IN ('border-collie', 'labrador-retriever', 'kot-perski', 'ragdoll')
+ORDER BY b.slug, brr.organization_code;
 SELECT 'calculator_profiles_count' AS test_name, COUNT(*) AS result FROM calculator_profiles;
 SELECT 'affiliate_links_count' AS test_name, COUNT(*) AS result FROM affiliate_links;
 SELECT 'breed_images_primary_count' AS test_name, COUNT(*) AS result FROM breed_images WHERE is_primary = 1;
