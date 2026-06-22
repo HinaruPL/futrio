@@ -172,6 +172,7 @@ CREATE TABLE breed_content_sections (
   section_key TEXT NOT NULL CHECK (
     section_key IN (
       'character',
+      'history',
       'for_whom',
       'home_and_apartment',
       'children_and_family',
@@ -196,6 +197,39 @@ CREATE TABLE breed_content_sections (
 
 CREATE INDEX idx_breed_content_sections_breed_id ON breed_content_sections(breed_id);
 CREATE INDEX idx_breed_content_sections_sort ON breed_content_sections(breed_id, sort_order);
+
+CREATE TABLE breed_faqs (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  breed_id INTEGER NOT NULL,
+  question TEXT NOT NULL,
+  answer TEXT NOT NULL,
+  sort_order INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (breed_id) REFERENCES breeds(id) ON DELETE CASCADE,
+  UNIQUE (breed_id, question)
+);
+
+CREATE INDEX breed_faqs_breed_id_idx ON breed_faqs(breed_id);
+
+CREATE TABLE breed_registry_recognitions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  breed_id INTEGER NOT NULL,
+  organization_code TEXT NOT NULL,
+  organization_name TEXT NOT NULL,
+  recognized INTEGER NOT NULL DEFAULT 0,
+  recognition_status TEXT,
+  note TEXT,
+  source_url TEXT,
+  verified_at TEXT,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (breed_id) REFERENCES breeds(id) ON DELETE CASCADE,
+  UNIQUE (breed_id, organization_code)
+);
+
+CREATE INDEX breed_registry_recognitions_breed_id_idx ON breed_registry_recognitions(breed_id);
+CREATE INDEX breed_registry_recognitions_org_idx ON breed_registry_recognitions(organization_code);
 
 CREATE TABLE breed_images (
   id INTEGER PRIMARY KEY AUTOINCREMENT,

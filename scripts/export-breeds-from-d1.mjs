@@ -104,6 +104,30 @@ WHERE b.status = 'published'
   AND al.is_active = 1
 ORDER BY al.breed_id ASC, al.priority ASC`;
 
+const faqsQuery = `SELECT
+  bf.breed_id,
+  bf.question,
+  bf.answer,
+  bf.sort_order
+FROM breed_faqs bf
+JOIN breeds b ON b.id = bf.breed_id
+WHERE b.status = 'published'
+ORDER BY bf.breed_id ASC, bf.sort_order ASC`;
+
+const registryRecognitionsQuery = `SELECT
+  brr.breed_id,
+  brr.organization_code,
+  brr.organization_name,
+  brr.recognized,
+  brr.recognition_status,
+  brr.note,
+  brr.source_url,
+  brr.verified_at
+FROM breed_registry_recognitions brr
+JOIN breeds b ON b.id = brr.breed_id
+WHERE b.status = 'published'
+ORDER BY brr.breed_id ASC, brr.organization_code ASC`;
+
 function compactQuery(query) {
   return query.replace(/\s+/g, ' ').trim();
 }
@@ -249,9 +273,13 @@ const breeds = executeQuery(breedsQuery);
 const sections = executeQuery(sectionsQuery);
 const images = executeQuery(imagesQuery);
 const affiliateLinks = executeQuery(affiliateLinksQuery);
+const faqs = executeQuery(faqsQuery);
+const registryRecognitions = executeQuery(registryRecognitionsQuery);
 const sectionsByBreedId = new Map();
 const imageByBreedId = new Map();
 const affiliateLinksByBreedId = new Map();
+const faqsByBreedId = new Map();
+const registryRecognitionsByBreedId = new Map();
 
 for (const section of sections) {
   const breedSections = sectionsByBreedId.get(section.breed_id) ?? [];
@@ -297,11 +325,37 @@ for (const link of affiliateLinks) {
   affiliateLinksByBreedId.set(link.breed_id, breedLinks);
 }
 
+for (const faq of faqs) {
+  const breedFaqs = faqsByBreedId.get(faq.breed_id) ?? [];
+  breedFaqs.push({
+    question: faq.question,
+    answer: faq.answer,
+    sortOrder: faq.sort_order,
+  });
+  faqsByBreedId.set(faq.breed_id, breedFaqs);
+}
+
+for (const recognition of registryRecognitions) {
+  const breedRecognitions = registryRecognitionsByBreedId.get(recognition.breed_id) ?? [];
+  breedRecognitions.push({
+    organizationCode: recognition.organization_code,
+    organizationName: recognition.organization_name,
+    recognized: recognition.recognized,
+    recognitionStatus: recognition.recognition_status,
+    note: recognition.note,
+    sourceUrl: recognition.source_url,
+    verifiedAt: recognition.verified_at,
+  });
+  registryRecognitionsByBreedId.set(recognition.breed_id, breedRecognitions);
+}
+
 const breedsWithSections = breeds.map((breed) => ({
   ...breed,
   contentSections: sectionsByBreedId.get(breed.id) ?? [],
   image: imageByBreedId.get(breed.id) ?? null,
   affiliateLinks: affiliateLinksByBreedId.get(breed.id) ?? [],
+  faqs: faqsByBreedId.get(breed.id) ?? [],
+  registryRecognitions: registryRecognitionsByBreedId.get(breed.id) ?? [],
 }));
 
 mkdirSync(dirname(outputPath), { recursive: true });

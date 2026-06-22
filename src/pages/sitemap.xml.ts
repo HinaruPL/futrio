@@ -88,6 +88,12 @@ export function GET() {
       priority: '0.6',
     },
     {
+      loc: toAbsoluteUrl('/metodologia-ras/'),
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.5',
+    },
+    {
       loc: toAbsoluteUrl('/o-nas/'),
       lastmod: today,
       changefreq: 'yearly',

@@ -14,7 +14,10 @@ import {
   formatScore,
   formatSpecies,
   formatTrainingDifficulty,
+  getBreedFaqs,
   getBreedStaticPaths,
+  getBreedRecognitionStatus,
+  getVisibleContentSections,
   getBreedPhotoUrl,
   getOtherBreeds,
 } from '../../lib/breeds-data';
@@ -40,9 +43,10 @@ const calories = formatRange(
   breed.daily_calories_max,
   'kcal'
 );
-const sections = [...breed.contentSections].sort(
-  (first, second) => first.sort_order - second.sort_order
-);
+const sections = getVisibleContentSections(breed);
+const faqs = getBreedFaqs(breed);
+const recognitionStatus = getBreedRecognitionStatus(breed);
+const allRecognitionsNeedVerification = recognitionStatus === 'needs_verification';
 const relatedBreeds = getOtherBreeds(breed.slug, 3);
 const affiliateLinks = breed.affiliateLinks.filter((link) => link.is_active === 1);
 const primaryAffiliateLink = affiliateLinks[0] ?? null;
@@ -70,7 +74,7 @@ const affiliateCtaLabel =
 const affiliateCtaUrl = primaryAffiliateLink?.url ?? undefined;
 const affiliateDisclosure = primaryAffiliateLink?.disclosure ?? undefined;
 const photoUrl = getBreedPhotoUrl(breed);
-const breedMediaAlt = `${breed.species === 'cat' ? 'Ilustracja kota' : 'Ilustracja rasy'} ${breed.name}`;
+const breedMediaAlt = `${breed.species === 'cat' ? 'Zdjęcie kota' : 'Zdjęcie rasy'} ${breed.name}`;
 
 const heroStats = [
   ['Waga', formatRange(breed.weight_min_kg, breed.weight_max_kg, 'kg')],
@@ -109,17 +113,26 @@ const details = [
 ];
 
 function getParagraphs(section: BreedContentSection): string[] {
-  if (section.section_key === 'faq') {
-    return section.body
-      .split(/(?=Czy )/)
-      .map((item) => item.trim())
-      .filter(Boolean);
-  }
-
   return section.body
     .split(/\r?\n+/)
     .map((paragraph) => paragraph.trim())
     .filter(Boolean);
+}
+
+function getRecognitionLabel(recognized: number, status: string | null): string {
+  if (status === 'needs_verification') {
+    return 'Do weryfikacji';
+  }
+
+  return recognized === 1 ? 'Uznana' : 'Nieuznana';
+}
+
+function getRecognitionStatusClass(recognized: number, status: string | null): string {
+  if (status === 'needs_verification') {
+    return 'registry-status--needs-verification';
+  }
+
+  return recognized === 1 ? 'registry-status--recognized' : 'registry-status--unrecognized';
 }
 ---
 
@@ -139,7 +152,7 @@ function getParagraphs(section: BreedContentSection): string[] {
         <h1>{h1}</h1>
         <p class="lead">{breed.short_description ?? 'Opis rasy jest w przygotowaniu.'}</p>
         <div class="actions">
-          <a class="button" href="#narzedzia-dla-opiekuna">Sprawdź kalkulatory</a>
+          <a class="button" href="#kalkulator-kalorii">Sprawdź kalkulator kalorii</a>
           <a class="button button--secondary" href="/poradniki/">Zobacz poradniki</a>
         </div>
 
@@ -187,12 +200,13 @@ function getParagraphs(section: BreedContentSection): string[] {
         <h2>Spis treści</h2>
         <nav>
           <a href="#najwazniejsze-informacje">Najważniejsze informacje</a>
-          <a href="#narzedzia-dla-opiekuna">Narzędzia dla opiekuna</a>
+          <a href="#uznanie-rasy">Uznanie rasy</a>
           {
             sections.map((section) => (
               <a href={`#${section.section_key}`}>{section.heading}</a>
             ))
           }
+          <a href="#faq">FAQ</a>
         </nav>
       </aside>
 
@@ -211,70 +225,50 @@ function getParagraphs(section: BreedContentSection): string[] {
           </dl>
         </section>
 
-        <section class="tools-section" id="narzedzia-dla-opiekuna">
-          <div class="tool-intro">
-            <p class="eyebrow">Praktyczne narzędzia</p>
-            <h2>Narzędzia dla opiekuna</h2>
-            <p>
-              Skorzystaj z prostych kalkulatorów Futrio, aby oszacować dzienne
-              zapotrzebowanie kaloryczne oraz orientacyjne koszty utrzymania tej
-              rasy. Wyniki mają charakter poglądowy i warto traktować je jako
-              punkt wyjścia do dalszego planowania.
-            </p>
-            <a class="text-link" href="/kalkulatory/">Zobacz też kalkulatory Futrio</a>
+        <section class="registry-section" id="uznanie-rasy">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Metodologia ras</p>
+              <h2>Uznanie rasy przez organizacje</h2>
+            </div>
+            <a class="text-link" href="/metodologia-ras/">Jak to sprawdzamy?</a>
           </div>
-
-          <div class="tools-grid">
-            <article class="tool-card" id="kalkulator-kalorii">
-              <div class="tool-card__header">
-                <h3>Kalkulator kalorii</h3>
-                <p>Do oszacowania dziennego zapotrzebowania energetycznego.</p>
-              </div>
-              <CalorieCalculator
-                breedName={breed.name}
-                species={breed.species}
-                defaultWeightKg={calculatorWeightKg}
-                dailyCaloriesMin={calculatorDailyCaloriesMin}
-                dailyCaloriesMax={calculatorDailyCaloriesMax}
-                affiliateCtaLabel={affiliateCtaLabel}
-                affiliateCtaUrl={affiliateCtaUrl}
-                affiliateDisclosure={affiliateDisclosure}
-                client:visible
-              />
-            </article>
-
-            <article class="tool-card" id="kalkulator-kosztow">
-              <div class="tool-card__header">
-                <h3>Kalkulator kosztów utrzymania</h3>
-                <p>Do oszacowania miesięcznych i rocznych wydatków.</p>
-              </div>
-              <CostCalculator
-                breedName={breed.name}
-                species={breed.species}
-                weightMinKg={calculatorWeightMinKg}
-                weightMaxKg={calculatorWeightMaxKg}
-                groomingLevel={calculatorGroomingLevel}
-                affiliateCtaLabel={affiliateCtaLabel}
-                affiliateCtaUrl={affiliateCtaUrl}
-                affiliateDisclosure={affiliateDisclosure}
-                client:visible
-              />
-            </article>
+          <p>
+            Różne organizacje kynologiczne i felinologiczne mogą uznawać różne rasy.
+            Dlatego w Futrio pokazujemy status uznania osobno dla najważniejszych organizacji.
+          </p>
+          {allRecognitionsNeedVerification && (
+            <div class="registry-note">
+              Status uznania tej rasy wymaga jeszcze weryfikacji w oficjalnych źródłach.
+            </div>
+          )}
+          <div class="registry-grid">
+            {
+              breed.registryRecognitions.map((recognition) => (
+                <article class="registry-card">
+                  <div>
+                    <strong>{recognition.organizationCode}</strong>
+                    <p>{recognition.organizationName}</p>
+                  </div>
+                  <span class:list={['registry-status', getRecognitionStatusClass(recognition.recognized, recognition.recognitionStatus)]}>
+                    {getRecognitionLabel(recognition.recognized, recognition.recognitionStatus)}
+                  </span>
+                  {recognition.note && <p class="registry-card__note">{recognition.note}</p>}
+                </article>
+              ))
+            }
           </div>
         </section>
 
         {
           sections.map((section) => (
             <>
-              {section.section_key === 'faq' && (
-                <!-- TODO: Google AdSense placement - before FAQ -->
-              )}
-
               <section
                 id={section.section_key}
                 class:list={[
                   'article-section',
-                  section.section_key === 'faq' && 'faq-section',
+                  'content-section-card',
+                  section.section_key === 'history' && 'breed-history',
                 ]}
               >
                 <h2>{section.heading}</h2>
@@ -293,6 +287,28 @@ function getParagraphs(section: BreedContentSection): string[] {
 
               {section.section_key === 'feeding' && (
                 <>
+                  <section class="calculator-inline-section" id="kalkulator-kalorii">
+                    <div class="tool-card__header">
+                      <p class="eyebrow">Żywienie w praktyce</p>
+                      <h2>Kalkulator kalorii dla tej rasy</h2>
+                      <p>
+                        Wynik jest orientacyjny i zależy od masy ciała, wieku, aktywności
+                        oraz stanu zdrowia zwierzęcia.
+                      </p>
+                    </div>
+                    <CalorieCalculator
+                      breedName={breed.name}
+                      species={breed.species}
+                      defaultWeightKg={calculatorWeightKg}
+                      dailyCaloriesMin={calculatorDailyCaloriesMin}
+                      dailyCaloriesMax={calculatorDailyCaloriesMax}
+                      affiliateCtaLabel={affiliateCtaLabel}
+                      affiliateCtaUrl={affiliateCtaUrl}
+                      affiliateDisclosure={affiliateDisclosure}
+                      client:visible
+                    />
+                  </section>
+
                   <section class="affiliate-placeholder">
                     <h2>Polecane produkty dla tej rasy</h2>
                     <p>
@@ -335,8 +351,53 @@ function getParagraphs(section: BreedContentSection): string[] {
                   <!-- TODO: Google AdSense placement - mid article -->
                 </>
               )}
+
+              {section.section_key === 'costs' && (
+                <section class="calculator-inline-section" id="kalkulator-kosztow">
+                  <div class="tool-card__header">
+                    <p class="eyebrow">Budżet opiekuna</p>
+                    <h2>Kalkulator kosztów utrzymania</h2>
+                    <p>
+                      Koszty są orientacyjne i zależą od jakości karmy, profilaktyki,
+                      pielęgnacji oraz indywidualnych potrzeb zwierzęcia.
+                    </p>
+                  </div>
+                  <CostCalculator
+                    breedName={breed.name}
+                    species={breed.species}
+                    weightMinKg={calculatorWeightMinKg}
+                    weightMaxKg={calculatorWeightMaxKg}
+                    groomingLevel={calculatorGroomingLevel}
+                    affiliateCtaLabel={affiliateCtaLabel}
+                    affiliateCtaUrl={affiliateCtaUrl}
+                    affiliateDisclosure={affiliateDisclosure}
+                    client:visible
+                  />
+                </section>
+              )}
             </>
           ))
+        }
+
+        {
+          faqs.length > 0 && (
+            <section class="breed-faq" id="faq">
+              <div class="section-heading">
+                <p class="eyebrow">Pytania opiekunów</p>
+                <h2>FAQ</h2>
+              </div>
+              <div class="faq-grid">
+                {
+                  faqs.map((faq) => (
+                    <article class="faq-item">
+                      <h3>{faq.question}</h3>
+                      <p>{faq.answer}</p>
+                    </article>
+                  ))
+                }
+              </div>
+            </section>
+          )
         }
 
         <section class="related-breeds">

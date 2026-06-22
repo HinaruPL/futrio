@@ -40,6 +40,22 @@ export type BreedAffiliateLink = {
   valid_to: string | null;
 };
 
+export type BreedFaq = {
+  question: string;
+  answer: string;
+  sortOrder: number;
+};
+
+export type BreedRegistryRecognition = {
+  organizationCode: string;
+  organizationName: string;
+  recognized: number;
+  recognitionStatus: string | null;
+  note: string | null;
+  sourceUrl: string | null;
+  verifiedAt: string | null;
+};
+
 export type Breed = {
   id: number;
   name: string;
@@ -69,6 +85,8 @@ export type Breed = {
   contentSections: BreedContentSection[];
   image: BreedImage | null;
   affiliateLinks: BreedAffiliateLink[];
+  faqs: BreedFaq[];
+  registryRecognitions: BreedRegistryRecognition[];
 };
 
 type GeneratedBreedsData = {
@@ -148,6 +166,28 @@ function normalizeAffiliateLink(link: BreedAffiliateLink): BreedAffiliateLink {
   };
 }
 
+function normalizeFaq(faq: BreedFaq): BreedFaq {
+  return {
+    ...faq,
+    question: normalizeText(faq.question) ?? faq.question,
+    answer: normalizeText(faq.answer) ?? faq.answer,
+  };
+}
+
+function normalizeRegistryRecognition(
+  recognition: BreedRegistryRecognition
+): BreedRegistryRecognition {
+  return {
+    ...recognition,
+    organizationCode: normalizeText(recognition.organizationCode) ?? recognition.organizationCode,
+    organizationName: normalizeText(recognition.organizationName) ?? recognition.organizationName,
+    recognitionStatus: normalizeText(recognition.recognitionStatus),
+    note: normalizeText(recognition.note),
+    sourceUrl: normalizeText(recognition.sourceUrl),
+    verifiedAt: normalizeText(recognition.verifiedAt),
+  };
+}
+
 function normalizeBreed(breed: Breed): Breed {
   return {
     ...breed,
@@ -160,6 +200,8 @@ function normalizeBreed(breed: Breed): Breed {
     contentSections: (breed.contentSections ?? []).map(normalizeSection),
     image: normalizeImage(breed.image ?? null),
     affiliateLinks: (breed.affiliateLinks ?? []).map(normalizeAffiliateLink),
+    faqs: (breed.faqs ?? []).map(normalizeFaq),
+    registryRecognitions: (breed.registryRecognitions ?? []).map(normalizeRegistryRecognition),
   };
 }
 
@@ -241,6 +283,42 @@ export function getSectionByKey(
   sectionKey: string
 ): BreedContentSection | undefined {
   return breed.contentSections.find((section) => section.section_key === sectionKey);
+}
+
+export function getBreedFaqs(breed: Breed): BreedFaq[] {
+  return [...(breed.faqs ?? [])].sort((first, second) => first.sortOrder - second.sortOrder);
+}
+
+export function getVisibleContentSections(breed: Breed): BreedContentSection[] {
+  const hasStructuredFaq = getBreedFaqs(breed).length > 0;
+
+  return [...(breed.contentSections ?? [])]
+    .filter((section) => !(hasStructuredFaq && section.section_key === 'faq'))
+    .sort((first, second) => first.sort_order - second.sort_order);
+}
+
+export function getBreedRecognitionStatus(
+  breed: Breed
+): 'recognized' | 'unrecognized' | 'needs_verification' | 'mixed' | 'none' {
+  const recognitions = breed.registryRecognitions ?? [];
+
+  if (recognitions.length === 0) {
+    return 'none';
+  }
+
+  if (recognitions.every((recognition) => recognition.recognitionStatus === 'needs_verification')) {
+    return 'needs_verification';
+  }
+
+  if (recognitions.every((recognition) => recognition.recognized === 1)) {
+    return 'recognized';
+  }
+
+  if (recognitions.every((recognition) => recognition.recognized !== 1)) {
+    return 'unrecognized';
+  }
+
+  return 'mixed';
 }
 
 export function formatSpecies(species: Breed['species'] | null | undefined): string {
