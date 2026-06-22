@@ -1,13 +1,13 @@
--- Realna weryfikacja status?w uznania ras w oficjalnych organizacjach.
--- ?r?d?a: FCI, AKC, The Royal Kennel Club, UKC, TICA, CFA, FIFe, GCCF, WCF.
+-- Realna weryfikacja statusów uznania ras w oficjalnych organizacjach.
+-- Źródła: FCI, AKC, The Royal Kennel Club, UKC, TICA, CFA, FIFe, GCCF, WCF.
 
 PRAGMA foreign_keys = ON;
 
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Akita.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Akita.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'akita-inu')
@@ -17,7 +17,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Akita.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Akita.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'akita-inu')
@@ -27,7 +27,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Akita.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Akita.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'akita-inu')
@@ -37,7 +37,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Akita.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Akita.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'akita-inu')
@@ -46,8 +46,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'akita-inu')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Beagle.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Beagle.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'beagle')
@@ -57,7 +57,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Beagle.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Beagle.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'beagle')
@@ -67,7 +67,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Beagle.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Beagle.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'beagle')
@@ -77,7 +77,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Beagle.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Beagle.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'beagle')
@@ -86,8 +86,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'beagle')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bernese Mountain Dog.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bernese Mountain Dog.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bernenski-pies-pasterski')
@@ -97,7 +97,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bernese Mountain Dog.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bernese Mountain Dog.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bernenski-pies-pasterski')
@@ -107,7 +107,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bernese Mountain Dog.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bernese Mountain Dog.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bernenski-pies-pasterski')
@@ -117,7 +117,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bernese Mountain Dog.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bernese Mountain Dog.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bernenski-pies-pasterski')
@@ -126,8 +126,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bernenski-pies-pasterski')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Boxer.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Boxer.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bokser')
@@ -137,7 +137,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Boxer.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Boxer.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bokser')
@@ -147,7 +147,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Boxer.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Boxer.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bokser')
@@ -157,7 +157,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Boxer.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Boxer.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bokser')
@@ -166,8 +166,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bokser')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Border Collie.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Border Collie.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'border-collie')
@@ -177,7 +177,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Border Collie.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Border Collie.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'border-collie')
@@ -187,7 +187,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Border Collie.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Border Collie.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'border-collie')
@@ -197,7 +197,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Border Collie.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Border Collie.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'border-collie')
@@ -206,8 +206,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'border-collie')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: French Bulldog.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: French Bulldog.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'buldog-francuski')
@@ -217,7 +217,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: French Bulldog.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: French Bulldog.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'buldog-francuski')
@@ -227,7 +227,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: French Bulldog.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: French Bulldog.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'buldog-francuski')
@@ -237,7 +237,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: French Bulldog.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: French Bulldog.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'buldog-francuski')
@@ -246,8 +246,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'buldog-francuski')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cane Corso.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cane Corso.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cane-corso')
@@ -257,7 +257,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cane Corso.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cane Corso.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cane-corso')
@@ -267,7 +267,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Italian Cane Corso.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Italian Cane Corso.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cane-corso')
@@ -277,7 +277,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cane Corso Italiano.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cane Corso Italiano.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cane-corso')
@@ -286,8 +286,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cane-corso')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cavalier King Charles Spaniel.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cavalier King Charles Spaniel.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cavalier-king-charles-spaniel')
@@ -297,7 +297,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cavalier King Charles Spaniel.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cavalier King Charles Spaniel.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cavalier-king-charles-spaniel')
@@ -307,7 +307,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cavalier King Charles Spaniel.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cavalier King Charles Spaniel.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cavalier-king-charles-spaniel')
@@ -317,7 +317,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cavalier King Charles Spaniel.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cavalier King Charles Spaniel.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cavalier-king-charles-spaniel')
@@ -326,8 +326,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cavalier-king-charles-span
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Chihuahua.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Chihuahua.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'chihuahua')
@@ -337,7 +337,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Chihuahua.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Chihuahua.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'chihuahua')
@@ -347,7 +347,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Chihuahua.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Chihuahua.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'chihuahua')
@@ -357,7 +357,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Chihuahua.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Chihuahua.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'chihuahua')
@@ -366,8 +366,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'chihuahua')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: English Cocker Spaniel.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: English Cocker Spaniel.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cocker-spaniel-angielski')
@@ -377,7 +377,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: English Cocker Spaniel.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: English Cocker Spaniel.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cocker-spaniel-angielski')
@@ -387,7 +387,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cocker Spaniel.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cocker Spaniel.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cocker-spaniel-angielski')
@@ -397,7 +397,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: English Cocker Spaniel.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: English Cocker Spaniel.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cocker-spaniel-angielski')
@@ -406,8 +406,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'cocker-spaniel-angielski')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Golden Retriever.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Golden Retriever.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'golden-retriever')
@@ -417,7 +417,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Golden Retriever.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Golden Retriever.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'golden-retriever')
@@ -427,7 +427,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Golden Retriever.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Golden Retriever.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'golden-retriever')
@@ -437,7 +437,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Golden Retriever.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Golden Retriever.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'golden-retriever')
@@ -446,8 +446,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'golden-retriever')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Jack Russell Terrier.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Jack Russell Terrier.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'jack-russell-terrier')
@@ -457,7 +457,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Russell Terrier.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Russell Terrier.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'jack-russell-terrier')
@@ -467,7 +467,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Jack Russell Terrier.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Jack Russell Terrier.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'jack-russell-terrier')
@@ -477,7 +477,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Jack Russell Terrier.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Jack Russell Terrier.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'jack-russell-terrier')
@@ -486,8 +486,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'jack-russell-terrier')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Dachshund.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Dachshund.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'jamnik')
@@ -497,7 +497,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Dachshund.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Dachshund.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'jamnik')
@@ -507,7 +507,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Dachshund.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Dachshund.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'jamnik')
@@ -517,7 +517,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Dachshund.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Dachshund.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'jamnik')
@@ -526,8 +526,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'jamnik')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Labrador Retriever.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Labrador Retriever.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'labrador-retriever')
@@ -537,7 +537,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Labrador Retriever.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Labrador Retriever.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'labrador-retriever')
@@ -547,7 +547,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Labrador Retriever.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Labrador Retriever.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'labrador-retriever')
@@ -557,7 +557,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Labrador Retriever.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Labrador Retriever.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'labrador-retriever')
@@ -566,8 +566,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'labrador-retriever')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maltese.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maltese.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maltanczyk')
@@ -577,7 +577,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maltese.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maltese.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maltanczyk')
@@ -587,7 +587,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maltese.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maltese.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maltanczyk')
@@ -597,7 +597,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maltese.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maltese.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maltanczyk')
@@ -606,8 +606,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maltanczyk')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: German Shepherd Dog.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: German Shepherd Dog.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'owczarek-niemiecki')
@@ -617,7 +617,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: German Shepherd Dog.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: German Shepherd Dog.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'owczarek-niemiecki')
@@ -627,7 +627,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: German Shepherd Dog.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: German Shepherd Dog.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'owczarek-niemiecki')
@@ -637,7 +637,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: German Shepherd Dog.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: German Shepherd Dog.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'owczarek-niemiecki')
@@ -646,8 +646,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'owczarek-niemiecki')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Poodle.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Poodle.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'pudel')
@@ -657,7 +657,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Poodle.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Poodle.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'pudel')
@@ -667,7 +667,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Poodle.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Poodle.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'pudel')
@@ -677,7 +677,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Poodle.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Poodle.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'pudel')
@@ -686,8 +686,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'pudel')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Rottweiler.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Rottweiler.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'rottweiler')
@@ -697,7 +697,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Rottweiler.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Rottweiler.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'rottweiler')
@@ -707,7 +707,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Rottweiler.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Rottweiler.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'rottweiler')
@@ -717,7 +717,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Rottweiler.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Rottweiler.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'rottweiler')
@@ -726,8 +726,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'rottweiler')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Samoyed.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Samoyed.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'samoyed')
@@ -737,7 +737,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Samoyed.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Samoyed.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'samoyed')
@@ -747,7 +747,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Samoyed.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Samoyed.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'samoyed')
@@ -757,7 +757,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Samoyed.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Samoyed.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'samoyed')
@@ -766,8 +766,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'samoyed')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Shih Tzu.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Shih Tzu.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'shih-tzu')
@@ -777,7 +777,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Shih Tzu.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Shih Tzu.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'shih-tzu')
@@ -787,7 +787,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Shih Tzu.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Shih Tzu.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'shih-tzu')
@@ -797,7 +797,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Shih Tzu.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Shih Tzu.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'shih-tzu')
@@ -806,8 +806,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'shih-tzu')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian Husky.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian Husky.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'siberian-husky')
@@ -817,7 +817,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian Husky.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian Husky.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'siberian-husky')
@@ -827,7 +827,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian Husky.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian Husky.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'siberian-husky')
@@ -837,7 +837,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian Husky.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian Husky.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'siberian-husky')
@@ -846,8 +846,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'siberian-husky')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Miniature Schnauzer.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Miniature Schnauzer.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sznaucer-miniaturowy')
@@ -857,7 +857,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Miniature Schnauzer.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Miniature Schnauzer.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sznaucer-miniaturowy')
@@ -867,7 +867,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Miniature Schnauzer.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Miniature Schnauzer.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sznaucer-miniaturowy')
@@ -877,7 +877,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Miniature Schnauzer.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Miniature Schnauzer.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sznaucer-miniaturowy')
@@ -886,8 +886,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sznaucer-miniaturowy')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Cynologique Internationale',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Yorkshire Terrier.',
+    organization_name = 'Fédération Cynologique Internationale',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Yorkshire Terrier.',
     source_url = 'https://www.fci.be/en/Nomenclature/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'yorkshire-terrier')
@@ -897,7 +897,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'American Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Yorkshire Terrier.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Yorkshire Terrier.',
     source_url = 'https://www.akc.org/dog-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'yorkshire-terrier')
@@ -907,7 +907,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The Royal Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Yorkshire Terrier.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Yorkshire Terrier.',
     source_url = 'https://www.thekennelclub.org.uk/search/breeds-a-to-z/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'yorkshire-terrier')
@@ -917,7 +917,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'United Kennel Club',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Yorkshire Terrier.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Yorkshire Terrier.',
     source_url = 'https://www.ukcdogs.com/breed-standards',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'yorkshire-terrier')
@@ -927,7 +927,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The International Cat Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bengal.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bengal.',
     source_url = 'https://tica.org/browse-all-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bengal')
@@ -937,7 +937,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Cat Fanciers Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bengal.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bengal.',
     source_url = 'https://cfa.org/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bengal')
@@ -946,8 +946,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bengal')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Internationale F?line',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bengal.',
+    organization_name = 'Fédération Internationale Féline',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bengal.',
     source_url = 'https://fifeweb.org/cats/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bengal')
@@ -957,7 +957,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Governing Council of the Cat Fancy',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bengal.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bengal.',
     source_url = 'https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bengal')
@@ -967,7 +967,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'World Cat Federation',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bengal.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bengal.',
     source_url = 'https://wcf.de/en/standard/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'bengal')
@@ -977,7 +977,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The International Cat Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: British Shorthair.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: British Shorthair.',
     source_url = 'https://tica.org/browse-all-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-brytyjski-krotkowlosy')
@@ -987,7 +987,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Cat Fanciers Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: British Shorthair.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: British Shorthair.',
     source_url = 'https://cfa.org/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-brytyjski-krotkowlosy')
@@ -996,8 +996,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-brytyjski-krotkowlosy'
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Internationale F?line',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: British Shorthair.',
+    organization_name = 'Fédération Internationale Féline',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: British Shorthair.',
     source_url = 'https://fifeweb.org/cats/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-brytyjski-krotkowlosy')
@@ -1007,7 +1007,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Governing Council of the Cat Fancy',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: British Shorthair.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: British Shorthair.',
     source_url = 'https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-brytyjski-krotkowlosy')
@@ -1017,7 +1017,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'World Cat Federation',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: British Shorthair.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: British Shorthair.',
     source_url = 'https://wcf.de/en/standard/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-brytyjski-krotkowlosy')
@@ -1027,7 +1027,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The International Cat Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Persian.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Persian.',
     source_url = 'https://tica.org/browse-all-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-perski')
@@ -1037,7 +1037,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Cat Fanciers Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Persian.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Persian.',
     source_url = 'https://cfa.org/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-perski')
@@ -1046,8 +1046,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-perski')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Internationale F?line',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Persian.',
+    organization_name = 'Fédération Internationale Féline',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Persian.',
     source_url = 'https://fifeweb.org/cats/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-perski')
@@ -1057,7 +1057,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Governing Council of the Cat Fancy',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Persian.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Persian.',
     source_url = 'https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-perski')
@@ -1067,7 +1067,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'World Cat Federation',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Persian.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Persian.',
     source_url = 'https://wcf.de/en/standard/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-perski')
@@ -1077,7 +1077,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The International Cat Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian.',
     source_url = 'https://tica.org/browse-all-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-syberyjski')
@@ -1087,7 +1087,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Cat Fanciers Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian.',
     source_url = 'https://cfa.org/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-syberyjski')
@@ -1096,8 +1096,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-syberyjski')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Internationale F?line',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian.',
+    organization_name = 'Fédération Internationale Féline',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian.',
     source_url = 'https://fifeweb.org/cats/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-syberyjski')
@@ -1107,7 +1107,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Governing Council of the Cat Fancy',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian.',
     source_url = 'https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-syberyjski')
@@ -1117,7 +1117,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'World Cat Federation',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian.',
     source_url = 'https://wcf.de/en/standard/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'kot-syberyjski')
@@ -1127,7 +1127,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The International Cat Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maine Coon.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maine Coon.',
     source_url = 'https://tica.org/browse-all-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maine-coon')
@@ -1137,7 +1137,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Cat Fanciers Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maine Coon Cat.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maine Coon Cat.',
     source_url = 'https://cfa.org/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maine-coon')
@@ -1146,8 +1146,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maine-coon')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Internationale F?line',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maine Coon.',
+    organization_name = 'Fédération Internationale Féline',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maine Coon.',
     source_url = 'https://fifeweb.org/cats/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maine-coon')
@@ -1157,7 +1157,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Governing Council of the Cat Fancy',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maine Coon.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maine Coon.',
     source_url = 'https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maine-coon')
@@ -1167,7 +1167,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'World Cat Federation',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maine Coon.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maine Coon.',
     source_url = 'https://wcf.de/en/standard/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'maine-coon')
@@ -1177,7 +1177,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The International Cat Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Ragdoll.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Ragdoll.',
     source_url = 'https://tica.org/browse-all-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'ragdoll')
@@ -1187,7 +1187,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Cat Fanciers Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Ragdoll.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Ragdoll.',
     source_url = 'https://cfa.org/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'ragdoll')
@@ -1196,8 +1196,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'ragdoll')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Internationale F?line',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Ragdoll.',
+    organization_name = 'Fédération Internationale Féline',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Ragdoll.',
     source_url = 'https://fifeweb.org/cats/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'ragdoll')
@@ -1207,7 +1207,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Governing Council of the Cat Fancy',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Ragdoll.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Ragdoll.',
     source_url = 'https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'ragdoll')
@@ -1217,7 +1217,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'World Cat Federation',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Ragdoll.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Ragdoll.',
     source_url = 'https://wcf.de/en/standard/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'ragdoll')
@@ -1227,7 +1227,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'The International Cat Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Sphynx.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Sphynx.',
     source_url = 'https://tica.org/browse-all-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sfinks')
@@ -1237,7 +1237,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Cat Fanciers Association',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Sphynx.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Sphynx.',
     source_url = 'https://cfa.org/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sfinks')
@@ -1246,8 +1246,8 @@ WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sfinks')
 UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
-    organization_name = 'F?d?ration Internationale F?line',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Sphynx.',
+    organization_name = 'Fédération Internationale Féline',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Sphynx.',
     source_url = 'https://fifeweb.org/cats/breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sfinks')
@@ -1257,7 +1257,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'Governing Council of the Cat Fancy',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Sphynx.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Sphynx.',
     source_url = 'https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sfinks')
@@ -1267,7 +1267,7 @@ UPDATE breed_registry_recognitions
 SET recognized = 1,
     recognition_status = 'recognized',
     organization_name = 'World Cat Federation',
-    note = 'Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Sphynx.',
+    note = 'Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Sphynx.',
     source_url = 'https://wcf.de/en/standard/',
     verified_at = '2026-06-22'
 WHERE breed_id = (SELECT id FROM breeds WHERE slug = 'sfinks')

@@ -125,7 +125,7 @@ function getRecognitionLabel(recognized: number, status: string | null): string 
   }
 
   if (status === 'not_recognized') {
-    return 'Brak na li?cie';
+    return 'Brak na liście';
   }
 
   if (status === 'provisional') {
@@ -136,7 +136,7 @@ function getRecognitionLabel(recognized: number, status: string | null): string 
     return 'Do weryfikacji';
   }
 
-  return recognized === 1 ? 'Uznana' : 'Brak na li?cie';
+  return recognized === 1 ? 'Uznana' : 'Brak na liście';
 }
 
 function getRecognitionStatusClass(recognized: number, status: string | null): string {
@@ -260,7 +260,7 @@ function getRecognitionStatusClass(recognized: number, status: string | null): s
           <p>
             Różne organizacje kynologiczne i felinologiczne mogą uznawać różne rasy.
             Dlatego w Futrio pokazujemy status uznania osobno dla najważniejszych organizacji.
-            Statusy weryfikujemy na podstawie oficjalnych list i standard?w organizacji.
+            Statusy weryfikujemy na podstawie oficjalnych list i standardów organizacji.
           </p>
           {allRecognitionsNeedVerification && (
             <div class="registry-note">

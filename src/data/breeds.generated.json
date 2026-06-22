@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T16:07:52.693Z",
+  "generatedAt": "2026-06-22T16:20:58.785Z",
   "source": "cloudflare-d1",
   "count": 30,
   "breeds": [
@@ -169,16 +169,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Akita.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Akita.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Akita.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Akita.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -187,7 +187,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Akita.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Akita.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -196,7 +196,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Akita.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Akita.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -368,16 +368,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Beagle.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Beagle.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Beagle.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Beagle.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -386,7 +386,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Beagle.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Beagle.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -395,7 +395,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Beagle.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Beagle.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -567,16 +567,16 @@
           "organizationName": "Cat Fanciers Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bengal.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bengal.",
           "sourceUrl": "https://cfa.org/breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FIFe",
-          "organizationName": "F?d?ration Internationale F?line",
+          "organizationName": "Fédération Internationale Féline",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bengal.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bengal.",
           "sourceUrl": "https://fifeweb.org/cats/breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -585,7 +585,7 @@
           "organizationName": "Governing Council of the Cat Fancy",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bengal.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bengal.",
           "sourceUrl": "https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -594,7 +594,7 @@
           "organizationName": "The International Cat Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bengal.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bengal.",
           "sourceUrl": "https://tica.org/browse-all-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -603,7 +603,7 @@
           "organizationName": "World Cat Federation",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bengal.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bengal.",
           "sourceUrl": "https://wcf.de/en/standard/",
           "verifiedAt": "2026-06-22"
         }
@@ -775,16 +775,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bernese Mountain Dog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bernese Mountain Dog.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bernese Mountain Dog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bernese Mountain Dog.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -793,7 +793,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bernese Mountain Dog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bernese Mountain Dog.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -802,7 +802,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Bernese Mountain Dog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Bernese Mountain Dog.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -974,16 +974,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Boxer.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Boxer.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Boxer.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Boxer.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -992,7 +992,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Boxer.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Boxer.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -1001,7 +1001,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Boxer.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Boxer.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -1173,16 +1173,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Border Collie.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Border Collie.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Border Collie.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Border Collie.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -1191,7 +1191,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Border Collie.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Border Collie.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -1200,7 +1200,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Border Collie.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Border Collie.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -1372,16 +1372,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: French Bulldog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: French Bulldog.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: French Bulldog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: French Bulldog.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -1390,7 +1390,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: French Bulldog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: French Bulldog.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -1399,7 +1399,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: French Bulldog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: French Bulldog.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -1571,16 +1571,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cane Corso.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cane Corso.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cane Corso.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cane Corso.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -1589,7 +1589,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Italian Cane Corso.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Italian Cane Corso.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -1598,7 +1598,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cane Corso Italiano.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cane Corso Italiano.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -1770,16 +1770,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cavalier King Charles Spaniel.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cavalier King Charles Spaniel.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cavalier King Charles Spaniel.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cavalier King Charles Spaniel.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -1788,7 +1788,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cavalier King Charles Spaniel.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cavalier King Charles Spaniel.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -1797,7 +1797,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cavalier King Charles Spaniel.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cavalier King Charles Spaniel.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -1969,16 +1969,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Chihuahua.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Chihuahua.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Chihuahua.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Chihuahua.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -1987,7 +1987,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Chihuahua.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Chihuahua.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -1996,7 +1996,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Chihuahua.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Chihuahua.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -2168,16 +2168,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: English Cocker Spaniel.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: English Cocker Spaniel.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: English Cocker Spaniel.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: English Cocker Spaniel.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -2186,7 +2186,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Cocker Spaniel.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Cocker Spaniel.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -2195,7 +2195,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: English Cocker Spaniel.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: English Cocker Spaniel.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -2367,16 +2367,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Golden Retriever.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Golden Retriever.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Golden Retriever.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Golden Retriever.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -2385,7 +2385,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Golden Retriever.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Golden Retriever.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -2394,7 +2394,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Golden Retriever.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Golden Retriever.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -2566,16 +2566,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Russell Terrier.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Russell Terrier.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Jack Russell Terrier.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Jack Russell Terrier.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -2584,7 +2584,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Jack Russell Terrier.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Jack Russell Terrier.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -2593,7 +2593,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Jack Russell Terrier.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Jack Russell Terrier.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -2765,16 +2765,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Dachshund.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Dachshund.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Dachshund.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Dachshund.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -2783,7 +2783,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Dachshund.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Dachshund.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -2792,7 +2792,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Dachshund.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Dachshund.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -2964,16 +2964,16 @@
           "organizationName": "Cat Fanciers Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: British Shorthair.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: British Shorthair.",
           "sourceUrl": "https://cfa.org/breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FIFe",
-          "organizationName": "F?d?ration Internationale F?line",
+          "organizationName": "Fédération Internationale Féline",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: British Shorthair.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: British Shorthair.",
           "sourceUrl": "https://fifeweb.org/cats/breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -2982,7 +2982,7 @@
           "organizationName": "Governing Council of the Cat Fancy",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: British Shorthair.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: British Shorthair.",
           "sourceUrl": "https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -2991,7 +2991,7 @@
           "organizationName": "The International Cat Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: British Shorthair.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: British Shorthair.",
           "sourceUrl": "https://tica.org/browse-all-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -3000,7 +3000,7 @@
           "organizationName": "World Cat Federation",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: British Shorthair.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: British Shorthair.",
           "sourceUrl": "https://wcf.de/en/standard/",
           "verifiedAt": "2026-06-22"
         }
@@ -3172,16 +3172,16 @@
           "organizationName": "Cat Fanciers Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Persian.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Persian.",
           "sourceUrl": "https://cfa.org/breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FIFe",
-          "organizationName": "F?d?ration Internationale F?line",
+          "organizationName": "Fédération Internationale Féline",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Persian.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Persian.",
           "sourceUrl": "https://fifeweb.org/cats/breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -3190,7 +3190,7 @@
           "organizationName": "Governing Council of the Cat Fancy",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Persian.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Persian.",
           "sourceUrl": "https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -3199,7 +3199,7 @@
           "organizationName": "The International Cat Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Persian.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Persian.",
           "sourceUrl": "https://tica.org/browse-all-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -3208,7 +3208,7 @@
           "organizationName": "World Cat Federation",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Persian.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Persian.",
           "sourceUrl": "https://wcf.de/en/standard/",
           "verifiedAt": "2026-06-22"
         }
@@ -3380,16 +3380,16 @@
           "organizationName": "Cat Fanciers Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian.",
           "sourceUrl": "https://cfa.org/breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FIFe",
-          "organizationName": "F?d?ration Internationale F?line",
+          "organizationName": "Fédération Internationale Féline",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian.",
           "sourceUrl": "https://fifeweb.org/cats/breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -3398,7 +3398,7 @@
           "organizationName": "Governing Council of the Cat Fancy",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian.",
           "sourceUrl": "https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -3407,7 +3407,7 @@
           "organizationName": "The International Cat Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian.",
           "sourceUrl": "https://tica.org/browse-all-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -3416,7 +3416,7 @@
           "organizationName": "World Cat Federation",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian.",
           "sourceUrl": "https://wcf.de/en/standard/",
           "verifiedAt": "2026-06-22"
         }
@@ -3588,16 +3588,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Labrador Retriever.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Labrador Retriever.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Labrador Retriever.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Labrador Retriever.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -3606,7 +3606,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Labrador Retriever.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Labrador Retriever.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -3615,7 +3615,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Labrador Retriever.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Labrador Retriever.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -3787,16 +3787,16 @@
           "organizationName": "Cat Fanciers Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maine Coon Cat.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maine Coon Cat.",
           "sourceUrl": "https://cfa.org/breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FIFe",
-          "organizationName": "F?d?ration Internationale F?line",
+          "organizationName": "Fédération Internationale Féline",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maine Coon.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maine Coon.",
           "sourceUrl": "https://fifeweb.org/cats/breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -3805,7 +3805,7 @@
           "organizationName": "Governing Council of the Cat Fancy",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maine Coon.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maine Coon.",
           "sourceUrl": "https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -3814,7 +3814,7 @@
           "organizationName": "The International Cat Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maine Coon.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maine Coon.",
           "sourceUrl": "https://tica.org/browse-all-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -3823,7 +3823,7 @@
           "organizationName": "World Cat Federation",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maine Coon.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maine Coon.",
           "sourceUrl": "https://wcf.de/en/standard/",
           "verifiedAt": "2026-06-22"
         }
@@ -3995,16 +3995,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maltese.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maltese.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maltese.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maltese.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -4013,7 +4013,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maltese.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maltese.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -4022,7 +4022,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Maltese.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Maltese.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -4194,16 +4194,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: German Shepherd Dog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: German Shepherd Dog.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: German Shepherd Dog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: German Shepherd Dog.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -4212,7 +4212,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: German Shepherd Dog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: German Shepherd Dog.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -4221,7 +4221,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: German Shepherd Dog.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: German Shepherd Dog.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -4393,16 +4393,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Poodle.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Poodle.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Poodle.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Poodle.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -4411,7 +4411,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Poodle.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Poodle.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -4420,7 +4420,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Poodle.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Poodle.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -4592,16 +4592,16 @@
           "organizationName": "Cat Fanciers Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Ragdoll.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Ragdoll.",
           "sourceUrl": "https://cfa.org/breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FIFe",
-          "organizationName": "F?d?ration Internationale F?line",
+          "organizationName": "Fédération Internationale Féline",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Ragdoll.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Ragdoll.",
           "sourceUrl": "https://fifeweb.org/cats/breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -4610,7 +4610,7 @@
           "organizationName": "Governing Council of the Cat Fancy",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Ragdoll.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Ragdoll.",
           "sourceUrl": "https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -4619,7 +4619,7 @@
           "organizationName": "The International Cat Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Ragdoll.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Ragdoll.",
           "sourceUrl": "https://tica.org/browse-all-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -4628,7 +4628,7 @@
           "organizationName": "World Cat Federation",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Ragdoll.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Ragdoll.",
           "sourceUrl": "https://wcf.de/en/standard/",
           "verifiedAt": "2026-06-22"
         }
@@ -4800,16 +4800,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Rottweiler.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Rottweiler.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Rottweiler.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Rottweiler.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -4818,7 +4818,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Rottweiler.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Rottweiler.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -4827,7 +4827,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Rottweiler.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Rottweiler.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -4999,16 +4999,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Samoyed.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Samoyed.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Samoyed.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Samoyed.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -5017,7 +5017,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Samoyed.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Samoyed.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -5026,7 +5026,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Samoyed.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Samoyed.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -5198,16 +5198,16 @@
           "organizationName": "Cat Fanciers Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Sphynx.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Sphynx.",
           "sourceUrl": "https://cfa.org/breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FIFe",
-          "organizationName": "F?d?ration Internationale F?line",
+          "organizationName": "Fédération Internationale Féline",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Sphynx.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Sphynx.",
           "sourceUrl": "https://fifeweb.org/cats/breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -5216,7 +5216,7 @@
           "organizationName": "Governing Council of the Cat Fancy",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Sphynx.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Sphynx.",
           "sourceUrl": "https://www.gccfcats.org/getting-a-cat/choosing/cat-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -5225,7 +5225,7 @@
           "organizationName": "The International Cat Association",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Sphynx.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Sphynx.",
           "sourceUrl": "https://tica.org/browse-all-breeds/",
           "verifiedAt": "2026-06-22"
         },
@@ -5234,7 +5234,7 @@
           "organizationName": "World Cat Federation",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Sphynx.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Sphynx.",
           "sourceUrl": "https://wcf.de/en/standard/",
           "verifiedAt": "2026-06-22"
         }
@@ -5406,16 +5406,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Shih Tzu.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Shih Tzu.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Shih Tzu.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Shih Tzu.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -5424,7 +5424,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Shih Tzu.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Shih Tzu.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -5433,7 +5433,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Shih Tzu.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Shih Tzu.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -5605,16 +5605,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian Husky.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian Husky.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian Husky.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian Husky.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -5623,7 +5623,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian Husky.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian Husky.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -5632,7 +5632,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Siberian Husky.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Siberian Husky.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -5804,16 +5804,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Miniature Schnauzer.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Miniature Schnauzer.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Miniature Schnauzer.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Miniature Schnauzer.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -5822,7 +5822,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Miniature Schnauzer.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Miniature Schnauzer.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -5831,7 +5831,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Miniature Schnauzer.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Miniature Schnauzer.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
@@ -6003,16 +6003,16 @@
           "organizationName": "American Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Yorkshire Terrier.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Yorkshire Terrier.",
           "sourceUrl": "https://www.akc.org/dog-breeds/",
           "verifiedAt": "2026-06-22"
         },
         {
           "organizationCode": "FCI",
-          "organizationName": "F?d?ration Cynologique Internationale",
+          "organizationName": "Fédération Cynologique Internationale",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Yorkshire Terrier.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Yorkshire Terrier.",
           "sourceUrl": "https://www.fci.be/en/Nomenclature/",
           "verifiedAt": "2026-06-22"
         },
@@ -6021,7 +6021,7 @@
           "organizationName": "The Royal Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Yorkshire Terrier.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Yorkshire Terrier.",
           "sourceUrl": "https://www.thekennelclub.org.uk/search/breeds-a-to-z/",
           "verifiedAt": "2026-06-22"
         },
@@ -6030,7 +6030,7 @@
           "organizationName": "United Kennel Club",
           "recognized": 1,
           "recognitionStatus": "recognized",
-          "note": "Zweryfikowano w oficjalnej li?cie organizacji. Nazwa w ?r?dle: Yorkshire Terrier.",
+          "note": "Zweryfikowano w oficjalnej liście organizacji. Nazwa w źródle: Yorkshire Terrier.",
           "sourceUrl": "https://www.ukcdogs.com/breed-standards",
           "verifiedAt": "2026-06-22"
         }
