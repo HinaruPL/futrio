@@ -123,3 +123,146 @@ FROM calculator_profiles cp
 JOIN breeds b ON b.id = cp.breed_id
 WHERE b.slug IN ('border-collie', 'ragdoll')
 ORDER BY b.slug;
+
+-- FCI dog breeds Batch 1 validation.
+WITH fci_batch_1(slug) AS (
+  VALUES
+  ('australian-shepherd'), ('welsh-corgi-pembroke'), ('welsh-corgi-cardigan'),
+  ('doberman'), ('dalmatynczyk'), ('nowofundland'), ('dog-niemiecki'),
+  ('chart-afganski'), ('whippet'), ('bichon-frise'), ('hawanczyk'),
+  ('west-highland-white-terrier'), ('boston-terrier'), ('shar-pei'), ('chow-chow'),
+  ('basenji'), ('papillon'), ('pomeranian'), ('owczarek-australijski-kelpie'),
+  ('owczarek-szetlandzki'), ('wyzel-weimarski'), ('vizsla'),
+  ('rhodesian-ridgeback'), ('pies-faraona'), ('alaskan-malamute')
+)
+SELECT 'fci_batch_1_count' AS test_name, COUNT(b.id) AS result
+FROM fci_batch_1 fb
+LEFT JOIN breeds b ON b.slug = fb.slug;
+
+SELECT 'all_breeds_count_after_fci_batch_1' AS test_name, COUNT(*) AS result FROM breeds;
+SELECT 'dog_breeds_count_after_fci_batch_1' AS test_name, COUNT(*) AS result FROM breeds WHERE species = 'dog';
+SELECT 'cat_breeds_count_after_fci_batch_1' AS test_name, COUNT(*) AS result FROM breeds WHERE species = 'cat';
+
+WITH fci_batch_1(slug) AS (
+  VALUES
+  ('australian-shepherd'), ('welsh-corgi-pembroke'), ('welsh-corgi-cardigan'),
+  ('doberman'), ('dalmatynczyk'), ('nowofundland'), ('dog-niemiecki'),
+  ('chart-afganski'), ('whippet'), ('bichon-frise'), ('hawanczyk'),
+  ('west-highland-white-terrier'), ('boston-terrier'), ('shar-pei'), ('chow-chow'),
+  ('basenji'), ('papillon'), ('pomeranian'), ('owczarek-australijski-kelpie'),
+  ('owczarek-szetlandzki'), ('wyzel-weimarski'), ('vizsla'),
+  ('rhodesian-ridgeback'), ('pies-faraona'), ('alaskan-malamute')
+)
+SELECT b.slug, b.name
+FROM fci_batch_1 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_content_sections bcs ON bcs.breed_id = b.id AND bcs.section_key = 'history'
+WHERE bcs.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_1(slug) AS (
+  VALUES
+  ('australian-shepherd'), ('welsh-corgi-pembroke'), ('welsh-corgi-cardigan'),
+  ('doberman'), ('dalmatynczyk'), ('nowofundland'), ('dog-niemiecki'),
+  ('chart-afganski'), ('whippet'), ('bichon-frise'), ('hawanczyk'),
+  ('west-highland-white-terrier'), ('boston-terrier'), ('shar-pei'), ('chow-chow'),
+  ('basenji'), ('papillon'), ('pomeranian'), ('owczarek-australijski-kelpie'),
+  ('owczarek-szetlandzki'), ('wyzel-weimarski'), ('vizsla'),
+  ('rhodesian-ridgeback'), ('pies-faraona'), ('alaskan-malamute')
+)
+SELECT b.slug, b.name, COUNT(bf.id) AS faq_count
+FROM fci_batch_1 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_faqs bf ON bf.breed_id = b.id
+GROUP BY b.id, b.slug, b.name
+HAVING COUNT(bf.id) < 5
+ORDER BY b.slug;
+
+WITH fci_batch_1(slug) AS (
+  VALUES
+  ('australian-shepherd'), ('welsh-corgi-pembroke'), ('welsh-corgi-cardigan'),
+  ('doberman'), ('dalmatynczyk'), ('nowofundland'), ('dog-niemiecki'),
+  ('chart-afganski'), ('whippet'), ('bichon-frise'), ('hawanczyk'),
+  ('west-highland-white-terrier'), ('boston-terrier'), ('shar-pei'), ('chow-chow'),
+  ('basenji'), ('papillon'), ('pomeranian'), ('owczarek-australijski-kelpie'),
+  ('owczarek-szetlandzki'), ('wyzel-weimarski'), ('vizsla'),
+  ('rhodesian-ridgeback'), ('pies-faraona'), ('alaskan-malamute')
+)
+SELECT b.slug, b.name
+FROM fci_batch_1 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE cp.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_1(slug) AS (
+  VALUES
+  ('australian-shepherd'), ('welsh-corgi-pembroke'), ('welsh-corgi-cardigan'),
+  ('doberman'), ('dalmatynczyk'), ('nowofundland'), ('dog-niemiecki'),
+  ('chart-afganski'), ('whippet'), ('bichon-frise'), ('hawanczyk'),
+  ('west-highland-white-terrier'), ('boston-terrier'), ('shar-pei'), ('chow-chow'),
+  ('basenji'), ('papillon'), ('pomeranian'), ('owczarek-australijski-kelpie'),
+  ('owczarek-szetlandzki'), ('wyzel-weimarski'), ('vizsla'),
+  ('rhodesian-ridgeback'), ('pies-faraona'), ('alaskan-malamute')
+)
+SELECT b.slug, b.name
+FROM fci_batch_1 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+WHERE bi.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_1(slug) AS (
+  VALUES
+  ('australian-shepherd'), ('welsh-corgi-pembroke'), ('welsh-corgi-cardigan'),
+  ('doberman'), ('dalmatynczyk'), ('nowofundland'), ('dog-niemiecki'),
+  ('chart-afganski'), ('whippet'), ('bichon-frise'), ('hawanczyk'),
+  ('west-highland-white-terrier'), ('boston-terrier'), ('shar-pei'), ('chow-chow'),
+  ('basenji'), ('papillon'), ('pomeranian'), ('owczarek-australijski-kelpie'),
+  ('owczarek-szetlandzki'), ('wyzel-weimarski'), ('vizsla'),
+  ('rhodesian-ridgeback'), ('pies-faraona'), ('alaskan-malamute')
+)
+SELECT b.slug, b.name
+FROM fci_batch_1 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN affiliate_links al ON al.breed_id = b.id AND al.merchant = 'Placeholder'
+WHERE al.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_1(slug) AS (
+  VALUES
+  ('australian-shepherd'), ('welsh-corgi-pembroke'), ('welsh-corgi-cardigan'),
+  ('doberman'), ('dalmatynczyk'), ('nowofundland'), ('dog-niemiecki'),
+  ('chart-afganski'), ('whippet'), ('bichon-frise'), ('hawanczyk'),
+  ('west-highland-white-terrier'), ('boston-terrier'), ('shar-pei'), ('chow-chow'),
+  ('basenji'), ('papillon'), ('pomeranian'), ('owczarek-australijski-kelpie'),
+  ('owczarek-szetlandzki'), ('wyzel-weimarski'), ('vizsla'),
+  ('rhodesian-ridgeback'), ('pies-faraona'), ('alaskan-malamute')
+)
+SELECT b.slug, b.name, COUNT(brr.id) AS recognition_count
+FROM fci_batch_1 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_registry_recognitions brr ON brr.breed_id = b.id
+GROUP BY b.id, b.slug, b.name
+HAVING COUNT(brr.id) < 4
+ORDER BY b.slug;
+
+SELECT slug, COUNT(*) AS duplicates
+FROM breeds
+GROUP BY slug
+HAVING COUNT(*) > 1;
+
+SELECT
+  b.slug,
+  b.name,
+  b.species,
+  b.status,
+  b.short_description,
+  bi.image_url,
+  cp.monthly_food_cost_min_pln,
+  cp.monthly_food_cost_max_pln
+FROM breeds b
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE b.slug IN ('australian-shepherd', 'welsh-corgi-pembroke', 'alaskan-malamute')
+ORDER BY b.slug;
