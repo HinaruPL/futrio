@@ -266,3 +266,144 @@ LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
 LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
 WHERE b.slug IN ('australian-shepherd', 'welsh-corgi-pembroke', 'alaskan-malamute')
 ORDER BY b.slug;
+
+-- FCI dog breeds Batch 2 validation.
+WITH fci_batch_2(slug) AS (
+  VALUES
+  ('american-staffordshire-terrier'), ('bull-terrier'), ('staffordshire-bull-terrier'),
+  ('springer-spaniel-angielski'), ('flat-coated-retriever'), ('nova-scotia-duck-tolling-retriever'),
+  ('bobtail'), ('collie-dlugowlosy'), ('collie-krotkowlosy'),
+  ('australian-cattle-dog'), ('bialy-owczarek-szwajcarski'),
+  ('chart-rosyjski-borzoj'), ('charcik-wloski'), ('saluki'), ('wilczarz-irlandzki'),
+  ('airedale-terrier'), ('cairn-terrier'), ('fox-terrier-szorstkowlosy'),
+  ('norwich-terrier'), ('scottish-terrier'), ('shiba-inu'),
+  ('szpic-japonski'), ('leonberger'), ('bernardyn'), ('bullmastiff')
+)
+SELECT 'fci_batch_2_count' AS test_name, COUNT(b.id) AS result
+FROM fci_batch_2 fb
+LEFT JOIN breeds b ON b.slug = fb.slug;
+
+WITH fci_batch_2(slug) AS (
+  VALUES
+  ('american-staffordshire-terrier'), ('bull-terrier'), ('staffordshire-bull-terrier'),
+  ('springer-spaniel-angielski'), ('flat-coated-retriever'), ('nova-scotia-duck-tolling-retriever'),
+  ('bobtail'), ('collie-dlugowlosy'), ('collie-krotkowlosy'),
+  ('australian-cattle-dog'), ('bialy-owczarek-szwajcarski'),
+  ('chart-rosyjski-borzoj'), ('charcik-wloski'), ('saluki'), ('wilczarz-irlandzki'),
+  ('airedale-terrier'), ('cairn-terrier'), ('fox-terrier-szorstkowlosy'),
+  ('norwich-terrier'), ('scottish-terrier'), ('shiba-inu'),
+  ('szpic-japonski'), ('leonberger'), ('bernardyn'), ('bullmastiff')
+)
+SELECT b.slug, b.name
+FROM fci_batch_2 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_content_sections bcs ON bcs.breed_id = b.id AND bcs.section_key = 'history'
+WHERE bcs.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_2(slug) AS (
+  VALUES
+  ('american-staffordshire-terrier'), ('bull-terrier'), ('staffordshire-bull-terrier'),
+  ('springer-spaniel-angielski'), ('flat-coated-retriever'), ('nova-scotia-duck-tolling-retriever'),
+  ('bobtail'), ('collie-dlugowlosy'), ('collie-krotkowlosy'),
+  ('australian-cattle-dog'), ('bialy-owczarek-szwajcarski'),
+  ('chart-rosyjski-borzoj'), ('charcik-wloski'), ('saluki'), ('wilczarz-irlandzki'),
+  ('airedale-terrier'), ('cairn-terrier'), ('fox-terrier-szorstkowlosy'),
+  ('norwich-terrier'), ('scottish-terrier'), ('shiba-inu'),
+  ('szpic-japonski'), ('leonberger'), ('bernardyn'), ('bullmastiff')
+)
+SELECT b.slug, b.name, COUNT(bf.id) AS faq_count
+FROM fci_batch_2 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_faqs bf ON bf.breed_id = b.id
+GROUP BY b.id, b.slug, b.name
+HAVING COUNT(bf.id) < 5
+ORDER BY b.slug;
+
+WITH fci_batch_2(slug) AS (
+  VALUES
+  ('american-staffordshire-terrier'), ('bull-terrier'), ('staffordshire-bull-terrier'),
+  ('springer-spaniel-angielski'), ('flat-coated-retriever'), ('nova-scotia-duck-tolling-retriever'),
+  ('bobtail'), ('collie-dlugowlosy'), ('collie-krotkowlosy'),
+  ('australian-cattle-dog'), ('bialy-owczarek-szwajcarski'),
+  ('chart-rosyjski-borzoj'), ('charcik-wloski'), ('saluki'), ('wilczarz-irlandzki'),
+  ('airedale-terrier'), ('cairn-terrier'), ('fox-terrier-szorstkowlosy'),
+  ('norwich-terrier'), ('scottish-terrier'), ('shiba-inu'),
+  ('szpic-japonski'), ('leonberger'), ('bernardyn'), ('bullmastiff')
+)
+SELECT b.slug, b.name
+FROM fci_batch_2 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE cp.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_2(slug) AS (
+  VALUES
+  ('american-staffordshire-terrier'), ('bull-terrier'), ('staffordshire-bull-terrier'),
+  ('springer-spaniel-angielski'), ('flat-coated-retriever'), ('nova-scotia-duck-tolling-retriever'),
+  ('bobtail'), ('collie-dlugowlosy'), ('collie-krotkowlosy'),
+  ('australian-cattle-dog'), ('bialy-owczarek-szwajcarski'),
+  ('chart-rosyjski-borzoj'), ('charcik-wloski'), ('saluki'), ('wilczarz-irlandzki'),
+  ('airedale-terrier'), ('cairn-terrier'), ('fox-terrier-szorstkowlosy'),
+  ('norwich-terrier'), ('scottish-terrier'), ('shiba-inu'),
+  ('szpic-japonski'), ('leonberger'), ('bernardyn'), ('bullmastiff')
+)
+SELECT b.slug, b.name
+FROM fci_batch_2 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+WHERE bi.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_2(slug) AS (
+  VALUES
+  ('american-staffordshire-terrier'), ('bull-terrier'), ('staffordshire-bull-terrier'),
+  ('springer-spaniel-angielski'), ('flat-coated-retriever'), ('nova-scotia-duck-tolling-retriever'),
+  ('bobtail'), ('collie-dlugowlosy'), ('collie-krotkowlosy'),
+  ('australian-cattle-dog'), ('bialy-owczarek-szwajcarski'),
+  ('chart-rosyjski-borzoj'), ('charcik-wloski'), ('saluki'), ('wilczarz-irlandzki'),
+  ('airedale-terrier'), ('cairn-terrier'), ('fox-terrier-szorstkowlosy'),
+  ('norwich-terrier'), ('scottish-terrier'), ('shiba-inu'),
+  ('szpic-japonski'), ('leonberger'), ('bernardyn'), ('bullmastiff')
+)
+SELECT b.slug, b.name
+FROM fci_batch_2 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN affiliate_links al ON al.breed_id = b.id AND al.merchant = 'Placeholder'
+WHERE al.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_2(slug) AS (
+  VALUES
+  ('american-staffordshire-terrier'), ('bull-terrier'), ('staffordshire-bull-terrier'),
+  ('springer-spaniel-angielski'), ('flat-coated-retriever'), ('nova-scotia-duck-tolling-retriever'),
+  ('bobtail'), ('collie-dlugowlosy'), ('collie-krotkowlosy'),
+  ('australian-cattle-dog'), ('bialy-owczarek-szwajcarski'),
+  ('chart-rosyjski-borzoj'), ('charcik-wloski'), ('saluki'), ('wilczarz-irlandzki'),
+  ('airedale-terrier'), ('cairn-terrier'), ('fox-terrier-szorstkowlosy'),
+  ('norwich-terrier'), ('scottish-terrier'), ('shiba-inu'),
+  ('szpic-japonski'), ('leonberger'), ('bernardyn'), ('bullmastiff')
+)
+SELECT b.slug, b.name, COUNT(brr.id) AS recognition_count
+FROM fci_batch_2 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_registry_recognitions brr ON brr.breed_id = b.id
+GROUP BY b.id, b.slug, b.name
+HAVING COUNT(brr.id) < 4
+ORDER BY b.slug;
+
+SELECT
+  b.slug,
+  b.name,
+  b.species,
+  b.status,
+  b.short_description,
+  bi.image_url,
+  cp.monthly_food_cost_min_pln,
+  cp.monthly_food_cost_max_pln
+FROM breeds b
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE b.slug IN ('american-staffordshire-terrier', 'springer-spaniel-angielski', 'bernardyn')
+ORDER BY b.slug;
