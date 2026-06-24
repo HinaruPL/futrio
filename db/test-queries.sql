@@ -681,3 +681,129 @@ LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
 LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
 WHERE b.slug IN ('kuvasz', 'mastif-angielski', 'parson-russell-terrier')
 ORDER BY b.slug;
+
+WITH fci_batch_5(slug) AS (
+  VALUES
+  ('terrier-brazylijski'), ('niemiecki-terier-mysliwski'), ('fox-terrier-krotkowlosy'),
+  ('manchester-terrier'), ('glen-of-imaal-terrier'), ('irish-soft-coated-wheaten-terrier'),
+  ('terier-japonski'), ('miniaturowy-bull-terrier'), ('australian-silky-terrier'),
+  ('english-toy-terrier'), ('bolonczyk'), ('lwi-piesek'),
+  ('griffon-belge'), ('griffon-bruxellois'), ('petit-brabancon'),
+  ('grzywacz-chinski'), ('spaniel-tybetanski'), ('terier-tybetanski'),
+  ('king-charles-spaniel'), ('chin-japonski'), ('russkiy-toy'),
+  ('kromfohrlander'), ('chesapeake-bay-retriever'), ('kooikerhondje'),
+  ('barbet')
+)
+SELECT COUNT(*) AS batch_5_breed_count
+FROM breeds b
+JOIN fci_batch_5 fb ON fb.slug = b.slug;
+
+WITH fci_batch_5(slug) AS (
+  VALUES
+  ('terrier-brazylijski'), ('niemiecki-terier-mysliwski'), ('fox-terrier-krotkowlosy'),
+  ('manchester-terrier'), ('glen-of-imaal-terrier'), ('irish-soft-coated-wheaten-terrier'),
+  ('terier-japonski'), ('miniaturowy-bull-terrier'), ('australian-silky-terrier'),
+  ('english-toy-terrier'), ('bolonczyk'), ('lwi-piesek'),
+  ('griffon-belge'), ('griffon-bruxellois'), ('petit-brabancon'),
+  ('grzywacz-chinski'), ('spaniel-tybetanski'), ('terier-tybetanski'),
+  ('king-charles-spaniel'), ('chin-japonski'), ('russkiy-toy'),
+  ('kromfohrlander'), ('chesapeake-bay-retriever'), ('kooikerhondje'),
+  ('barbet')
+)
+SELECT b.slug, b.name
+FROM fci_batch_5 fb
+LEFT JOIN breeds b ON b.slug = fb.slug
+WHERE b.id IS NULL
+ORDER BY fb.slug;
+
+WITH fci_batch_5(slug) AS (
+  VALUES
+  ('terrier-brazylijski'), ('niemiecki-terier-mysliwski'), ('fox-terrier-krotkowlosy'),
+  ('manchester-terrier'), ('glen-of-imaal-terrier'), ('irish-soft-coated-wheaten-terrier'),
+  ('terier-japonski'), ('miniaturowy-bull-terrier'), ('australian-silky-terrier'),
+  ('english-toy-terrier'), ('bolonczyk'), ('lwi-piesek'),
+  ('griffon-belge'), ('griffon-bruxellois'), ('petit-brabancon'),
+  ('grzywacz-chinski'), ('spaniel-tybetanski'), ('terier-tybetanski'),
+  ('king-charles-spaniel'), ('chin-japonski'), ('russkiy-toy'),
+  ('kromfohrlander'), ('chesapeake-bay-retriever'), ('kooikerhondje'),
+  ('barbet')
+)
+SELECT b.slug, b.name
+FROM fci_batch_5 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE cp.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_5(slug) AS (
+  VALUES
+  ('terrier-brazylijski'), ('niemiecki-terier-mysliwski'), ('fox-terrier-krotkowlosy'),
+  ('manchester-terrier'), ('glen-of-imaal-terrier'), ('irish-soft-coated-wheaten-terrier'),
+  ('terier-japonski'), ('miniaturowy-bull-terrier'), ('australian-silky-terrier'),
+  ('english-toy-terrier'), ('bolonczyk'), ('lwi-piesek'),
+  ('griffon-belge'), ('griffon-bruxellois'), ('petit-brabancon'),
+  ('grzywacz-chinski'), ('spaniel-tybetanski'), ('terier-tybetanski'),
+  ('king-charles-spaniel'), ('chin-japonski'), ('russkiy-toy'),
+  ('kromfohrlander'), ('chesapeake-bay-retriever'), ('kooikerhondje'),
+  ('barbet')
+)
+SELECT b.slug, b.name
+FROM fci_batch_5 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+WHERE bi.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_5(slug) AS (
+  VALUES
+  ('terrier-brazylijski'), ('niemiecki-terier-mysliwski'), ('fox-terrier-krotkowlosy'),
+  ('manchester-terrier'), ('glen-of-imaal-terrier'), ('irish-soft-coated-wheaten-terrier'),
+  ('terier-japonski'), ('miniaturowy-bull-terrier'), ('australian-silky-terrier'),
+  ('english-toy-terrier'), ('bolonczyk'), ('lwi-piesek'),
+  ('griffon-belge'), ('griffon-bruxellois'), ('petit-brabancon'),
+  ('grzywacz-chinski'), ('spaniel-tybetanski'), ('terier-tybetanski'),
+  ('king-charles-spaniel'), ('chin-japonski'), ('russkiy-toy'),
+  ('kromfohrlander'), ('chesapeake-bay-retriever'), ('kooikerhondje'),
+  ('barbet')
+)
+SELECT b.slug, b.name
+FROM fci_batch_5 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN affiliate_links al ON al.breed_id = b.id AND al.merchant = 'Placeholder'
+WHERE al.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_5(slug) AS (
+  VALUES
+  ('terrier-brazylijski'), ('niemiecki-terier-mysliwski'), ('fox-terrier-krotkowlosy'),
+  ('manchester-terrier'), ('glen-of-imaal-terrier'), ('irish-soft-coated-wheaten-terrier'),
+  ('terier-japonski'), ('miniaturowy-bull-terrier'), ('australian-silky-terrier'),
+  ('english-toy-terrier'), ('bolonczyk'), ('lwi-piesek'),
+  ('griffon-belge'), ('griffon-bruxellois'), ('petit-brabancon'),
+  ('grzywacz-chinski'), ('spaniel-tybetanski'), ('terier-tybetanski'),
+  ('king-charles-spaniel'), ('chin-japonski'), ('russkiy-toy'),
+  ('kromfohrlander'), ('chesapeake-bay-retriever'), ('kooikerhondje'),
+  ('barbet')
+)
+SELECT b.slug, b.name, COUNT(brr.id) AS recognition_count
+FROM fci_batch_5 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_registry_recognitions brr ON brr.breed_id = b.id
+GROUP BY b.id, b.slug, b.name
+HAVING COUNT(brr.id) < 4
+ORDER BY b.slug;
+
+SELECT
+  b.slug,
+  b.name,
+  b.species,
+  b.status,
+  b.short_description,
+  bi.image_url,
+  cp.monthly_food_cost_min_pln,
+  cp.monthly_food_cost_max_pln
+FROM breeds b
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE b.slug IN ('terrier-brazylijski', 'bolonczyk', 'barbet')
+ORDER BY b.slug;
