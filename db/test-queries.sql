@@ -555,3 +555,129 @@ LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
 LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
 WHERE b.slug IN ('basset-hound', 'gonczy-polski', 'mops')
 ORDER BY b.slug;
+
+WITH fci_batch_4(slug) AS (
+  VALUES
+  ('kuvasz'), ('hovawart'), ('duzy-szwajcarski-pies-pasterski'),
+  ('entlebucher'), ('appenzeller'), ('mastif-angielski'),
+  ('mastino-napoletano'), ('mastif-tybetanski'), ('pinczer-niemiecki'),
+  ('affenpinscher'), ('sznaucer-olbrzym'), ('sznaucer-sredni'),
+  ('norfolk-terrier'), ('lakeland-terrier'), ('irish-terrier'),
+  ('kerry-blue-terrier'), ('welsh-terrier'), ('australian-terrier'),
+  ('bedlington-terrier'), ('dandie-dinmont-terrier'), ('border-terrier'),
+  ('terier-czeski'), ('sealyham-terrier'), ('skye-terrier'),
+  ('parson-russell-terrier')
+)
+SELECT COUNT(*) AS batch_4_breed_count
+FROM breeds b
+JOIN fci_batch_4 fb ON fb.slug = b.slug;
+
+WITH fci_batch_4(slug) AS (
+  VALUES
+  ('kuvasz'), ('hovawart'), ('duzy-szwajcarski-pies-pasterski'),
+  ('entlebucher'), ('appenzeller'), ('mastif-angielski'),
+  ('mastino-napoletano'), ('mastif-tybetanski'), ('pinczer-niemiecki'),
+  ('affenpinscher'), ('sznaucer-olbrzym'), ('sznaucer-sredni'),
+  ('norfolk-terrier'), ('lakeland-terrier'), ('irish-terrier'),
+  ('kerry-blue-terrier'), ('welsh-terrier'), ('australian-terrier'),
+  ('bedlington-terrier'), ('dandie-dinmont-terrier'), ('border-terrier'),
+  ('terier-czeski'), ('sealyham-terrier'), ('skye-terrier'),
+  ('parson-russell-terrier')
+)
+SELECT b.slug, b.name
+FROM fci_batch_4 fb
+LEFT JOIN breeds b ON b.slug = fb.slug
+WHERE b.id IS NULL
+ORDER BY fb.slug;
+
+WITH fci_batch_4(slug) AS (
+  VALUES
+  ('kuvasz'), ('hovawart'), ('duzy-szwajcarski-pies-pasterski'),
+  ('entlebucher'), ('appenzeller'), ('mastif-angielski'),
+  ('mastino-napoletano'), ('mastif-tybetanski'), ('pinczer-niemiecki'),
+  ('affenpinscher'), ('sznaucer-olbrzym'), ('sznaucer-sredni'),
+  ('norfolk-terrier'), ('lakeland-terrier'), ('irish-terrier'),
+  ('kerry-blue-terrier'), ('welsh-terrier'), ('australian-terrier'),
+  ('bedlington-terrier'), ('dandie-dinmont-terrier'), ('border-terrier'),
+  ('terier-czeski'), ('sealyham-terrier'), ('skye-terrier'),
+  ('parson-russell-terrier')
+)
+SELECT b.slug, b.name
+FROM fci_batch_4 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE cp.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_4(slug) AS (
+  VALUES
+  ('kuvasz'), ('hovawart'), ('duzy-szwajcarski-pies-pasterski'),
+  ('entlebucher'), ('appenzeller'), ('mastif-angielski'),
+  ('mastino-napoletano'), ('mastif-tybetanski'), ('pinczer-niemiecki'),
+  ('affenpinscher'), ('sznaucer-olbrzym'), ('sznaucer-sredni'),
+  ('norfolk-terrier'), ('lakeland-terrier'), ('irish-terrier'),
+  ('kerry-blue-terrier'), ('welsh-terrier'), ('australian-terrier'),
+  ('bedlington-terrier'), ('dandie-dinmont-terrier'), ('border-terrier'),
+  ('terier-czeski'), ('sealyham-terrier'), ('skye-terrier'),
+  ('parson-russell-terrier')
+)
+SELECT b.slug, b.name
+FROM fci_batch_4 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+WHERE bi.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_4(slug) AS (
+  VALUES
+  ('kuvasz'), ('hovawart'), ('duzy-szwajcarski-pies-pasterski'),
+  ('entlebucher'), ('appenzeller'), ('mastif-angielski'),
+  ('mastino-napoletano'), ('mastif-tybetanski'), ('pinczer-niemiecki'),
+  ('affenpinscher'), ('sznaucer-olbrzym'), ('sznaucer-sredni'),
+  ('norfolk-terrier'), ('lakeland-terrier'), ('irish-terrier'),
+  ('kerry-blue-terrier'), ('welsh-terrier'), ('australian-terrier'),
+  ('bedlington-terrier'), ('dandie-dinmont-terrier'), ('border-terrier'),
+  ('terier-czeski'), ('sealyham-terrier'), ('skye-terrier'),
+  ('parson-russell-terrier')
+)
+SELECT b.slug, b.name
+FROM fci_batch_4 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN affiliate_links al ON al.breed_id = b.id AND al.merchant = 'Placeholder'
+WHERE al.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_4(slug) AS (
+  VALUES
+  ('kuvasz'), ('hovawart'), ('duzy-szwajcarski-pies-pasterski'),
+  ('entlebucher'), ('appenzeller'), ('mastif-angielski'),
+  ('mastino-napoletano'), ('mastif-tybetanski'), ('pinczer-niemiecki'),
+  ('affenpinscher'), ('sznaucer-olbrzym'), ('sznaucer-sredni'),
+  ('norfolk-terrier'), ('lakeland-terrier'), ('irish-terrier'),
+  ('kerry-blue-terrier'), ('welsh-terrier'), ('australian-terrier'),
+  ('bedlington-terrier'), ('dandie-dinmont-terrier'), ('border-terrier'),
+  ('terier-czeski'), ('sealyham-terrier'), ('skye-terrier'),
+  ('parson-russell-terrier')
+)
+SELECT b.slug, b.name, COUNT(brr.id) AS recognition_count
+FROM fci_batch_4 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_registry_recognitions brr ON brr.breed_id = b.id
+GROUP BY b.id, b.slug, b.name
+HAVING COUNT(brr.id) < 4
+ORDER BY b.slug;
+
+SELECT
+  b.slug,
+  b.name,
+  b.species,
+  b.status,
+  b.short_description,
+  bi.image_url,
+  cp.monthly_food_cost_min_pln,
+  cp.monthly_food_cost_max_pln
+FROM breeds b
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE b.slug IN ('kuvasz', 'mastif-angielski', 'parson-russell-terrier')
+ORDER BY b.slug;

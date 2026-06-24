@@ -207,6 +207,7 @@ function runWrangler(query, useJsonFlag) {
     encoding: 'utf8',
     env: process.env,
     shell: pnpm.shell ?? false,
+    maxBuffer: 50 * 1024 * 1024,
   });
 }
 
