@@ -407,3 +407,151 @@ LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
 LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
 WHERE b.slug IN ('american-staffordshire-terrier', 'springer-spaniel-angielski', 'bernardyn')
 ORDER BY b.slug;
+
+-- FCI dog breeds Batch 3 validation.
+WITH fci_batch_3(slug) AS (
+  VALUES
+  ('basset-hound'), ('bloodhound'), ('petit-basset-griffon-vendeen'),
+  ('gonczy-polski'), ('bearded-collie'), ('beauceron'),
+  ('briard'), ('bouvier-des-flandres'), ('schipperke'),
+  ('eurasier'), ('akita-amerykanska'), ('szpic-finski'),
+  ('finski-lapphund'), ('lagotto-romagnolo'), ('portugalski-pies-wodny'),
+  ('seter-irlandzki'), ('seter-angielski'), ('seter-szkocki-gordon'),
+  ('pointer'), ('coton-de-tulear'), ('lhasa-apso'),
+  ('pekinczyk'), ('mops'), ('cocker-spaniel-amerykanski'),
+  ('springer-spaniel-walijski')
+)
+SELECT 'fci_batch_3_count' AS test_name, COUNT(b.id) AS result
+FROM fci_batch_3 fb
+LEFT JOIN breeds b ON b.slug = fb.slug;
+
+WITH fci_batch_3(slug) AS (
+  VALUES
+  ('basset-hound'), ('bloodhound'), ('petit-basset-griffon-vendeen'),
+  ('gonczy-polski'), ('bearded-collie'), ('beauceron'),
+  ('briard'), ('bouvier-des-flandres'), ('schipperke'),
+  ('eurasier'), ('akita-amerykanska'), ('szpic-finski'),
+  ('finski-lapphund'), ('lagotto-romagnolo'), ('portugalski-pies-wodny'),
+  ('seter-irlandzki'), ('seter-angielski'), ('seter-szkocki-gordon'),
+  ('pointer'), ('coton-de-tulear'), ('lhasa-apso'),
+  ('pekinczyk'), ('mops'), ('cocker-spaniel-amerykanski'),
+  ('springer-spaniel-walijski')
+)
+SELECT b.slug, b.name
+FROM fci_batch_3 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_content_sections bcs ON bcs.breed_id = b.id AND bcs.section_key = 'history'
+WHERE bcs.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_3(slug) AS (
+  VALUES
+  ('basset-hound'), ('bloodhound'), ('petit-basset-griffon-vendeen'),
+  ('gonczy-polski'), ('bearded-collie'), ('beauceron'),
+  ('briard'), ('bouvier-des-flandres'), ('schipperke'),
+  ('eurasier'), ('akita-amerykanska'), ('szpic-finski'),
+  ('finski-lapphund'), ('lagotto-romagnolo'), ('portugalski-pies-wodny'),
+  ('seter-irlandzki'), ('seter-angielski'), ('seter-szkocki-gordon'),
+  ('pointer'), ('coton-de-tulear'), ('lhasa-apso'),
+  ('pekinczyk'), ('mops'), ('cocker-spaniel-amerykanski'),
+  ('springer-spaniel-walijski')
+)
+SELECT b.slug, b.name, COUNT(bf.id) AS faq_count
+FROM fci_batch_3 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_faqs bf ON bf.breed_id = b.id
+GROUP BY b.id, b.slug, b.name
+HAVING COUNT(bf.id) < 5
+ORDER BY b.slug;
+
+WITH fci_batch_3(slug) AS (
+  VALUES
+  ('basset-hound'), ('bloodhound'), ('petit-basset-griffon-vendeen'),
+  ('gonczy-polski'), ('bearded-collie'), ('beauceron'),
+  ('briard'), ('bouvier-des-flandres'), ('schipperke'),
+  ('eurasier'), ('akita-amerykanska'), ('szpic-finski'),
+  ('finski-lapphund'), ('lagotto-romagnolo'), ('portugalski-pies-wodny'),
+  ('seter-irlandzki'), ('seter-angielski'), ('seter-szkocki-gordon'),
+  ('pointer'), ('coton-de-tulear'), ('lhasa-apso'),
+  ('pekinczyk'), ('mops'), ('cocker-spaniel-amerykanski'),
+  ('springer-spaniel-walijski')
+)
+SELECT b.slug, b.name
+FROM fci_batch_3 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE cp.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_3(slug) AS (
+  VALUES
+  ('basset-hound'), ('bloodhound'), ('petit-basset-griffon-vendeen'),
+  ('gonczy-polski'), ('bearded-collie'), ('beauceron'),
+  ('briard'), ('bouvier-des-flandres'), ('schipperke'),
+  ('eurasier'), ('akita-amerykanska'), ('szpic-finski'),
+  ('finski-lapphund'), ('lagotto-romagnolo'), ('portugalski-pies-wodny'),
+  ('seter-irlandzki'), ('seter-angielski'), ('seter-szkocki-gordon'),
+  ('pointer'), ('coton-de-tulear'), ('lhasa-apso'),
+  ('pekinczyk'), ('mops'), ('cocker-spaniel-amerykanski'),
+  ('springer-spaniel-walijski')
+)
+SELECT b.slug, b.name
+FROM fci_batch_3 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+WHERE bi.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_3(slug) AS (
+  VALUES
+  ('basset-hound'), ('bloodhound'), ('petit-basset-griffon-vendeen'),
+  ('gonczy-polski'), ('bearded-collie'), ('beauceron'),
+  ('briard'), ('bouvier-des-flandres'), ('schipperke'),
+  ('eurasier'), ('akita-amerykanska'), ('szpic-finski'),
+  ('finski-lapphund'), ('lagotto-romagnolo'), ('portugalski-pies-wodny'),
+  ('seter-irlandzki'), ('seter-angielski'), ('seter-szkocki-gordon'),
+  ('pointer'), ('coton-de-tulear'), ('lhasa-apso'),
+  ('pekinczyk'), ('mops'), ('cocker-spaniel-amerykanski'),
+  ('springer-spaniel-walijski')
+)
+SELECT b.slug, b.name
+FROM fci_batch_3 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN affiliate_links al ON al.breed_id = b.id AND al.merchant = 'Placeholder'
+WHERE al.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_3(slug) AS (
+  VALUES
+  ('basset-hound'), ('bloodhound'), ('petit-basset-griffon-vendeen'),
+  ('gonczy-polski'), ('bearded-collie'), ('beauceron'),
+  ('briard'), ('bouvier-des-flandres'), ('schipperke'),
+  ('eurasier'), ('akita-amerykanska'), ('szpic-finski'),
+  ('finski-lapphund'), ('lagotto-romagnolo'), ('portugalski-pies-wodny'),
+  ('seter-irlandzki'), ('seter-angielski'), ('seter-szkocki-gordon'),
+  ('pointer'), ('coton-de-tulear'), ('lhasa-apso'),
+  ('pekinczyk'), ('mops'), ('cocker-spaniel-amerykanski'),
+  ('springer-spaniel-walijski')
+)
+SELECT b.slug, b.name, COUNT(brr.id) AS recognition_count
+FROM fci_batch_3 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_registry_recognitions brr ON brr.breed_id = b.id
+GROUP BY b.id, b.slug, b.name
+HAVING COUNT(brr.id) < 4
+ORDER BY b.slug;
+
+SELECT
+  b.slug,
+  b.name,
+  b.species,
+  b.status,
+  b.short_description,
+  bi.image_url,
+  cp.monthly_food_cost_min_pln,
+  cp.monthly_food_cost_max_pln
+FROM breeds b
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE b.slug IN ('basset-hound', 'gonczy-polski', 'mops')
+ORDER BY b.slug;
