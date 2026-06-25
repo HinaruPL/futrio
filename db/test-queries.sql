@@ -807,3 +807,129 @@ LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
 LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
 WHERE b.slug IN ('terrier-brazylijski', 'bolonczyk', 'barbet')
 ORDER BY b.slug;
+
+WITH fci_batch_6(slug) AS (
+  VALUES
+  ('clumber-spaniel'), ('field-spaniel'), ('sussex-spaniel'),
+  ('irish-water-spaniel'), ('curly-coated-retriever'), ('hiszpanski-pies-wodny'),
+  ('wetterhoun'), ('drentsche-patrijshond'), ('maly-munsterlander'),
+  ('duzy-munsterlander'), ('bracco-italiano'), ('spinone-italiano'),
+  ('epagneul-breton'), ('wyzel-niemiecki-krotkowlosy'), ('wyzel-niemiecki-szorstkowlosy'),
+  ('wyzel-niemiecki-dlugowlosy'), ('griffon-korthalsa'), ('braque-francais-typ-pirenejski'),
+  ('braque-francais-typ-gaskonski'), ('braque-d-auvergne'), ('braque-du-bourbonnais'),
+  ('braque-saint-germain'), ('wyzel-wegierski-szorstkowlosy'), ('spaniel-pikardyjski-niebieski'),
+  ('spaniel-pikardyjski')
+)
+SELECT COUNT(*) AS batch_6_breed_count
+FROM breeds b
+JOIN fci_batch_6 fb ON fb.slug = b.slug;
+
+WITH fci_batch_6(slug) AS (
+  VALUES
+  ('clumber-spaniel'), ('field-spaniel'), ('sussex-spaniel'),
+  ('irish-water-spaniel'), ('curly-coated-retriever'), ('hiszpanski-pies-wodny'),
+  ('wetterhoun'), ('drentsche-patrijshond'), ('maly-munsterlander'),
+  ('duzy-munsterlander'), ('bracco-italiano'), ('spinone-italiano'),
+  ('epagneul-breton'), ('wyzel-niemiecki-krotkowlosy'), ('wyzel-niemiecki-szorstkowlosy'),
+  ('wyzel-niemiecki-dlugowlosy'), ('griffon-korthalsa'), ('braque-francais-typ-pirenejski'),
+  ('braque-francais-typ-gaskonski'), ('braque-d-auvergne'), ('braque-du-bourbonnais'),
+  ('braque-saint-germain'), ('wyzel-wegierski-szorstkowlosy'), ('spaniel-pikardyjski-niebieski'),
+  ('spaniel-pikardyjski')
+)
+SELECT b.slug, b.name
+FROM fci_batch_6 fb
+LEFT JOIN breeds b ON b.slug = fb.slug
+WHERE b.id IS NULL
+ORDER BY fb.slug;
+
+WITH fci_batch_6(slug) AS (
+  VALUES
+  ('clumber-spaniel'), ('field-spaniel'), ('sussex-spaniel'),
+  ('irish-water-spaniel'), ('curly-coated-retriever'), ('hiszpanski-pies-wodny'),
+  ('wetterhoun'), ('drentsche-patrijshond'), ('maly-munsterlander'),
+  ('duzy-munsterlander'), ('bracco-italiano'), ('spinone-italiano'),
+  ('epagneul-breton'), ('wyzel-niemiecki-krotkowlosy'), ('wyzel-niemiecki-szorstkowlosy'),
+  ('wyzel-niemiecki-dlugowlosy'), ('griffon-korthalsa'), ('braque-francais-typ-pirenejski'),
+  ('braque-francais-typ-gaskonski'), ('braque-d-auvergne'), ('braque-du-bourbonnais'),
+  ('braque-saint-germain'), ('wyzel-wegierski-szorstkowlosy'), ('spaniel-pikardyjski-niebieski'),
+  ('spaniel-pikardyjski')
+)
+SELECT b.slug, b.name
+FROM fci_batch_6 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE cp.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_6(slug) AS (
+  VALUES
+  ('clumber-spaniel'), ('field-spaniel'), ('sussex-spaniel'),
+  ('irish-water-spaniel'), ('curly-coated-retriever'), ('hiszpanski-pies-wodny'),
+  ('wetterhoun'), ('drentsche-patrijshond'), ('maly-munsterlander'),
+  ('duzy-munsterlander'), ('bracco-italiano'), ('spinone-italiano'),
+  ('epagneul-breton'), ('wyzel-niemiecki-krotkowlosy'), ('wyzel-niemiecki-szorstkowlosy'),
+  ('wyzel-niemiecki-dlugowlosy'), ('griffon-korthalsa'), ('braque-francais-typ-pirenejski'),
+  ('braque-francais-typ-gaskonski'), ('braque-d-auvergne'), ('braque-du-bourbonnais'),
+  ('braque-saint-germain'), ('wyzel-wegierski-szorstkowlosy'), ('spaniel-pikardyjski-niebieski'),
+  ('spaniel-pikardyjski')
+)
+SELECT b.slug, b.name
+FROM fci_batch_6 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+WHERE bi.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_6(slug) AS (
+  VALUES
+  ('clumber-spaniel'), ('field-spaniel'), ('sussex-spaniel'),
+  ('irish-water-spaniel'), ('curly-coated-retriever'), ('hiszpanski-pies-wodny'),
+  ('wetterhoun'), ('drentsche-patrijshond'), ('maly-munsterlander'),
+  ('duzy-munsterlander'), ('bracco-italiano'), ('spinone-italiano'),
+  ('epagneul-breton'), ('wyzel-niemiecki-krotkowlosy'), ('wyzel-niemiecki-szorstkowlosy'),
+  ('wyzel-niemiecki-dlugowlosy'), ('griffon-korthalsa'), ('braque-francais-typ-pirenejski'),
+  ('braque-francais-typ-gaskonski'), ('braque-d-auvergne'), ('braque-du-bourbonnais'),
+  ('braque-saint-germain'), ('wyzel-wegierski-szorstkowlosy'), ('spaniel-pikardyjski-niebieski'),
+  ('spaniel-pikardyjski')
+)
+SELECT b.slug, b.name
+FROM fci_batch_6 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN affiliate_links al ON al.breed_id = b.id AND al.merchant = 'Placeholder'
+WHERE al.id IS NULL
+ORDER BY b.slug;
+
+WITH fci_batch_6(slug) AS (
+  VALUES
+  ('clumber-spaniel'), ('field-spaniel'), ('sussex-spaniel'),
+  ('irish-water-spaniel'), ('curly-coated-retriever'), ('hiszpanski-pies-wodny'),
+  ('wetterhoun'), ('drentsche-patrijshond'), ('maly-munsterlander'),
+  ('duzy-munsterlander'), ('bracco-italiano'), ('spinone-italiano'),
+  ('epagneul-breton'), ('wyzel-niemiecki-krotkowlosy'), ('wyzel-niemiecki-szorstkowlosy'),
+  ('wyzel-niemiecki-dlugowlosy'), ('griffon-korthalsa'), ('braque-francais-typ-pirenejski'),
+  ('braque-francais-typ-gaskonski'), ('braque-d-auvergne'), ('braque-du-bourbonnais'),
+  ('braque-saint-germain'), ('wyzel-wegierski-szorstkowlosy'), ('spaniel-pikardyjski-niebieski'),
+  ('spaniel-pikardyjski')
+)
+SELECT b.slug, b.name, COUNT(brr.id) AS recognition_count
+FROM fci_batch_6 fb
+JOIN breeds b ON b.slug = fb.slug
+LEFT JOIN breed_registry_recognitions brr ON brr.breed_id = b.id
+GROUP BY b.id, b.slug, b.name
+HAVING COUNT(brr.id) < 4
+ORDER BY b.slug;
+
+SELECT
+  b.slug,
+  b.name,
+  b.species,
+  b.status,
+  b.short_description,
+  bi.image_url,
+  cp.monthly_food_cost_min_pln,
+  cp.monthly_food_cost_max_pln
+FROM breeds b
+LEFT JOIN breed_images bi ON bi.breed_id = b.id AND bi.is_primary = 1
+LEFT JOIN calculator_profiles cp ON cp.breed_id = b.id
+WHERE b.slug IN ('clumber-spaniel', 'wyzel-niemiecki-krotkowlosy', 'spaniel-pikardyjski')
+ORDER BY b.slug;
